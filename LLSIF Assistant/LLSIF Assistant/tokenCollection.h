@@ -19,6 +19,9 @@ public:
 	void setEstimatedPoints(int points);
 	int getEstimatedPoints();
 
+	//Function to calculate estimated total of points.
+	void calculate(int points, int tokens);
+
 	//Don't know what this is, but I'll leave it here for now.
 	//~tokenCollection();
 private:

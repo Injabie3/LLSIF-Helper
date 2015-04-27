@@ -46,6 +46,11 @@ int tokenCollection::getEstimatedPoints()
 	return estimatedPoints;
 }
 
+//Function to calculate estimated total of points.
+void tokenCollection::calculate(int points, int tokens)
+{
+	
+}
 /*
 tokenCollection::~tokenCollection()
 {
