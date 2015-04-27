@@ -1,17 +1,20 @@
 #pragma once
+
+//Description:	A class purely for token collection related stuff.
+
 class tokenCollection
 {
 public:
 	tokenCollection();
 
-	void setCurrentPoints();
-	void getCurrentPoints();
+	void setCurrentPoints(int points);
+	int getCurrentPoints();
 	
-	void setCurrentTokens();
-	void getCurrentTokens();
+	void setCurrentTokens(int tokens);
+	int getCurrentTokens();
 	
-	void setEstimatedPoints();
-	void getEstimatedPoints();
+	void setEstimatedPoints(int points);
+	int getEstimatedPoints();
 
 	//Don't know what this is, but I'll leave it here for now.
 	//~tokenCollection();
