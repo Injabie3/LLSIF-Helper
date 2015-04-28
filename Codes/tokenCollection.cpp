@@ -5,6 +5,7 @@
 #include <fstream>
 using namespace std;
 
+//Class constructor
 tokenCollection::tokenCollection()
 {
 	currentPoints = 0;
@@ -12,37 +13,51 @@ tokenCollection::tokenCollection()
 	estimatedPoints = 0;
 }
 
-//Function to set current points.
+//Function to set/get current points.
 void tokenCollection::setCurrentPoints(int points)
 {
 	currentPoints = points;
 }
-
-//Function to get current points.
 int tokenCollection::getCurrentPoints()
 {
 	return currentPoints;
 }
 
-//Function to set current number of tokens.
+//Function to set/get current number of tokens.
 void tokenCollection::setCurrentTokens(int tokens)
 {
 	currentTokens = tokens;
 }
-
-//Function to get current number of tokens.
 int tokenCollection::getCurrentTokens()
 {
 	return currentTokens;
 }
 
-//Function to set the estimated number of points.
+//Function to set/get (average) event points obtained per song
+void tokenCollection::setPointsPerSong(int points)
+{
+	pointsPerSong = points;
+}
+int tokenCollection::getPointsPerSong()
+{
+	return pointsPerSong;
+}
+
+//Function to set/get target event points.
+void tokenCollection::setTargetPoints(int points)
+{
+	targetPoints = points;
+}
+int tokenCollection::getTargetPoints()
+{
+	return targetPoints;
+}
+
+//Function to set/get the estimated number of points.
 void tokenCollection::setEstimatedPoints(int points)
 {
 	estimatedPoints = points;
 }
-
-//Function to get the estimated number of points.
 int tokenCollection::getEstimatedPoints()
 {
 	return estimatedPoints;
