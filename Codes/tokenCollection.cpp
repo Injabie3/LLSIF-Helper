@@ -7,7 +7,9 @@ using namespace std;
 
 tokenCollection::tokenCollection()
 {
-
+	currentPoints = 0;
+	currentTokens = 0;
+	estimatedPoints = 0;
 }
 
 //Function to set current points.
