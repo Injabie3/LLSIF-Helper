@@ -15,17 +15,21 @@ public:
 	void setCurrentTokens(int tokens);
 	int getCurrentTokens();
 	
-	//Function to set/get the estimated number of points.
-	void setEstimatedPoints(int points);
-	int getEstimatedPoints();
+	//Function to set/get target event points
+	void setTargetPoints(int points);
+	int getTargetPoints();
+
+	//Function to set/get difficulty of song.
+	void setDifficulty(int songDifficulty);
+	int getDifficulty();
 
 	//Function to set/get the event points per song.
 	void setPointsPerSong(int points);
 	int getPointsPerSong();
 
-	//Function to set/get target event points
-	void setTargetPoints(int points);
-	int getTargetPoints();
+	//Function to set/get the estimated number of points.
+	void setEstimatedPoints(int points);
+	int getEstimatedPoints();
 
 	//Function to calculate estimated total of points.
 	void calculate(int points, int tokens);
