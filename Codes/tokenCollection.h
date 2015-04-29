@@ -7,29 +7,39 @@ class tokenCollection
 public:
 	tokenCollection();
 
-	//Function to set/get current points.
-	int setCurrentPoints(int points);	//Returns 0 if OK, 1 if error.
-	int getCurrentPoints();
+	//Function to set data
+	int setData(int points, int tokens, int songDifficulty);
+
+	/*tokenTracker.setCurrentPoints(currentPoints);
+	tokenTracker.setCurrentTokens(tokens);
+	tokenTracker.setPointsPerSong(pointsPerSong);
+	tokenTracker.calculateEstimatedPoints();
+	cout << "Estimated total currentPoints: " << tokenTracker.getEstimatedPoints() << endl;*/
+
+		//Function to set/get current points.
+		int setCurrentPoints(int points);	//Returns 0 if OK, 1 if error.
+		int getCurrentPoints();
 	
-	//Function to set/get current number of tokens.
-	int setCurrentTokens(int tokens);	//Returns 0 if OK, 1 if error.
-	int getCurrentTokens();
+		//Function to set/get current number of tokens.
+		int setCurrentTokens(int tokens);	//Returns 0 if OK, 1 if error.
+		int getCurrentTokens();
+
+		//Function to set/get difficulty of song.
+		int setDifficulty(int songDifficulty);	//Returns 0 if OK, 1 if error.
+		int getDifficulty();
+
+		//Function to set/get the event points per song.
+		int setPointsPerSong(int points);	//Returns 0 if OK, 1 if error.
+		int getPointsPerSong();
+
+		//Function to calculate/get the estimated number of points.
+		void calculateEstimatedPoints();
+		int getEstimatedPoints();	
 	
-	//Function to set/get target event points
-	int setTargetPoints(int points);	//Returns 0 if OK, 1 if error.
-	int getTargetPoints();
+		//Function to set/get target event points
+		int setTargetPoints(int points);	//Returns 0 if OK, 1 if error.
+		int getTargetPoints();
 
-	//Function to set/get difficulty of song.
-	int setDifficulty(int songDifficulty);	//Returns 0 if OK, 1 if error.
-	int getDifficulty();
-
-	//Function to set/get the event points per song.
-	int setPointsPerSong(int points);	//Returns 0 if OK, 1 if error.
-	int getPointsPerSong();
-
-	//Function to calculate/get the estimated number of points.
-	void calculateEstimatedPoints();
-	int getEstimatedPoints();	
 
 	//Don't know what this is, but I'll leave it here for now.
 	//~tokenCollection();

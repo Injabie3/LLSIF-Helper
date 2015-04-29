@@ -8,11 +8,34 @@ using namespace std;
 //Class constructor
 tokenCollection::tokenCollection()
 {
+	int difficulty;				//Difficulty of song: Easy/Normal/Hard/Expert
+	int currentPoints;			//The user's current event points.
+	int currentTokens;			//The user's current event tokens.
+	int pointsPerSong;			//Points per song, entered by user.
+	int tokenSong;				//The token cost per event song
+	double scoreMultiplier;		//Multiplier based on score.
+	double comboMultiplier;		//Multiplier based on combo.
+	int estimatedPoints;		//The estimated number of points the user has after calculations.
+
 	currentPoints = 0;
 	currentTokens = 0;
 	estimatedPoints = 0;
 	tokenSong = 1;			//To avoid divide by zero.
 }
+
+//Function to set data
+	int tokenCollection::setData(int points, int tokens, int Difficulty, int pSong)
+	{
+		currentPoints = points;
+		currentTokens = tokens;
+		difficulty = Difficulty;
+		pointsPerSong = pSong;
+
+	/*tokenTracker.setCurrentPoints(currentPoints);
+	tokenTracker.setCurrentTokens(tokens);
+	tokenTracker.setPointsPerSong(pointsPerSong);
+	tokenTracker.calculateEstimatedPoints();
+	cout << "Estimated total currentPoints: " << tokenTracker.getEstimatedPoints() << endl;*/
 
 //Function to set/get current points.
 int tokenCollection::setCurrentPoints(int points)

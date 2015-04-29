@@ -8,34 +8,34 @@ using namespace std;
 int main()
 {
 	//Defining variables.
-	int points = 0;
+	int currentPoints = 0;
 	int tokens = 0;
 	int difficulty = 0;
 	int pointsPerSong = 0;
 
 
 	tokenCollection tokenTracker;
-	cout << "LLSIF Helper beta" << endl;
+	cout << "LLSIF Calculator beta" << endl;
 	//Token Collection Test
 	cout << "Enter current points: ";
-	cin >> points;
-	cout << "Enter current tokens: ";
+	cin >> currentPoints;
+	cout << "Enter number of tokens available: ";
 	cin >> tokens;
 	do
 	{
-		cout << "1. Easy | 2. Normal | 3. Hard | 4. Expert" << endl;
-		cout << "Enter difficulty: ";
+		cout << "Easy (1) | Normal (2) | Hard (3) | Expert (4)" << endl;
+		cout << "Song difficulty (number): ";
 		cin >> difficulty;
 	} while (tokenTracker.setDifficulty(difficulty));
 	cout << "Enter (average) points per event song: ";
 	cin >> pointsPerSong;
 
 
-	tokenTracker.setCurrentPoints(points);
+	tokenTracker.setCurrentPoints(currentPoints);
 	tokenTracker.setCurrentTokens(tokens);
 	tokenTracker.setPointsPerSong(pointsPerSong);
 	tokenTracker.calculateEstimatedPoints();
-	cout << "Estimated total points: " << tokenTracker.getEstimatedPoints() << endl;
+	cout << "Estimated total currentPoints: " << tokenTracker.getEstimatedPoints() << endl;
 
 	system("PAUSE");
 	return 0;
