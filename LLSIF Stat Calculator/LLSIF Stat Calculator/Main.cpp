@@ -4,12 +4,13 @@
 #include <assert.h>
 #include <cmath>
 #include <fstream>
+#include <string>
 
 using namespace std;
 
 int main()
 {
-	char rarity[2] = {}; //R, SR, UR
+	string rarity = ""; //R, SR, UR
 	int smile, pure, cool;
 	int smileE, pureE, coolE; //estimated stats
 	int currentL, findL, Ldiff; //current level, find level, level difference
@@ -37,22 +38,39 @@ int main()
 		smileE = smile + Ldiff*13;
 		pureE = pure + Ldiff*13;
 		coolE = cool + Ldiff*13;
-		if(findL == 60)
+		if (findL == 60)
+		{
 			smileE += 3;
+			pureE += 3;
+			coolE += 3;
+		}
 	}
-	else if(rarity == "SR"){//+14 each level
+	else if (rarity == "SR"){//+14 each level
 		smileE = smile + Ldiff*14;
 		pureE = pure + Ldiff*14;
 		coolE = cool + Ldiff*14;
-		if(findL == 80)
+		if (findL == 80)
+		{
 			smileE += 4;
+			pureE += 4;
+			coolE += 4;
+		}
 	}
-	else if(rarity == "UR"){//+15 each level
+	else if (rarity == "UR"){//+15 each level
 		smileE = smile + Ldiff*15;
 		pureE = pure + Ldiff*15;
 		coolE = cool + Ldiff*15;
-		if(findL == 100)
+		if (findL == 100)
+		{
 			smileE += 5;
+			pureE += 5;
+			coolE += 5;
+		}
+	}
+	else
+	{
+		cout << "YOU DONE GOOFED";
+		return 1;
 	}
 
 	cout << "At level " << findL << " your card's stats are:" << endl;

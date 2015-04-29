@@ -64,11 +64,7 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
-    <ClCompile Include="..\..\Codes\Source.cpp" />
-    <ClCompile Include="..\..\Codes\tokenCollection.cpp" />
-  </ItemGroup>
-  <ItemGroup>
-    <ClInclude Include="..\..\Codes\tokenCollection.h" />
+    <ClCompile Include="..\..\LLSIF Stat Calculator\LLSIF Stat Calculator\Main.cpp" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">
