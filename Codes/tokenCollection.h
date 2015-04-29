@@ -8,37 +8,28 @@ public:
 	tokenCollection();
 
 	//Function to set data
-	int setData(int points, int tokens, int songDifficulty);
+	int setData(int points, int tokens, int songDifficulty, int pSong);
 
 	/*tokenTracker.setCurrentPoints(currentPoints);
 	tokenTracker.setCurrentTokens(tokens);
 	tokenTracker.setPointsPerSong(pointsPerSong);
 	tokenTracker.calculateEstimatedPoints();
 	cout << "Estimated total currentPoints: " << tokenTracker.getEstimatedPoints() << endl;*/
-
-		//Function to set/get current points.
-		int setCurrentPoints(int points);	//Returns 0 if OK, 1 if error.
-		int getCurrentPoints();
 	
-		//Function to set/get current number of tokens.
-		int setCurrentTokens(int tokens);	//Returns 0 if OK, 1 if error.
-		int getCurrentTokens();
+	int getCurrentPoints();				//Function to get current points.
+	int getCurrentTokens();				//Function to get current number of tokens.
+	int getDifficulty();				//Function to get difficulty of song.
+	int getPointsPerSong();				//Function to get the event points per song.
+	int getEstimatedPoints();			//Function to get Estimated points
 
-		//Function to set/get difficulty of song.
-		int setDifficulty(int songDifficulty);	//Returns 0 if OK, 1 if error.
-		int getDifficulty();
-
-		//Function to set/get the event points per song.
-		int setPointsPerSong(int points);	//Returns 0 if OK, 1 if error.
-		int getPointsPerSong();
-
-		//Function to calculate/get the estimated number of points.
-		void calculateEstimatedPoints();
-		int getEstimatedPoints();	
+	int setTargetPoints(int points);	//Function to set target event points. Returns 0 if OK, 1 if error.
+	int getTargetPoints();				//Function to get target event points.
+	int setTokenSong(int difficulty);	//Function to set the token cost per event song, based on the difficulty selected.
+	//Calculations
+	void calculateEstimatedPoints();	//Function to calculate the estimated number of points.
+	void calculateTokensNeeded();		//Function to calculate number of tokens needed to reach user's target event points.
 	
-		//Function to set/get target event points
-		int setTargetPoints(int points);	//Returns 0 if OK, 1 if error.
-		int getTargetPoints();
+
 
 
 	//Don't know what this is, but I'll leave it here for now.
@@ -52,6 +43,8 @@ private:
 	int tokenSong;				//The token cost per event song
 	double scoreMultiplier;		//Multiplier based on score.
 	double comboMultiplier;		//Multiplier based on combo.
+
 	int estimatedPoints;		//The estimated number of points the user has after calculations.
+	int tokensNeeded;			//The estimated number of tokens needed to get to the user's target event points.
 };
 

@@ -21,19 +21,13 @@ int main()
 	cin >> currentPoints;
 	cout << "Enter number of tokens available: ";
 	cin >> tokens;
-	do
-	{
-		cout << "Easy (1) | Normal (2) | Hard (3) | Expert (4)" << endl;
-		cout << "Song difficulty (number): ";
-		cin >> difficulty;
-	} while (tokenTracker.setDifficulty(difficulty));
+	cout << "Easy (1) | Normal (2) | Hard (3) | Expert (4)" << endl;
+	cout << "Song difficulty (number): ";
+	cin >> difficulty;
 	cout << "Enter (average) points per event song: ";
 	cin >> pointsPerSong;
 
-
-	tokenTracker.setCurrentPoints(currentPoints);
-	tokenTracker.setCurrentTokens(tokens);
-	tokenTracker.setPointsPerSong(pointsPerSong);
+	tokenTracker.setData(currentPoints, tokens, difficulty, pointsPerSong);
 	tokenTracker.calculateEstimatedPoints();
 	cout << "Estimated total currentPoints: " << tokenTracker.getEstimatedPoints() << endl;
 
