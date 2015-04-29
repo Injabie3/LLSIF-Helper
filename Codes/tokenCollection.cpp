@@ -8,67 +8,38 @@ using namespace std;
 //Class constructor
 tokenCollection::tokenCollection()
 {
-	int difficulty;				//Difficulty of song: Easy/Normal/Hard/Expert
-	int currentPoints;			//The user's current event points.
-	int currentTokens;			//The user's current event tokens.
-	int pointsPerSong;			//Points per song, entered by user.
-	int tokenSong;				//The token cost per event song
-	double scoreMultiplier;		//Multiplier based on score.
-	double comboMultiplier;		//Multiplier based on combo.
-	int estimatedPoints;		//The estimated number of points the user has after calculations.
+	difficulty = 1;				//Difficulty of song: Easy/Normal/Hard/Expert
+	currentPoints = 0;			//The user's current event points.
+	currentTokens = 0;			//The user's current event tokens.
+	pointsPerSong = 0;			//Points per song, entered by user.
+	tokenSong = 1;				//The token cost per event song
+	scoreMultiplier = 0.0;		//Multiplier based on score.
+	comboMultiplier = 0.0;		//Multiplier based on combo.
+	estimatedPoints;			//The estimated number of points the user has after calculations.
 
-	currentPoints = 0;
-	currentTokens = 0;
-	estimatedPoints = 0;
-	tokenSong = 1;			//To avoid divide by zero.
 }
 
 //Function to set data
-	int tokenCollection::setData(int points, int tokens, int Difficulty, int pSong)
-	{
-		currentPoints = points;
-		currentTokens = tokens;
-		difficulty = Difficulty;
-		pointsPerSong = pSong;
-
-	/*tokenTracker.setCurrentPoints(currentPoints);
-	tokenTracker.setCurrentTokens(tokens);
-	tokenTracker.setPointsPerSong(pointsPerSong);
-	tokenTracker.calculateEstimatedPoints();
-	cout << "Estimated total currentPoints: " << tokenTracker.getEstimatedPoints() << endl;*/
-
-//Function to set/get current points.
-int tokenCollection::setCurrentPoints(int points)
+int tokenCollection::setData(int points, int tokens, int Difficulty, int pSong)
 {
-	if (points > 0)
+	currentPoints = points;
+	currentTokens = tokens;
+	difficulty = Difficulty;
+	if (setTokenSong(difficulty))
 	{
-		currentPoints = points;
-		return 0;
+		return 3;
 	}
-	else
-	{
-		return 1;
-	}
+	pointsPerSong = pSong;
+	return 0;
 }
+
+//Function to get current points.
 int tokenCollection::getCurrentPoints()
 {
 	return currentPoints;
 }
 
-//Function to set/get current number of tokens.
-int tokenCollection::setCurrentTokens(int tokens)
-{
-	if (tokens > 0)
-	{
-		currentTokens = tokens;
-		return 0;
-	}
-	else
-	{
-		return 1;
-	}
-	
-}
+//Function to get current number of tokens.
 int tokenCollection::getCurrentTokens()
 {
 	return currentTokens;
@@ -92,51 +63,39 @@ int tokenCollection::getTargetPoints()
 	return targetPoints;
 }
 
-//Function to get/set song difficulty
-int tokenCollection::setDifficulty(int songDifficulty)
+//Function to set the token cost per event song, based on the difficulty selected.
+int tokenCollection::setTokenSong(int difficulty)
 {
-	if (songDifficulty == 1)
+	if (difficulty == 1)		//Easy song
 	{
 		tokenSong = 15;
 	}
-	else if (songDifficulty == 2)
+	else if (difficulty == 2)	//Normal song
 	{
 		tokenSong = 30;
 	}
-	else if (songDifficulty == 3)
+	else if (difficulty == 3)	//Hard song
 	{
 		tokenSong = 45;
 	}
-	else if (songDifficulty == 4)
+	else if (difficulty == 4)	//Expert song
 	{
 		tokenSong = 75;
 	}
-	else
+	else						//Return error.
 	{
 		return 1;
 	}
-	difficulty = songDifficulty;
-	return 0;
+	return 0;					//Return OK.
 }
+
+//Function to get song difficulty
 int tokenCollection::getDifficulty()
 {
 	return difficulty;
 }
 
-//Function to set/get (average) event points obtained per song
-int tokenCollection::setPointsPerSong(int points)
-{
-	if (points > 0)
-	{
-		pointsPerSong = points;
-		return 0;
-	}
-	else
-	{
-		return 1;
-	}
-	
-}
+//Function to get (average) event points obtained per song
 int tokenCollection::getPointsPerSong()
 {
 	return pointsPerSong;
@@ -146,7 +105,7 @@ int tokenCollection::getPointsPerSong()
 void tokenCollection::calculateEstimatedPoints()
 {
 	int plays = 0;
-	plays = floor(currentTokens / tokenSong);
+	plays = floor((double)(currentTokens / tokenSong));
 	estimatedPoints = currentPoints + pointsPerSong * plays;
 }
 int tokenCollection::getEstimatedPoints()
@@ -154,6 +113,11 @@ int tokenCollection::getEstimatedPoints()
 	return estimatedPoints;
 }
 
+//Function to calculate number of tokens needed to reach user's target event points.
+void tokenCollection::calculateTokensNeeded()
+{
+	tokensNeeded = (targetPoints - currentPoints);
+}
 /*
 tokenCollection::~tokenCollection()
 {
