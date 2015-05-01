@@ -14,8 +14,9 @@ int main()
 	int smile, pure, cool;
 	int smileE, pureE, coolE; //estimated stats
 	int currentL, findL, Ldiff; //current level, find level, level difference
+
 	cout << "LLSIF Card Stat Calculator" << endl;
-	cout << "Please enter card rarity: " << endl;
+	cout << "Please enter card rarity(R, SR, UR): " << endl;
 	cin >> rarity;
 	cout << "Please enter card level: " << endl;
 	cin >> currentL;
@@ -34,12 +35,12 @@ int main()
 	assert(findL > 0);
 
 	Ldiff = findL - currentL; 
+
 	if(rarity == "R"){//+13 each level
 		smileE = smile + Ldiff*13;
 		pureE = pure + Ldiff*13;
 		coolE = cool + Ldiff*13;
-		if (findL == 60)
-		{
+		if (findL == 60){
 			smileE += 3;
 			pureE += 3;
 			coolE += 3;
@@ -49,8 +50,7 @@ int main()
 		smileE = smile + Ldiff*14;
 		pureE = pure + Ldiff*14;
 		coolE = cool + Ldiff*14;
-		if (findL == 80)
-		{
+		if (findL == 80){
 			smileE += 4;
 			pureE += 4;
 			coolE += 4;
@@ -60,8 +60,7 @@ int main()
 		smileE = smile + Ldiff*15;
 		pureE = pure + Ldiff*15;
 		coolE = cool + Ldiff*15;
-		if (findL == 100)
-		{
+		if (findL == 100){
 			smileE += 5;
 			pureE += 5;
 			coolE += 5;
