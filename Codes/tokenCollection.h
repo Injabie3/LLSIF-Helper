@@ -6,6 +6,8 @@ class tokenCollection
 {
 public:
 	tokenCollection();
+	//Apparently this is a destructor.
+	~tokenCollection();
 
 	//Function to set data
 	int setData(int points, int tokens, int songDifficulty, int pSong);
@@ -32,8 +34,7 @@ public:
 
 
 
-	//Don't know what this is, but I'll leave it here for now.
-	//~tokenCollection();
+
 private:
 	int difficulty;				//Difficulty of song: Easy/Normal/Hard/Expert
 	int currentPoints;			//The user's current event points.
