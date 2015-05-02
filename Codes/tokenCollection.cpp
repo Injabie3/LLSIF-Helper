@@ -118,9 +118,8 @@ void tokenCollection::calculateTokensNeeded()
 {
 	tokensNeeded = (targetPoints - currentPoints);
 }
-/*
+
 tokenCollection::~tokenCollection()
 {
 }
 
-*/
