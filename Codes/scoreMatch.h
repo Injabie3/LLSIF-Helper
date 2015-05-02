@@ -9,6 +9,15 @@ public:
 	//Apparently this is a destructor.
 	~scoreMatch();
 
+	int setDataV1(int difficulty, string score, int rank);
+	int setDataV2(int currentP, int goalP, double aveScore, int LPCost);
+	void calculateFinalScore();
+	int getFinalScore();
+	void calculateLPNeeded();
+	int getLPNeeded();
+
+
+private:
 	//Base scores
 	const int pointsEasy = 36;
 	const int pointsNormal = 89;
@@ -25,15 +34,22 @@ public:
 	const double rank_2 = 1.15;
 	const double rank_3 = 1.05;
 	const double rank_4 = 1;
-private:
-	double multiplyScore;
-	double multiplyRank;
-	int baseScore;
-	int difficulty;
+
+	//Implementation 1
+	double multiplyScore;	//Score Multiplier
+	double multiplyRank;	//Rank Multiplier
+	int baseScore;			//The base score.
+	int difficulty;			//The difficulty selected.
 	int finalScore;
 
+	//Implementation 2
+	int currentPoints;
+	int goalPoints;
+	double averageScore;
+	int LPCost;
+	int LPNeeded;
+
 	
-	int setData(int difficulty, string score, int rank);
-	int calculateFinalScore();
+
 };
 

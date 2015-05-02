@@ -11,13 +11,13 @@
     </ProjectConfiguration>
   </ItemGroup>
   <ItemGroup>
+    <ClCompile Include="..\..\Codes\scoreMatch.cpp" />
     <ClCompile Include="..\..\Codes\Source.cpp" />
     <ClCompile Include="..\..\Codes\tokenCollection.cpp" />
-    <ClCompile Include="scoreMatch.cpp" />
   </ItemGroup>
   <ItemGroup>
+    <ClInclude Include="..\..\Codes\scoreMatch.h" />
     <ClInclude Include="..\..\Codes\tokenCollection.h" />
-    <ClInclude Include="scoreMatch.h" />
   </ItemGroup>
   <PropertyGroup Label="Globals">
     <ProjectGuid>{97E81E13-D0FD-4C0C-BB58-EEBC90A5623B}</ProjectGuid>

@@ -12,7 +12,7 @@ scoreMatch::~scoreMatch()
 {
 }
 
-int scoreMatch::setData(int difficulty, string score, int rank)
+int scoreMatch::setDataV1(int difficulty, string score, int rank)
 {
 	if (difficulty == 1)
 		baseScore = pointsEasy;
@@ -52,7 +52,40 @@ int scoreMatch::setData(int difficulty, string score, int rank)
 	return 0;
 }
 
-int scoreMatch::calculateFinalScore()
+int scoreMatch::setDataV2(int currentP, int goalP, double aveScore, int cost)
+{
+	//Checking parameters.
+	if (currentP <= 0)
+		return 1;
+	else if (goalP <= 0)
+		return 2;
+	else if (aveScore <= 0)
+		return 3;
+	else if (cost <= 0)
+		return 4;
+
+	currentPoints = currentP;
+	goalPoints = goalP;
+	averageScore = aveScore;
+	LPCost = cost;
+	return 0;
+}
+void scoreMatch::calculateFinalScore()
 {
 	finalScore = (int)round((double)baseScore * multiplyScore * multiplyRank);
+}
+
+int scoreMatch::getFinalScore()
+{
+	return finalScore;
+}
+
+void scoreMatch::calculateLPNeeded()
+{
+	LPNeeded = (int)(ceil((double)(goalPoints - currentPoints) / averageScore)*(double)LPCost);
+}
+
+int scoreMatch::getLPNeeded()
+{
+	return LPNeeded;
 }
