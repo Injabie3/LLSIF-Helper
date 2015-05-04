@@ -8,7 +8,7 @@ using namespace std;
 //Class constructor
 tokenCollection::tokenCollection()
 {
-	difficulty = 1;				//Difficulty of song: Easy/Normal/Hard/Expert
+	difficulty = 0;				//Difficulty of song: Easy/Normal/Hard/Expert
 	currentPoints = 0;			//The user's current event points.
 	currentTokens = 0;			//The user's current event tokens.
 	pointsPerSong = 0;			//Points per song, entered by user.
@@ -20,15 +20,10 @@ tokenCollection::tokenCollection()
 }
 
 //Function to set data
-int tokenCollection::setData(int points, int tokens, int Difficulty, int pSong)
+int tokenCollection::setData(int points, int tokens, int pSong)
 {
 	currentPoints = points;
 	currentTokens = tokens;
-	difficulty = Difficulty;
-	if (setTokenSong(difficulty))
-	{
-		return 3;
-	}
 	pointsPerSong = pSong;
 	return 0;
 }
@@ -89,6 +84,13 @@ int tokenCollection::setTokenSong(int difficulty)
 	return 0;					//Return OK.
 }
 
+//Function to set song difficulty
+int tokenCollection::setDifficulty(int diff)
+{
+	difficulty = diff;
+	setTokenSong(diff);
+	return 0;
+}
 //Function to get song difficulty
 int tokenCollection::getDifficulty()
 {
@@ -104,9 +106,9 @@ int tokenCollection::getPointsPerSong()
 //Function to calculate/get the estimated number of points.
 void tokenCollection::calculateEstimatedPoints()
 {
-	int plays = 0;
-	plays = floor((double)(currentTokens / tokenSong));
-	estimatedPoints = currentPoints + pointsPerSong * plays;
+	double plays = 0;
+	plays = (double)(currentTokens) / (double)(tokenSong);
+	estimatedPoints = (int)round(currentPoints + pointsPerSong * plays);
 }
 int tokenCollection::getEstimatedPoints()
 {

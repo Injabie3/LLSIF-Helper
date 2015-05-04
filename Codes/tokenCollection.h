@@ -10,7 +10,7 @@ public:
 	~tokenCollection();
 
 	//Function to set data
-	int setData(int points, int tokens, int songDifficulty, int pSong);
+	int setData(int points, int tokens, int pSong);
 
 	/*tokenTracker.setCurrentPoints(currentPoints);
 	tokenTracker.setCurrentTokens(tokens);
@@ -24,6 +24,7 @@ public:
 	int getPointsPerSong();				//Function to get the event points per song.
 	int getEstimatedPoints();			//Function to get Estimated points
 
+	int setDifficulty(int diff);		//Function to set difficulty.
 	int setTargetPoints(int points);	//Function to set target event points. Returns 0 if OK, 1 if error.
 	int getTargetPoints();				//Function to get target event points.
 	int setTokenSong(int difficulty);	//Function to set the token cost per event song, based on the difficulty selected.

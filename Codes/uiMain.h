@@ -1,5 +1,8 @@
 #pragma once
 
+//Define some classes here.
+tokenCollection Tracker;
+
 namespace LLSIFAssistant2013 {
 
 	using namespace System;
@@ -10,12 +13,12 @@ namespace LLSIFAssistant2013 {
 	using namespace System::Drawing;
 
 	/// <summary>
-	/// Summary for MyForm
+	/// Summary for uiMain
 	/// </summary>
-	public ref class MyForm : public System::Windows::Forms::Form
+	public ref class uiMain : public System::Windows::Forms::Form
 	{
 	public:
-		MyForm(void)
+		uiMain(void)
 		{
 			InitializeComponent();
 			//
@@ -27,7 +30,7 @@ namespace LLSIFAssistant2013 {
 		/// <summary>
 		/// Clean up any resources being used.
 		/// </summary>
-		~MyForm()
+		~uiMain()
 		{
 			if (components)
 			{
@@ -48,12 +51,13 @@ namespace LLSIFAssistant2013 {
 
 	private: System::Windows::Forms::Label^  labelToken_CurrentTokens;
 	private: System::Windows::Forms::Label^  labelToken_CurrentPoints;
+	private: System::Windows::Forms::Label^  labelToken_DifficultySelection;
 
 
 
 
-	private: System::Windows::Forms::Label^  labelToken_Difficulty;
-	private: System::Windows::Forms::ComboBox^  controlToken_Difficulty;
+
+
 	private: System::Windows::Forms::Button^  buttonToken_Calculate;
 
 
@@ -65,6 +69,13 @@ namespace LLSIFAssistant2013 {
 	private: System::Windows::Forms::NumericUpDown^  controlToken_AveragePoints;
 	private: System::Windows::Forms::Label^  labelToken_EstimatedPoints;
 	private: System::Windows::Forms::Label^  labelToken_Result;
+	private: System::Windows::Forms::Button^  controlDifficultyExpert;
+	private: System::Windows::Forms::Button^  controlDifficultyHard;
+	private: System::Windows::Forms::Button^  controlDifficultyNormal;
+	private: System::Windows::Forms::Button^  controlDifficultyEasy;
+	private: System::Windows::Forms::Label^  labelToken_Difficulty;
+
+	private: System::Windows::Forms::Label^  labelToken_SelectedDifficulty;
 
 
 	protected:
@@ -84,13 +95,18 @@ namespace LLSIFAssistant2013 {
 		{
 			this->tabControl1 = (gcnew System::Windows::Forms::TabControl());
 			this->tabTokenCollection = (gcnew System::Windows::Forms::TabPage());
+			this->labelToken_Difficulty = (gcnew System::Windows::Forms::Label());
+			this->labelToken_SelectedDifficulty = (gcnew System::Windows::Forms::Label());
+			this->controlDifficultyExpert = (gcnew System::Windows::Forms::Button());
+			this->controlDifficultyHard = (gcnew System::Windows::Forms::Button());
+			this->controlDifficultyNormal = (gcnew System::Windows::Forms::Button());
+			this->controlDifficultyEasy = (gcnew System::Windows::Forms::Button());
 			this->labelToken_EstimatedPoints = (gcnew System::Windows::Forms::Label());
 			this->labelToken_Result = (gcnew System::Windows::Forms::Label());
 			this->buttonToken_Calculate = (gcnew System::Windows::Forms::Button());
 			this->labelToken_AveragePoints = (gcnew System::Windows::Forms::Label());
 			this->controlToken_AveragePoints = (gcnew System::Windows::Forms::NumericUpDown());
-			this->labelToken_Difficulty = (gcnew System::Windows::Forms::Label());
-			this->controlToken_Difficulty = (gcnew System::Windows::Forms::ComboBox());
+			this->labelToken_DifficultySelection = (gcnew System::Windows::Forms::Label());
 			this->controlToken_CurrentTokens = (gcnew System::Windows::Forms::NumericUpDown());
 			this->controlToken_CurrentPoints = (gcnew System::Windows::Forms::NumericUpDown());
 			this->labelToken_CurrentTokens = (gcnew System::Windows::Forms::Label());
@@ -112,18 +128,23 @@ namespace LLSIFAssistant2013 {
 			this->tabControl1->Location = System::Drawing::Point(12, 36);
 			this->tabControl1->Name = L"tabControl1";
 			this->tabControl1->SelectedIndex = 0;
-			this->tabControl1->Size = System::Drawing::Size(448, 213);
+			this->tabControl1->Size = System::Drawing::Size(448, 248);
 			this->tabControl1->TabIndex = 0;
 			// 
 			// tabTokenCollection
 			// 
+			this->tabTokenCollection->Controls->Add(this->labelToken_Difficulty);
+			this->tabTokenCollection->Controls->Add(this->labelToken_SelectedDifficulty);
+			this->tabTokenCollection->Controls->Add(this->controlDifficultyExpert);
+			this->tabTokenCollection->Controls->Add(this->controlDifficultyHard);
+			this->tabTokenCollection->Controls->Add(this->controlDifficultyNormal);
+			this->tabTokenCollection->Controls->Add(this->controlDifficultyEasy);
 			this->tabTokenCollection->Controls->Add(this->labelToken_EstimatedPoints);
 			this->tabTokenCollection->Controls->Add(this->labelToken_Result);
 			this->tabTokenCollection->Controls->Add(this->buttonToken_Calculate);
 			this->tabTokenCollection->Controls->Add(this->labelToken_AveragePoints);
 			this->tabTokenCollection->Controls->Add(this->controlToken_AveragePoints);
-			this->tabTokenCollection->Controls->Add(this->labelToken_Difficulty);
-			this->tabTokenCollection->Controls->Add(this->controlToken_Difficulty);
+			this->tabTokenCollection->Controls->Add(this->labelToken_DifficultySelection);
 			this->tabTokenCollection->Controls->Add(this->controlToken_CurrentTokens);
 			this->tabTokenCollection->Controls->Add(this->controlToken_CurrentPoints);
 			this->tabTokenCollection->Controls->Add(this->labelToken_CurrentTokens);
@@ -131,24 +152,82 @@ namespace LLSIFAssistant2013 {
 			this->tabTokenCollection->Location = System::Drawing::Point(4, 22);
 			this->tabTokenCollection->Name = L"tabTokenCollection";
 			this->tabTokenCollection->Padding = System::Windows::Forms::Padding(3);
-			this->tabTokenCollection->Size = System::Drawing::Size(440, 187);
+			this->tabTokenCollection->Size = System::Drawing::Size(440, 222);
 			this->tabTokenCollection->TabIndex = 0;
 			this->tabTokenCollection->Text = L"Token Collection";
 			this->tabTokenCollection->UseVisualStyleBackColor = true;
 			// 
+			// labelToken_Difficulty
+			// 
+			this->labelToken_Difficulty->AutoSize = true;
+			this->labelToken_Difficulty->Location = System::Drawing::Point(152, 131);
+			this->labelToken_Difficulty->Name = L"labelToken_Difficulty";
+			this->labelToken_Difficulty->Size = System::Drawing::Size(123, 13);
+			this->labelToken_Difficulty->TabIndex = 17;
+			this->labelToken_Difficulty->Text = L"Please select a difficulty.";
+			// 
+			// labelToken_SelectedDifficulty
+			// 
+			this->labelToken_SelectedDifficulty->AutoSize = true;
+			this->labelToken_SelectedDifficulty->Location = System::Drawing::Point(54, 131);
+			this->labelToken_SelectedDifficulty->Name = L"labelToken_SelectedDifficulty";
+			this->labelToken_SelectedDifficulty->Size = System::Drawing::Size(95, 13);
+			this->labelToken_SelectedDifficulty->TabIndex = 16;
+			this->labelToken_SelectedDifficulty->Text = L"Selected Difficulty:";
+			// 
+			// controlDifficultyExpert
+			// 
+			this->controlDifficultyExpert->Location = System::Drawing::Point(332, 102);
+			this->controlDifficultyExpert->Name = L"controlDifficultyExpert";
+			this->controlDifficultyExpert->Size = System::Drawing::Size(53, 23);
+			this->controlDifficultyExpert->TabIndex = 15;
+			this->controlDifficultyExpert->Text = L"Expert";
+			this->controlDifficultyExpert->UseVisualStyleBackColor = true;
+			this->controlDifficultyExpert->Click += gcnew System::EventHandler(this, &uiMain::controlDifficultyExpert_Click);
+			// 
+			// controlDifficultyHard
+			// 
+			this->controlDifficultyHard->Location = System::Drawing::Point(273, 102);
+			this->controlDifficultyHard->Name = L"controlDifficultyHard";
+			this->controlDifficultyHard->Size = System::Drawing::Size(53, 23);
+			this->controlDifficultyHard->TabIndex = 14;
+			this->controlDifficultyHard->Text = L"Hard";
+			this->controlDifficultyHard->UseVisualStyleBackColor = true;
+			this->controlDifficultyHard->Click += gcnew System::EventHandler(this, &uiMain::controlDifficultyHard_Click);
+			// 
+			// controlDifficultyNormal
+			// 
+			this->controlDifficultyNormal->Location = System::Drawing::Point(214, 102);
+			this->controlDifficultyNormal->Name = L"controlDifficultyNormal";
+			this->controlDifficultyNormal->Size = System::Drawing::Size(53, 23);
+			this->controlDifficultyNormal->TabIndex = 13;
+			this->controlDifficultyNormal->Text = L"Normal";
+			this->controlDifficultyNormal->UseVisualStyleBackColor = true;
+			this->controlDifficultyNormal->Click += gcnew System::EventHandler(this, &uiMain::controlDifficultyNormal_Click);
+			// 
+			// controlDifficultyEasy
+			// 
+			this->controlDifficultyEasy->Location = System::Drawing::Point(155, 102);
+			this->controlDifficultyEasy->Name = L"controlDifficultyEasy";
+			this->controlDifficultyEasy->Size = System::Drawing::Size(53, 23);
+			this->controlDifficultyEasy->TabIndex = 12;
+			this->controlDifficultyEasy->Text = L"Easy";
+			this->controlDifficultyEasy->UseVisualStyleBackColor = true;
+			this->controlDifficultyEasy->Click += gcnew System::EventHandler(this, &uiMain::controlDifficultyEasy_Click);
+			// 
 			// labelToken_EstimatedPoints
 			// 
 			this->labelToken_EstimatedPoints->AutoSize = true;
-			this->labelToken_EstimatedPoints->Location = System::Drawing::Point(231, 154);
+			this->labelToken_EstimatedPoints->Location = System::Drawing::Point(152, 154);
 			this->labelToken_EstimatedPoints->Name = L"labelToken_EstimatedPoints";
-			this->labelToken_EstimatedPoints->Size = System::Drawing::Size(47, 13);
+			this->labelToken_EstimatedPoints->Size = System::Drawing::Size(172, 13);
 			this->labelToken_EstimatedPoints->TabIndex = 11;
-			this->labelToken_EstimatedPoints->Text = L"<points>";
+			this->labelToken_EstimatedPoints->Text = L"Click Calculate to determine points.";
 			// 
 			// labelToken_Result
 			// 
 			this->labelToken_Result->AutoSize = true;
-			this->labelToken_Result->Location = System::Drawing::Point(106, 154);
+			this->labelToken_Result->Location = System::Drawing::Point(30, 154);
 			this->labelToken_Result->Name = L"labelToken_Result";
 			this->labelToken_Result->Size = System::Drawing::Size(119, 13);
 			this->labelToken_Result->TabIndex = 10;
@@ -156,18 +235,18 @@ namespace LLSIFAssistant2013 {
 			// 
 			// buttonToken_Calculate
 			// 
-			this->buttonToken_Calculate->Location = System::Drawing::Point(15, 149);
+			this->buttonToken_Calculate->Location = System::Drawing::Point(169, 186);
 			this->buttonToken_Calculate->Name = L"buttonToken_Calculate";
 			this->buttonToken_Calculate->Size = System::Drawing::Size(75, 23);
 			this->buttonToken_Calculate->TabIndex = 9;
 			this->buttonToken_Calculate->Text = L"Calculate";
 			this->buttonToken_Calculate->UseVisualStyleBackColor = true;
-			this->buttonToken_Calculate->Click += gcnew System::EventHandler(this, &MyForm::buttonToken_Calculate_Click);
+			this->buttonToken_Calculate->Click += gcnew System::EventHandler(this, &uiMain::buttonToken_Calculate_Click);
 			// 
 			// labelToken_AveragePoints
 			// 
 			this->labelToken_AveragePoints->AutoSize = true;
-			this->labelToken_AveragePoints->Location = System::Drawing::Point(8, 102);
+			this->labelToken_AveragePoints->Location = System::Drawing::Point(67, 78);
 			this->labelToken_AveragePoints->Name = L"labelToken_AveragePoints";
 			this->labelToken_AveragePoints->Size = System::Drawing::Size(82, 13);
 			this->labelToken_AveragePoints->TabIndex = 8;
@@ -175,33 +254,24 @@ namespace LLSIFAssistant2013 {
 			// 
 			// controlToken_AveragePoints
 			// 
-			this->controlToken_AveragePoints->Location = System::Drawing::Point(96, 100);
+			this->controlToken_AveragePoints->Location = System::Drawing::Point(155, 76);
 			this->controlToken_AveragePoints->Maximum = System::Decimal(gcnew cli::array< System::Int32 >(4) { 100000000, 0, 0, 0 });
 			this->controlToken_AveragePoints->Name = L"controlToken_AveragePoints";
 			this->controlToken_AveragePoints->Size = System::Drawing::Size(100, 20);
 			this->controlToken_AveragePoints->TabIndex = 7;
 			// 
-			// labelToken_Difficulty
+			// labelToken_DifficultySelection
 			// 
-			this->labelToken_Difficulty->AutoSize = true;
-			this->labelToken_Difficulty->Location = System::Drawing::Point(40, 76);
-			this->labelToken_Difficulty->Name = L"labelToken_Difficulty";
-			this->labelToken_Difficulty->Size = System::Drawing::Size(50, 13);
-			this->labelToken_Difficulty->TabIndex = 6;
-			this->labelToken_Difficulty->Text = L"Difficulty:";
-			// 
-			// controlToken_Difficulty
-			// 
-			this->controlToken_Difficulty->FormattingEnabled = true;
-			this->controlToken_Difficulty->Items->AddRange(gcnew cli::array< System::Object^  >(4) { L"Easy", L"Normal", L"Hard", L"Expert" });
-			this->controlToken_Difficulty->Location = System::Drawing::Point(96, 73);
-			this->controlToken_Difficulty->Name = L"controlToken_Difficulty";
-			this->controlToken_Difficulty->Size = System::Drawing::Size(100, 21);
-			this->controlToken_Difficulty->TabIndex = 5;
+			this->labelToken_DifficultySelection->AutoSize = true;
+			this->labelToken_DifficultySelection->Location = System::Drawing::Point(99, 107);
+			this->labelToken_DifficultySelection->Name = L"labelToken_DifficultySelection";
+			this->labelToken_DifficultySelection->Size = System::Drawing::Size(50, 13);
+			this->labelToken_DifficultySelection->TabIndex = 6;
+			this->labelToken_DifficultySelection->Text = L"Difficulty:";
 			// 
 			// controlToken_CurrentTokens
 			// 
-			this->controlToken_CurrentTokens->Location = System::Drawing::Point(96, 47);
+			this->controlToken_CurrentTokens->Location = System::Drawing::Point(155, 50);
 			this->controlToken_CurrentTokens->Maximum = System::Decimal(gcnew cli::array< System::Int32 >(4) { 100000000, 0, 0, 0 });
 			this->controlToken_CurrentTokens->Name = L"controlToken_CurrentTokens";
 			this->controlToken_CurrentTokens->Size = System::Drawing::Size(100, 20);
@@ -209,7 +279,7 @@ namespace LLSIFAssistant2013 {
 			// 
 			// controlToken_CurrentPoints
 			// 
-			this->controlToken_CurrentPoints->Location = System::Drawing::Point(96, 21);
+			this->controlToken_CurrentPoints->Location = System::Drawing::Point(155, 24);
 			this->controlToken_CurrentPoints->Maximum = System::Decimal(gcnew cli::array< System::Int32 >(4) { 100000000, 0, 0, 0 });
 			this->controlToken_CurrentPoints->Name = L"controlToken_CurrentPoints";
 			this->controlToken_CurrentPoints->Size = System::Drawing::Size(100, 20);
@@ -218,7 +288,7 @@ namespace LLSIFAssistant2013 {
 			// labelToken_CurrentTokens
 			// 
 			this->labelToken_CurrentTokens->AutoSize = true;
-			this->labelToken_CurrentTokens->Location = System::Drawing::Point(7, 49);
+			this->labelToken_CurrentTokens->Location = System::Drawing::Point(66, 52);
 			this->labelToken_CurrentTokens->Name = L"labelToken_CurrentTokens";
 			this->labelToken_CurrentTokens->Size = System::Drawing::Size(83, 13);
 			this->labelToken_CurrentTokens->TabIndex = 1;
@@ -227,7 +297,7 @@ namespace LLSIFAssistant2013 {
 			// labelToken_CurrentPoints
 			// 
 			this->labelToken_CurrentPoints->AutoSize = true;
-			this->labelToken_CurrentPoints->Location = System::Drawing::Point(14, 23);
+			this->labelToken_CurrentPoints->Location = System::Drawing::Point(73, 26);
 			this->labelToken_CurrentPoints->Name = L"labelToken_CurrentPoints";
 			this->labelToken_CurrentPoints->Size = System::Drawing::Size(76, 13);
 			this->labelToken_CurrentPoints->TabIndex = 0;
@@ -238,14 +308,14 @@ namespace LLSIFAssistant2013 {
 			this->tabScoreMatch->Location = System::Drawing::Point(4, 22);
 			this->tabScoreMatch->Name = L"tabScoreMatch";
 			this->tabScoreMatch->Padding = System::Windows::Forms::Padding(3);
-			this->tabScoreMatch->Size = System::Drawing::Size(440, 187);
+			this->tabScoreMatch->Size = System::Drawing::Size(440, 222);
 			this->tabScoreMatch->TabIndex = 1;
 			this->tabScoreMatch->Text = L"Score Match";
 			this->tabScoreMatch->UseVisualStyleBackColor = true;
 			// 
 			// statusStrip1
 			// 
-			this->statusStrip1->Location = System::Drawing::Point(0, 265);
+			this->statusStrip1->Location = System::Drawing::Point(0, 301);
 			this->statusStrip1->Name = L"statusStrip1";
 			this->statusStrip1->Size = System::Drawing::Size(472, 22);
 			this->statusStrip1->TabIndex = 1;
@@ -259,17 +329,18 @@ namespace LLSIFAssistant2013 {
 			this->menuStrip1->TabIndex = 2;
 			this->menuStrip1->Text = L"menuStrip1";
 			// 
-			// MyForm
+			// uiMain
 			// 
 			this->AutoScaleDimensions = System::Drawing::SizeF(6, 13);
 			this->AutoScaleMode = System::Windows::Forms::AutoScaleMode::Font;
-			this->ClientSize = System::Drawing::Size(472, 287);
+			this->ClientSize = System::Drawing::Size(472, 323);
 			this->Controls->Add(this->statusStrip1);
 			this->Controls->Add(this->menuStrip1);
 			this->Controls->Add(this->tabControl1);
+			this->FormBorderStyle = System::Windows::Forms::FormBorderStyle::FixedSingle;
 			this->MainMenuStrip = this->menuStrip1;
-			this->Name = L"MyForm";
-			this->Text = L"MyForm";
+			this->Name = L"uiMain";
+			this->Text = L"LLSIF Helper";
 			this->tabControl1->ResumeLayout(false);
 			this->tabTokenCollection->ResumeLayout(false);
 			this->tabTokenCollection->PerformLayout();
@@ -283,10 +354,30 @@ namespace LLSIFAssistant2013 {
 #pragma endregion
 
 	private: System::Void buttonToken_Calculate_Click(System::Object^  sender, System::EventArgs^  e) {
-		tokenCollection Tracker;
-		Tracker.setData(Convert::ToInt32(controlToken_CurrentPoints->Value), Convert::ToInt32(controlToken_CurrentTokens->Value), 1, Convert::ToInt32(controlToken_AveragePoints->Value));
+		if (Tracker.getDifficulty() == 0)
+		{
+			labelToken_EstimatedPoints->Text = "Please set difficulty!";
+			return;
+		}
+		Tracker.setData(Convert::ToInt32(controlToken_CurrentPoints->Value), Convert::ToInt32(controlToken_CurrentTokens->Value), Convert::ToInt32(controlToken_AveragePoints->Value));
 		Tracker.calculateEstimatedPoints();
 		labelToken_EstimatedPoints->Text = Convert::ToString(Tracker.getEstimatedPoints());
 	}
+private: System::Void controlDifficultyEasy_Click(System::Object^  sender, System::EventArgs^  e) {
+	Tracker.setDifficulty(1);
+	this->labelToken_Difficulty->Text = "Easy";
+}
+private: System::Void controlDifficultyNormal_Click(System::Object^  sender, System::EventArgs^  e) {
+	Tracker.setDifficulty(2);
+	this->labelToken_Difficulty->Text = "Normal";
+}
+private: System::Void controlDifficultyHard_Click(System::Object^  sender, System::EventArgs^  e) {
+	Tracker.setDifficulty(3);
+	this->labelToken_Difficulty->Text = "Hard";
+}
+private: System::Void controlDifficultyExpert_Click(System::Object^  sender, System::EventArgs^  e) {
+	Tracker.setDifficulty(4);
+	this->labelToken_Difficulty->Text = "Expert";
+}
 };
 }
