@@ -13,37 +13,46 @@
       <UniqueIdentifier>{67DA6AB6-F800-4c08-8B7A-83BB121AAD01}</UniqueIdentifier>
       <Extensions>rc;ico;cur;bmp;dlg;rc2;rct;bin;rgs;gif;jpg;jpeg;jpe;resx;tiff;tif;png;wav;mfcribbon-ms</Extensions>
     </Filter>
+    <Filter Include="LLSIF Event Types">
+      <UniqueIdentifier>{bbd10bd8-0aaa-440f-bc22-8a12249c41fe}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="UI Related">
+      <UniqueIdentifier>{ffe3655a-cfb2-4bd4-a696-77402a62025e}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="scoreMatch.cpp">
-      <Filter>Source Files</Filter>
+      <Filter>LLSIF Event Types</Filter>
     </ClCompile>
     <ClCompile Include="tokenCollection.cpp">
-      <Filter>Source Files</Filter>
+      <Filter>LLSIF Event Types</Filter>
     </ClCompile>
     <ClCompile Include="uiAbout.cpp">
-      <Filter>Source Files</Filter>
+      <Filter>UI Related</Filter>
     </ClCompile>
     <ClCompile Include="uiMain.cpp">
-      <Filter>Source Files</Filter>
+      <Filter>UI Related</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>
-    <ClInclude Include="scoreMatch.h">
-      <Filter>Source Files</Filter>
-    </ClInclude>
-    <ClInclude Include="tokenCollection.h">
-      <Filter>Source Files</Filter>
-    </ClInclude>
     <ClInclude Include="uiMain.h">
       <Filter>Header Files</Filter>
     </ClInclude>
     <ClInclude Include="uiAbout.h">
       <Filter>Header Files</Filter>
     </ClInclude>
+    <ClInclude Include="scoreMatch.h">
+      <Filter>LLSIF Event Types</Filter>
+    </ClInclude>
+    <ClInclude Include="tokenCollection.h">
+      <Filter>LLSIF Event Types</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <EmbeddedResource Include="uiMain.resx">
+      <Filter>Resource Files</Filter>
+    </EmbeddedResource>
+    <EmbeddedResource Include="uiAbout.resx">
       <Filter>Resource Files</Filter>
     </EmbeddedResource>
   </ItemGroup>
