@@ -21,8 +21,11 @@
     <ClCompile Include="tokenCollection.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
+    <ClCompile Include="uiAbout.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
     <ClCompile Include="uiMain.cpp">
-      <Filter>Header Files</Filter>
+      <Filter>Source Files</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>
@@ -33,6 +36,9 @@
       <Filter>Source Files</Filter>
     </ClInclude>
     <ClInclude Include="uiMain.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="uiAbout.h">
       <Filter>Header Files</Filter>
     </ClInclude>
   </ItemGroup>

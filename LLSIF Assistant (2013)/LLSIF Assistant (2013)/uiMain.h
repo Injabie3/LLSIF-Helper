@@ -1,4 +1,5 @@
 #pragma once
+#include "uiAbout.h"
 
 //Define some classes here.
 tokenCollection Tracker;
@@ -13,7 +14,7 @@ namespace LLSIFAssistant2013 {
 	using namespace System::Drawing;
 
 	/// <summary>
-	/// Summary for uiMain
+	/// The Main UI for LLSIF Helper
 	/// </summary>
 	public ref class uiMain : public System::Windows::Forms::Form
 	{
@@ -40,11 +41,13 @@ namespace LLSIFAssistant2013 {
 	private: System::Windows::Forms::TabControl^  tabControl1;
 	private: System::Windows::Forms::TabPage^  tabTokenCollection;
 	private: System::Windows::Forms::TabPage^  tabScoreMatch;
+	private: System::Windows::Forms::StatusStrip^  statusStrip;
 	protected:
 
 
-	private: System::Windows::Forms::StatusStrip^  statusStrip1;
-	private: System::Windows::Forms::MenuStrip^  menuStrip1;
+
+	private: System::Windows::Forms::MenuStrip^  menuStrip;
+
 	private: System::Windows::Forms::NumericUpDown^  controlToken_CurrentTokens;
 
 	private: System::Windows::Forms::NumericUpDown^  controlToken_CurrentPoints;
@@ -76,6 +79,14 @@ namespace LLSIFAssistant2013 {
 	private: System::Windows::Forms::Label^  labelToken_Difficulty;
 
 	private: System::Windows::Forms::Label^  labelToken_SelectedDifficulty;
+	private: System::Windows::Forms::ToolStripMenuItem^  menuStrip_File;
+	private: System::Windows::Forms::ToolStripMenuItem^  menuStrip_File_Exit;
+	private: System::Windows::Forms::ToolStripMenuItem^  menuStrip_Help;
+	private: System::Windows::Forms::ToolStripMenuItem^  menuStrip_Help_About;
+
+
+
+
 
 
 	protected:
@@ -112,13 +123,18 @@ namespace LLSIFAssistant2013 {
 			this->labelToken_CurrentTokens = (gcnew System::Windows::Forms::Label());
 			this->labelToken_CurrentPoints = (gcnew System::Windows::Forms::Label());
 			this->tabScoreMatch = (gcnew System::Windows::Forms::TabPage());
-			this->statusStrip1 = (gcnew System::Windows::Forms::StatusStrip());
-			this->menuStrip1 = (gcnew System::Windows::Forms::MenuStrip());
+			this->statusStrip = (gcnew System::Windows::Forms::StatusStrip());
+			this->menuStrip = (gcnew System::Windows::Forms::MenuStrip());
+			this->menuStrip_File = (gcnew System::Windows::Forms::ToolStripMenuItem());
+			this->menuStrip_File_Exit = (gcnew System::Windows::Forms::ToolStripMenuItem());
+			this->menuStrip_Help = (gcnew System::Windows::Forms::ToolStripMenuItem());
+			this->menuStrip_Help_About = (gcnew System::Windows::Forms::ToolStripMenuItem());
 			this->tabControl1->SuspendLayout();
 			this->tabTokenCollection->SuspendLayout();
 			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->controlToken_AveragePoints))->BeginInit();
 			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->controlToken_CurrentTokens))->BeginInit();
 			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->controlToken_CurrentPoints))->BeginInit();
+			this->menuStrip->SuspendLayout();
 			this->SuspendLayout();
 			// 
 			// tabControl1
@@ -180,7 +196,7 @@ namespace LLSIFAssistant2013 {
 			this->controlDifficultyExpert->Location = System::Drawing::Point(332, 102);
 			this->controlDifficultyExpert->Name = L"controlDifficultyExpert";
 			this->controlDifficultyExpert->Size = System::Drawing::Size(53, 23);
-			this->controlDifficultyExpert->TabIndex = 15;
+			this->controlDifficultyExpert->TabIndex = 7;
 			this->controlDifficultyExpert->Text = L"Expert";
 			this->controlDifficultyExpert->UseVisualStyleBackColor = true;
 			this->controlDifficultyExpert->Click += gcnew System::EventHandler(this, &uiMain::controlDifficultyExpert_Click);
@@ -190,7 +206,7 @@ namespace LLSIFAssistant2013 {
 			this->controlDifficultyHard->Location = System::Drawing::Point(273, 102);
 			this->controlDifficultyHard->Name = L"controlDifficultyHard";
 			this->controlDifficultyHard->Size = System::Drawing::Size(53, 23);
-			this->controlDifficultyHard->TabIndex = 14;
+			this->controlDifficultyHard->TabIndex = 6;
 			this->controlDifficultyHard->Text = L"Hard";
 			this->controlDifficultyHard->UseVisualStyleBackColor = true;
 			this->controlDifficultyHard->Click += gcnew System::EventHandler(this, &uiMain::controlDifficultyHard_Click);
@@ -200,7 +216,7 @@ namespace LLSIFAssistant2013 {
 			this->controlDifficultyNormal->Location = System::Drawing::Point(214, 102);
 			this->controlDifficultyNormal->Name = L"controlDifficultyNormal";
 			this->controlDifficultyNormal->Size = System::Drawing::Size(53, 23);
-			this->controlDifficultyNormal->TabIndex = 13;
+			this->controlDifficultyNormal->TabIndex = 5;
 			this->controlDifficultyNormal->Text = L"Normal";
 			this->controlDifficultyNormal->UseVisualStyleBackColor = true;
 			this->controlDifficultyNormal->Click += gcnew System::EventHandler(this, &uiMain::controlDifficultyNormal_Click);
@@ -210,7 +226,7 @@ namespace LLSIFAssistant2013 {
 			this->controlDifficultyEasy->Location = System::Drawing::Point(155, 102);
 			this->controlDifficultyEasy->Name = L"controlDifficultyEasy";
 			this->controlDifficultyEasy->Size = System::Drawing::Size(53, 23);
-			this->controlDifficultyEasy->TabIndex = 12;
+			this->controlDifficultyEasy->TabIndex = 4;
 			this->controlDifficultyEasy->Text = L"Easy";
 			this->controlDifficultyEasy->UseVisualStyleBackColor = true;
 			this->controlDifficultyEasy->Click += gcnew System::EventHandler(this, &uiMain::controlDifficultyEasy_Click);
@@ -238,7 +254,7 @@ namespace LLSIFAssistant2013 {
 			this->buttonToken_Calculate->Location = System::Drawing::Point(169, 186);
 			this->buttonToken_Calculate->Name = L"buttonToken_Calculate";
 			this->buttonToken_Calculate->Size = System::Drawing::Size(75, 23);
-			this->buttonToken_Calculate->TabIndex = 9;
+			this->buttonToken_Calculate->TabIndex = 8;
 			this->buttonToken_Calculate->Text = L"Calculate";
 			this->buttonToken_Calculate->UseVisualStyleBackColor = true;
 			this->buttonToken_Calculate->Click += gcnew System::EventHandler(this, &uiMain::buttonToken_Calculate_Click);
@@ -258,7 +274,7 @@ namespace LLSIFAssistant2013 {
 			this->controlToken_AveragePoints->Maximum = System::Decimal(gcnew cli::array< System::Int32 >(4) { 100000000, 0, 0, 0 });
 			this->controlToken_AveragePoints->Name = L"controlToken_AveragePoints";
 			this->controlToken_AveragePoints->Size = System::Drawing::Size(100, 20);
-			this->controlToken_AveragePoints->TabIndex = 7;
+			this->controlToken_AveragePoints->TabIndex = 3;
 			// 
 			// labelToken_DifficultySelection
 			// 
@@ -275,7 +291,7 @@ namespace LLSIFAssistant2013 {
 			this->controlToken_CurrentTokens->Maximum = System::Decimal(gcnew cli::array< System::Int32 >(4) { 100000000, 0, 0, 0 });
 			this->controlToken_CurrentTokens->Name = L"controlToken_CurrentTokens";
 			this->controlToken_CurrentTokens->Size = System::Drawing::Size(100, 20);
-			this->controlToken_CurrentTokens->TabIndex = 4;
+			this->controlToken_CurrentTokens->TabIndex = 2;
 			// 
 			// controlToken_CurrentPoints
 			// 
@@ -283,7 +299,7 @@ namespace LLSIFAssistant2013 {
 			this->controlToken_CurrentPoints->Maximum = System::Decimal(gcnew cli::array< System::Int32 >(4) { 100000000, 0, 0, 0 });
 			this->controlToken_CurrentPoints->Name = L"controlToken_CurrentPoints";
 			this->controlToken_CurrentPoints->Size = System::Drawing::Size(100, 20);
-			this->controlToken_CurrentPoints->TabIndex = 3;
+			this->controlToken_CurrentPoints->TabIndex = 1;
 			// 
 			// labelToken_CurrentTokens
 			// 
@@ -313,32 +329,61 @@ namespace LLSIFAssistant2013 {
 			this->tabScoreMatch->Text = L"Score Match";
 			this->tabScoreMatch->UseVisualStyleBackColor = true;
 			// 
-			// statusStrip1
+			// statusStrip
 			// 
-			this->statusStrip1->Location = System::Drawing::Point(0, 301);
-			this->statusStrip1->Name = L"statusStrip1";
-			this->statusStrip1->Size = System::Drawing::Size(472, 22);
-			this->statusStrip1->TabIndex = 1;
-			this->statusStrip1->Text = L"statusStrip1";
+			this->statusStrip->Location = System::Drawing::Point(0, 301);
+			this->statusStrip->Name = L"statusStrip";
+			this->statusStrip->Size = System::Drawing::Size(472, 22);
+			this->statusStrip->TabIndex = 1;
+			this->statusStrip->Text = L"statusStrip1";
 			// 
-			// menuStrip1
+			// menuStrip
 			// 
-			this->menuStrip1->Location = System::Drawing::Point(0, 0);
-			this->menuStrip1->Name = L"menuStrip1";
-			this->menuStrip1->Size = System::Drawing::Size(472, 24);
-			this->menuStrip1->TabIndex = 2;
-			this->menuStrip1->Text = L"menuStrip1";
+			this->menuStrip->Items->AddRange(gcnew cli::array< System::Windows::Forms::ToolStripItem^  >(2) { this->menuStrip_File, this->menuStrip_Help });
+			this->menuStrip->Location = System::Drawing::Point(0, 0);
+			this->menuStrip->Name = L"menuStrip";
+			this->menuStrip->Size = System::Drawing::Size(472, 24);
+			this->menuStrip->TabIndex = 2;
+			this->menuStrip->Text = L"menuStrip1";
+			// 
+			// menuStrip_File
+			// 
+			this->menuStrip_File->DropDownItems->AddRange(gcnew cli::array< System::Windows::Forms::ToolStripItem^  >(1) { this->menuStrip_File_Exit });
+			this->menuStrip_File->Name = L"menuStrip_File";
+			this->menuStrip_File->Size = System::Drawing::Size(39, 20);
+			this->menuStrip_File->Text = L"File";
+			// 
+			// menuStrip_File_Exit
+			// 
+			this->menuStrip_File_Exit->Name = L"menuStrip_File_Exit";
+			this->menuStrip_File_Exit->Size = System::Drawing::Size(96, 22);
+			this->menuStrip_File_Exit->Text = L"Exit";
+			this->menuStrip_File_Exit->Click += gcnew System::EventHandler(this, &uiMain::menuStrip_File_Exit_Click);
+			// 
+			// menuStrip_Help
+			// 
+			this->menuStrip_Help->DropDownItems->AddRange(gcnew cli::array< System::Windows::Forms::ToolStripItem^  >(1) { this->menuStrip_Help_About });
+			this->menuStrip_Help->Name = L"menuStrip_Help";
+			this->menuStrip_Help->Size = System::Drawing::Size(45, 20);
+			this->menuStrip_Help->Text = L"Help";
+			// 
+			// menuStrip_Help_About
+			// 
+			this->menuStrip_Help_About->Name = L"menuStrip_Help_About";
+			this->menuStrip_Help_About->Size = System::Drawing::Size(152, 22);
+			this->menuStrip_Help_About->Text = L"About";
+			this->menuStrip_Help_About->Click += gcnew System::EventHandler(this, &uiMain::menuStrip_Help_About_Click);
 			// 
 			// uiMain
 			// 
 			this->AutoScaleDimensions = System::Drawing::SizeF(6, 13);
 			this->AutoScaleMode = System::Windows::Forms::AutoScaleMode::Font;
 			this->ClientSize = System::Drawing::Size(472, 323);
-			this->Controls->Add(this->statusStrip1);
-			this->Controls->Add(this->menuStrip1);
+			this->Controls->Add(this->statusStrip);
+			this->Controls->Add(this->menuStrip);
 			this->Controls->Add(this->tabControl1);
 			this->FormBorderStyle = System::Windows::Forms::FormBorderStyle::FixedSingle;
-			this->MainMenuStrip = this->menuStrip1;
+			this->MainMenuStrip = this->menuStrip;
 			this->Name = L"uiMain";
 			this->Text = L"LLSIF Helper";
 			this->tabControl1->ResumeLayout(false);
@@ -347,6 +392,8 @@ namespace LLSIFAssistant2013 {
 			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->controlToken_AveragePoints))->EndInit();
 			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->controlToken_CurrentTokens))->EndInit();
 			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->controlToken_CurrentPoints))->EndInit();
+			this->menuStrip->ResumeLayout(false);
+			this->menuStrip->PerformLayout();
 			this->ResumeLayout(false);
 			this->PerformLayout();
 
@@ -378,6 +425,13 @@ private: System::Void controlDifficultyHard_Click(System::Object^  sender, Syste
 private: System::Void controlDifficultyExpert_Click(System::Object^  sender, System::EventArgs^  e) {
 	Tracker.setDifficulty(4);
 	this->labelToken_Difficulty->Text = "Expert";
+}
+private: System::Void menuStrip_File_Exit_Click(System::Object^  sender, System::EventArgs^  e) {
+	exit(0);
+}
+private: System::Void menuStrip_Help_About_Click(System::Object^  sender, System::EventArgs^  e) {
+	uiAbout FormAbout;
+	FormAbout.Show();
 }
 };
 }
