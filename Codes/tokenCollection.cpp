@@ -1,9 +1,5 @@
 #include "tokenCollection.h"
-#include <iostream>
-#include <iomanip>
 #include <cmath>
-#include <fstream>
-using namespace std;
 
 //Class constructor
 tokenCollection::tokenCollection()
@@ -16,6 +12,12 @@ tokenCollection::tokenCollection()
 	scoreMultiplier = 0.0;		//Multiplier based on score.
 	comboMultiplier = 0.0;		//Multiplier based on combo.
 	estimatedPoints;			//The estimated number of points the user has after calculations.
+
+}
+
+//Class destructor
+tokenCollection::~tokenCollection()
+{
 
 }
 
@@ -121,7 +123,5 @@ void tokenCollection::calculateTokensNeeded()
 	tokensNeeded = (targetPoints - currentPoints);
 }
 
-tokenCollection::~tokenCollection()
-{
-}
+
 

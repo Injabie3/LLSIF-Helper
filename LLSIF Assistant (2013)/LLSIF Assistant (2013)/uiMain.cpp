@@ -1,4 +1,4 @@
-#include "scoreMatch.h"
+#include "scoreMatchG.h"
 #include "tokenCollection.h"
 #include "uiMain.h"
 #include "uiAbout.h"

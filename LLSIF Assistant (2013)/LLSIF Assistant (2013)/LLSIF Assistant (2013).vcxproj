@@ -11,11 +11,8 @@
     </ProjectConfiguration>
   </ItemGroup>
   <ItemGroup>
-    <ClCompile Include="..\..\Codes\scoreMatch.cpp" />
-    <ClCompile Include="..\..\Codes\Source.cpp" />
-    <ClCompile Include="..\..\Codes\tokenCollection.cpp" />
-    <ClCompile Include="..\..\Codes\uiAbout.cpp" />
-    <ClCompile Include="..\..\Codes\uiMain.cpp" />
+    <ClCompile Include="scoreMatchG.cpp" />
+    <ClCompile Include="tokenCollection.cpp" />
     <ClCompile Include="uiAbout.cpp">
       <CompileAsManaged Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">true</CompileAsManaged>
       <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
@@ -48,22 +45,16 @@
       <DebugInformationFormat Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">ProgramDatabase</DebugInformationFormat>
       <ExceptionHandling Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">Async</ExceptionHandling>
     </ClCompile>
-    <ClCompile Include="scoreMatch.cpp" />
-    <ClCompile Include="tokenCollection.cpp" />
   </ItemGroup>
   <ItemGroup>
-    <ClInclude Include="..\..\Codes\scoreMatch.h" />
-    <ClInclude Include="..\..\Codes\tokenCollection.h" />
-    <ClInclude Include="..\..\Codes\uiAbout.h" />
-    <ClInclude Include="..\..\Codes\uiMain.h" />
+    <ClInclude Include="scoreMatchG.h" />
+    <ClInclude Include="tokenCollection.h" />
     <ClInclude Include="uiAbout.h">
       <FileType>CppForm</FileType>
     </ClInclude>
     <ClInclude Include="uiMain.h">
       <FileType>CppForm</FileType>
     </ClInclude>
-    <ClInclude Include="scoreMatch.h" />
-    <ClInclude Include="tokenCollection.h" />
   </ItemGroup>
   <ItemGroup>
     <Reference Include="System" />
@@ -73,8 +64,6 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <EmbeddedResource Include="..\..\Codes\uiAbout.resx" />
-    <EmbeddedResource Include="..\..\Codes\uiMain.resx" />
     <EmbeddedResource Include="uiAbout.resx">
       <DependentUpon>uiAbout.h</DependentUpon>
     </EmbeddedResource>

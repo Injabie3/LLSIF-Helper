@@ -21,32 +21,17 @@
     </Filter>
   </ItemGroup>
   <ItemGroup>
-    <ClCompile Include="scoreMatch.cpp">
-      <Filter>LLSIF Event Types</Filter>
-    </ClCompile>
-    <ClCompile Include="tokenCollection.cpp">
-      <Filter>LLSIF Event Types</Filter>
-    </ClCompile>
     <ClCompile Include="uiAbout.cpp">
       <Filter>UI Related</Filter>
     </ClCompile>
     <ClCompile Include="uiMain.cpp">
       <Filter>UI Related</Filter>
     </ClCompile>
-    <ClCompile Include="..\..\Codes\scoreMatch.cpp">
-      <Filter>Source Files</Filter>
+    <ClCompile Include="scoreMatchG.cpp">
+      <Filter>LLSIF Event Types</Filter>
     </ClCompile>
-    <ClCompile Include="..\..\Codes\Source.cpp">
-      <Filter>Source Files</Filter>
-    </ClCompile>
-    <ClCompile Include="..\..\Codes\tokenCollection.cpp">
-      <Filter>Source Files</Filter>
-    </ClCompile>
-    <ClCompile Include="..\..\Codes\uiAbout.cpp">
-      <Filter>Source Files</Filter>
-    </ClCompile>
-    <ClCompile Include="..\..\Codes\uiMain.cpp">
-      <Filter>Source Files</Filter>
+    <ClCompile Include="tokenCollection.cpp">
+      <Filter>LLSIF Event Types</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>
@@ -56,23 +41,11 @@
     <ClInclude Include="uiAbout.h">
       <Filter>Header Files</Filter>
     </ClInclude>
-    <ClInclude Include="scoreMatch.h">
-      <Filter>LLSIF Event Types</Filter>
-    </ClInclude>
     <ClInclude Include="tokenCollection.h">
       <Filter>LLSIF Event Types</Filter>
     </ClInclude>
-    <ClInclude Include="..\..\Codes\scoreMatch.h">
-      <Filter>Source Files</Filter>
-    </ClInclude>
-    <ClInclude Include="..\..\Codes\tokenCollection.h">
-      <Filter>Source Files</Filter>
-    </ClInclude>
-    <ClInclude Include="..\..\Codes\uiAbout.h">
-      <Filter>Source Files</Filter>
-    </ClInclude>
-    <ClInclude Include="..\..\Codes\uiMain.h">
-      <Filter>Source Files</Filter>
+    <ClInclude Include="scoreMatchG.h">
+      <Filter>LLSIF Event Types</Filter>
     </ClInclude>
   </ItemGroup>
   <ItemGroup>
@@ -81,12 +54,6 @@
     </EmbeddedResource>
     <EmbeddedResource Include="uiAbout.resx">
       <Filter>Resource Files</Filter>
-    </EmbeddedResource>
-    <EmbeddedResource Include="..\..\Codes\uiAbout.resx">
-      <Filter>Source Files</Filter>
-    </EmbeddedResource>
-    <EmbeddedResource Include="..\..\Codes\uiMain.resx">
-      <Filter>Source Files</Filter>
     </EmbeddedResource>
   </ItemGroup>
 </Project>
