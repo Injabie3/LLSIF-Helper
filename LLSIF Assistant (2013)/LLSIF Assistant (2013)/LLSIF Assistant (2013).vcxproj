@@ -11,6 +11,11 @@
     </ProjectConfiguration>
   </ItemGroup>
   <ItemGroup>
+    <ClCompile Include="..\..\Codes\scoreMatch.cpp" />
+    <ClCompile Include="..\..\Codes\Source.cpp" />
+    <ClCompile Include="..\..\Codes\tokenCollection.cpp" />
+    <ClCompile Include="..\..\Codes\uiAbout.cpp" />
+    <ClCompile Include="..\..\Codes\uiMain.cpp" />
     <ClCompile Include="uiAbout.cpp">
       <CompileAsManaged Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">true</CompileAsManaged>
       <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
@@ -47,6 +52,10 @@
     <ClCompile Include="tokenCollection.cpp" />
   </ItemGroup>
   <ItemGroup>
+    <ClInclude Include="..\..\Codes\scoreMatch.h" />
+    <ClInclude Include="..\..\Codes\tokenCollection.h" />
+    <ClInclude Include="..\..\Codes\uiAbout.h" />
+    <ClInclude Include="..\..\Codes\uiMain.h" />
     <ClInclude Include="uiAbout.h">
       <FileType>CppForm</FileType>
     </ClInclude>
@@ -64,6 +73,8 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <EmbeddedResource Include="..\..\Codes\uiAbout.resx" />
+    <EmbeddedResource Include="..\..\Codes\uiMain.resx" />
     <EmbeddedResource Include="uiAbout.resx">
       <DependentUpon>uiAbout.h</DependentUpon>
     </EmbeddedResource>

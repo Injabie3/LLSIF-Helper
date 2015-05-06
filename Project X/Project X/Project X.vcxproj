@@ -11,8 +11,8 @@
     </ProjectConfiguration>
   </ItemGroup>
   <PropertyGroup Label="Globals">
-    <ProjectGuid>{88B1D7D7-8A27-40F2-86CE-6292BC61B73F}</ProjectGuid>
-    <RootNamespace>LLSIFAssistant</RootNamespace>
+    <ProjectGuid>{8FA37BFA-BE96-44C0-98D4-ED4DDA4C0476}</ProjectGuid>
+    <RootNamespace>ProjectX</RootNamespace>
   </PropertyGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.Default.props" />
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'" Label="Configuration">
@@ -64,23 +64,6 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
-    <ClCompile Include="..\..\Codes\scoreMatch.cpp" />
-    <ClCompile Include="..\..\Codes\Source.cpp" />
-    <ClCompile Include="..\..\Codes\tokenCollection.cpp" />
-    <ClCompile Include="..\..\Codes\uiAbout.cpp" />
-    <ClCompile Include="..\..\Codes\uiMain.cpp" />
-    <ClCompile Include="scoreMatchG.cpp" />
-    <ClCompile Include="test.cpp" />
-  </ItemGroup>
-  <ItemGroup>
-    <ClInclude Include="..\..\Codes\scoreMatch.h" />
-    <ClInclude Include="..\..\Codes\tokenCollection.h" />
-    <ClInclude Include="..\..\Codes\uiAbout.h" />
-    <ClInclude Include="..\..\Codes\uiMain.h" />
-    <ClInclude Include="ScoreMatchG.h" />
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="..\..\LLSIF Score Match\LLSIF Score Match.sdf" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">

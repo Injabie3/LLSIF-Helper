@@ -17,7 +17,6 @@ public:
 	int getLPNeeded();
 
 
-private:
 	//Base scores
 	const int pointsEasy = 36;
 	const int pointsNormal = 89;
