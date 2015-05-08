@@ -9,7 +9,7 @@ scoreMatch::scoreMatch()
 	difficulty = 0;
 	pointDiff = 0;
 	pointGoal = 0;
-	averageScore = 0;
+	averageScore = 1;
 	LPReq = 0;
 }
 

@@ -7,7 +7,7 @@ tokenCollection::tokenCollection()
 	difficulty = 0;				//Difficulty of song: Easy/Normal/Hard/Expert
 	currentPoints = 0;			//The user's current event points.
 	currentTokens = 0;			//The user's current event tokens.
-	pointsPerSong = 0;			//Points per song, entered by user.
+	pointsPerSong = 1;			//Points per song, entered by user.
 	tokenSong = 1;				//The token cost per event song
 	scoreMultiplier = 0.0;		//Multiplier based on score.
 	comboMultiplier = 0.0;		//Multiplier based on combo.

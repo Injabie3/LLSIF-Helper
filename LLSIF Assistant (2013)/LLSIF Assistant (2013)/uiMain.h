@@ -373,9 +373,11 @@ private: System::Windows::Forms::Button^  controlSM_Calculate;
 			// 
 			this->controlToken_AveragePoints->Location = System::Drawing::Point(184, 79);
 			this->controlToken_AveragePoints->Maximum = System::Decimal(gcnew cli::array< System::Int32 >(4) { 100000000, 0, 0, 0 });
+			this->controlToken_AveragePoints->Minimum = System::Decimal(gcnew cli::array< System::Int32 >(4) { 1, 0, 0, 0 });
 			this->controlToken_AveragePoints->Name = L"controlToken_AveragePoints";
 			this->controlToken_AveragePoints->Size = System::Drawing::Size(100, 20);
 			this->controlToken_AveragePoints->TabIndex = 3;
+			this->controlToken_AveragePoints->Value = System::Decimal(gcnew cli::array< System::Int32 >(4) { 1, 0, 0, 0 });
 			// 
 			// labelToken_DifficultySelection
 			// 
@@ -567,9 +569,11 @@ private: System::Windows::Forms::Button^  controlSM_Calculate;
 			// 
 			this->controlSM_AveragePoints->Location = System::Drawing::Point(184, 79);
 			this->controlSM_AveragePoints->Maximum = System::Decimal(gcnew cli::array< System::Int32 >(4) { 100000000, 0, 0, 0 });
+			this->controlSM_AveragePoints->Minimum = System::Decimal(gcnew cli::array< System::Int32 >(4) { 1, 0, 0, 0 });
 			this->controlSM_AveragePoints->Name = L"controlSM_AveragePoints";
 			this->controlSM_AveragePoints->Size = System::Drawing::Size(100, 20);
 			this->controlSM_AveragePoints->TabIndex = 22;
+			this->controlSM_AveragePoints->Value = System::Decimal(gcnew cli::array< System::Int32 >(4) { 1, 0, 0, 0 });
 			// 
 			// labelSM_DifficultySelection
 			// 
