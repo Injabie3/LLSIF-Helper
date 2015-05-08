@@ -2,6 +2,7 @@
 #include <cmath>
 
 //Class constructor
+//Initializes class variables to zero.
 scoreMatch::scoreMatch()
 {
 	currentPoints = 0;
@@ -18,7 +19,9 @@ scoreMatch::~scoreMatch()
 
 }
 
-//Function to set data. Returns 1 if pointDiff is negative
+//Function to set data. 
+//Function returns 0 if data was set correctly.
+//Function returns 1 if pointDiff is negative
 int scoreMatch::setData(int CurrentPts, int PtGoal, int AvgScore){
 	currentPoints = CurrentPts;
 	pointGoal = PtGoal;
@@ -30,6 +33,8 @@ int scoreMatch::setData(int CurrentPts, int PtGoal, int AvgScore){
 }
 
 //Function to set difficulty
+//Function returns 0 if difficulty was set correctly.
+//Function returns 1 if difficulty could not be set.
 int scoreMatch::setDifficulty(int diff)
 {
 	if (diff == 1 || diff == 2 || diff == 3 || diff == 4)
@@ -45,6 +50,8 @@ int scoreMatch::getDifficulty()
 	return difficulty;
 }
 //Function to calculate LP needed.
+//Returns the LP required to reach goal.
+//Will return -1 if LP cannot be calculated due to difficulty not being set.
 double scoreMatch::calcLP(){
 	int LPCost;
 	if (difficulty == 1)

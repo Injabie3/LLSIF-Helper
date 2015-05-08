@@ -61,6 +61,8 @@ int tokenCollection::getTargetPoints()
 }
 
 //Function to set the token cost per event song, based on the difficulty selected.
+//Returns 0 if function sets tokenSong correctly.
+//Returns 1 if function is unable to set tokenSong.
 int tokenCollection::setTokenSong(int difficulty)
 {
 	if (difficulty == 1)		//Easy song
@@ -87,10 +89,13 @@ int tokenCollection::setTokenSong(int difficulty)
 }
 
 //Function to set song difficulty
+//If function detects difficulty is incorrect, it will not set difficulty, and return 1
+//If function can set tokenSong correctly, it will set difficulty and return 0
 int tokenCollection::setDifficulty(int diff)
 {
+	if (setTokenSong(diff) == 1)
+		return 1;
 	difficulty = diff;
-	setTokenSong(diff);
 	return 0;
 }
 //Function to get song difficulty
