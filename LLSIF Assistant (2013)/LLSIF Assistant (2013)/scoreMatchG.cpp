@@ -32,7 +32,7 @@ int scoreMatch::setData(int CurrentPts, int PtGoal, int AvgScore){
 //Function to set difficulty
 int scoreMatch::setDifficulty(int diff)
 {
-	if (diff != 1 || diff != 2 || diff != 3 || diff != 4)
+	if (diff == 1 || diff == 2 || diff == 3 || diff == 4)
 		difficulty = diff;
 	else
 		return 1;
@@ -45,7 +45,7 @@ int scoreMatch::getDifficulty()
 	return difficulty;
 }
 //Function to calculate LP needed.
-double scoreMatch::calcLP(){ //difficulty = LP cost
+double scoreMatch::calcLP(){
 	int LPCost;
 	if (difficulty == 1)
 		LPCost = LPEasy;
