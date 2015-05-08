@@ -59,13 +59,14 @@ namespace LLSIFAssistant2013 {
 	private: System::Windows::Forms::Label^  labelToken_CurrentTokens;
 	private: System::Windows::Forms::Label^  labelToken_CurrentPoints;
 	private: System::Windows::Forms::Label^  labelToken_DifficultySelection;
+	private: System::Windows::Forms::Button^  controlToken_Calculate;
 
 
 
 
 
 
-	private: System::Windows::Forms::Button^  buttonToken_Calculate;
+
 
 
 
@@ -107,7 +108,7 @@ namespace LLSIFAssistant2013 {
 
 
 	private: System::Windows::Forms::Label^  labelSM_Result;
-	private: System::Windows::Forms::Button^  buttonSM_Calculate;
+
 
 
 	private: System::Windows::Forms::Label^  labelSM_AveragePoints;
@@ -128,6 +129,12 @@ namespace LLSIFAssistant2013 {
 private: System::Windows::Forms::TabPage^  tabRankUp;
 private: System::Windows::Forms::Button^  controlToken_SaveData;
 private: System::Windows::Forms::Button^  controlToken_LoadData;
+private: System::Windows::Forms::Button^  controlSM_SaveData;
+
+private: System::Windows::Forms::Button^  controlSM_LoadData;
+
+private: System::Windows::Forms::Button^  controlSM_Calculate;
+
 
 
 
@@ -162,7 +169,7 @@ private: System::Windows::Forms::Button^  controlToken_LoadData;
 			this->controlToken_DifficultyEasy = (gcnew System::Windows::Forms::Button());
 			this->labelToken_EstimatedPoints = (gcnew System::Windows::Forms::Label());
 			this->labelToken_Result = (gcnew System::Windows::Forms::Label());
-			this->buttonToken_Calculate = (gcnew System::Windows::Forms::Button());
+			this->controlToken_Calculate = (gcnew System::Windows::Forms::Button());
 			this->labelToken_AveragePoints = (gcnew System::Windows::Forms::Label());
 			this->controlToken_AveragePoints = (gcnew System::Windows::Forms::NumericUpDown());
 			this->labelToken_DifficultySelection = (gcnew System::Windows::Forms::Label());
@@ -171,6 +178,8 @@ private: System::Windows::Forms::Button^  controlToken_LoadData;
 			this->labelToken_CurrentTokens = (gcnew System::Windows::Forms::Label());
 			this->labelToken_CurrentPoints = (gcnew System::Windows::Forms::Label());
 			this->tabScoreMatch = (gcnew System::Windows::Forms::TabPage());
+			this->controlSM_SaveData = (gcnew System::Windows::Forms::Button());
+			this->controlSM_LoadData = (gcnew System::Windows::Forms::Button());
 			this->labelSM_Difficulty = (gcnew System::Windows::Forms::Label());
 			this->labelSM_SelectedDifficulty = (gcnew System::Windows::Forms::Label());
 			this->controlSM_DifficultyExpert = (gcnew System::Windows::Forms::Button());
@@ -179,7 +188,7 @@ private: System::Windows::Forms::Button^  controlToken_LoadData;
 			this->controlSM_DifficultyEasy = (gcnew System::Windows::Forms::Button());
 			this->labelSM_EstimatedLP = (gcnew System::Windows::Forms::Label());
 			this->labelSM_Result = (gcnew System::Windows::Forms::Label());
-			this->buttonSM_Calculate = (gcnew System::Windows::Forms::Button());
+			this->controlSM_Calculate = (gcnew System::Windows::Forms::Button());
 			this->labelSM_AveragePoints = (gcnew System::Windows::Forms::Label());
 			this->controlSM_AveragePoints = (gcnew System::Windows::Forms::NumericUpDown());
 			this->labelSM_DifficultySelection = (gcnew System::Windows::Forms::Label());
@@ -229,7 +238,7 @@ private: System::Windows::Forms::Button^  controlToken_LoadData;
 			this->tabTokenCollection->Controls->Add(this->controlToken_DifficultyEasy);
 			this->tabTokenCollection->Controls->Add(this->labelToken_EstimatedPoints);
 			this->tabTokenCollection->Controls->Add(this->labelToken_Result);
-			this->tabTokenCollection->Controls->Add(this->buttonToken_Calculate);
+			this->tabTokenCollection->Controls->Add(this->controlToken_Calculate);
 			this->tabTokenCollection->Controls->Add(this->labelToken_AveragePoints);
 			this->tabTokenCollection->Controls->Add(this->controlToken_AveragePoints);
 			this->tabTokenCollection->Controls->Add(this->labelToken_DifficultySelection);
@@ -340,16 +349,16 @@ private: System::Windows::Forms::Button^  controlToken_LoadData;
 			this->labelToken_Result->TabIndex = 10;
 			this->labelToken_Result->Text = L"Estimated Event Points:";
 			// 
-			// buttonToken_Calculate
+			// controlToken_Calculate
 			// 
-			this->buttonToken_Calculate->BackColor = System::Drawing::Color::Transparent;
-			this->buttonToken_Calculate->Location = System::Drawing::Point(94, 183);
-			this->buttonToken_Calculate->Name = L"buttonToken_Calculate";
-			this->buttonToken_Calculate->Size = System::Drawing::Size(84, 23);
-			this->buttonToken_Calculate->TabIndex = 8;
-			this->buttonToken_Calculate->Text = L"Calculate";
-			this->buttonToken_Calculate->UseVisualStyleBackColor = false;
-			this->buttonToken_Calculate->Click += gcnew System::EventHandler(this, &uiMain::buttonToken_Calculate_Click);
+			this->controlToken_Calculate->BackColor = System::Drawing::Color::Transparent;
+			this->controlToken_Calculate->Location = System::Drawing::Point(94, 183);
+			this->controlToken_Calculate->Name = L"controlToken_Calculate";
+			this->controlToken_Calculate->Size = System::Drawing::Size(84, 23);
+			this->controlToken_Calculate->TabIndex = 8;
+			this->controlToken_Calculate->Text = L"Calculate";
+			this->controlToken_Calculate->UseVisualStyleBackColor = false;
+			this->controlToken_Calculate->Click += gcnew System::EventHandler(this, &uiMain::controlToken_Calculate_Click);
 			// 
 			// labelToken_AveragePoints
 			// 
@@ -413,6 +422,8 @@ private: System::Windows::Forms::Button^  controlToken_LoadData;
 			// 
 			// tabScoreMatch
 			// 
+			this->tabScoreMatch->Controls->Add(this->controlSM_SaveData);
+			this->tabScoreMatch->Controls->Add(this->controlSM_LoadData);
 			this->tabScoreMatch->Controls->Add(this->labelSM_Difficulty);
 			this->tabScoreMatch->Controls->Add(this->labelSM_SelectedDifficulty);
 			this->tabScoreMatch->Controls->Add(this->controlSM_DifficultyExpert);
@@ -421,7 +432,7 @@ private: System::Windows::Forms::Button^  controlToken_LoadData;
 			this->tabScoreMatch->Controls->Add(this->controlSM_DifficultyEasy);
 			this->tabScoreMatch->Controls->Add(this->labelSM_EstimatedLP);
 			this->tabScoreMatch->Controls->Add(this->labelSM_Result);
-			this->tabScoreMatch->Controls->Add(this->buttonSM_Calculate);
+			this->tabScoreMatch->Controls->Add(this->controlSM_Calculate);
 			this->tabScoreMatch->Controls->Add(this->labelSM_AveragePoints);
 			this->tabScoreMatch->Controls->Add(this->controlSM_AveragePoints);
 			this->tabScoreMatch->Controls->Add(this->labelSM_DifficultySelection);
@@ -436,6 +447,26 @@ private: System::Windows::Forms::Button^  controlToken_LoadData;
 			this->tabScoreMatch->TabIndex = 1;
 			this->tabScoreMatch->Text = L"Score Match";
 			this->tabScoreMatch->UseVisualStyleBackColor = true;
+			// 
+			// controlSM_SaveData
+			// 
+			this->controlSM_SaveData->Location = System::Drawing::Point(274, 183);
+			this->controlSM_SaveData->Name = L"controlSM_SaveData";
+			this->controlSM_SaveData->Size = System::Drawing::Size(84, 23);
+			this->controlSM_SaveData->TabIndex = 35;
+			this->controlSM_SaveData->Text = L"Save Data";
+			this->controlSM_SaveData->UseVisualStyleBackColor = true;
+			this->controlSM_SaveData->Click += gcnew System::EventHandler(this, &uiMain::controlSM_SaveData_Click);
+			// 
+			// controlSM_LoadData
+			// 
+			this->controlSM_LoadData->Location = System::Drawing::Point(184, 183);
+			this->controlSM_LoadData->Name = L"controlSM_LoadData";
+			this->controlSM_LoadData->Size = System::Drawing::Size(84, 23);
+			this->controlSM_LoadData->TabIndex = 34;
+			this->controlSM_LoadData->Text = L"Load Data";
+			this->controlSM_LoadData->UseVisualStyleBackColor = true;
+			this->controlSM_LoadData->Click += gcnew System::EventHandler(this, &uiMain::controlSM_LoadData_Click);
 			// 
 			// labelSM_Difficulty
 			// 
@@ -513,15 +544,15 @@ private: System::Windows::Forms::Button^  controlToken_LoadData;
 			this->labelSM_Result->TabIndex = 30;
 			this->labelSM_Result->Text = L"Estimated LP Needed:";
 			// 
-			// buttonSM_Calculate
+			// controlSM_Calculate
 			// 
-			this->buttonSM_Calculate->Location = System::Drawing::Point(198, 189);
-			this->buttonSM_Calculate->Name = L"buttonSM_Calculate";
-			this->buttonSM_Calculate->Size = System::Drawing::Size(75, 23);
-			this->buttonSM_Calculate->TabIndex = 28;
-			this->buttonSM_Calculate->Text = L"Calculate";
-			this->buttonSM_Calculate->UseVisualStyleBackColor = true;
-			this->buttonSM_Calculate->Click += gcnew System::EventHandler(this, &uiMain::buttonSM_Calculate_Click);
+			this->controlSM_Calculate->Location = System::Drawing::Point(94, 183);
+			this->controlSM_Calculate->Name = L"controlSM_Calculate";
+			this->controlSM_Calculate->Size = System::Drawing::Size(84, 23);
+			this->controlSM_Calculate->TabIndex = 28;
+			this->controlSM_Calculate->Text = L"Calculate";
+			this->controlSM_Calculate->UseVisualStyleBackColor = true;
+			this->controlSM_Calculate->Click += gcnew System::EventHandler(this, &uiMain::controlSM_Calculate_Click);
 			// 
 			// labelSM_AveragePoints
 			// 
@@ -670,7 +701,7 @@ private: System::Windows::Forms::Button^  controlToken_LoadData;
 		}
 #pragma endregion
 
-	private: System::Void buttonToken_Calculate_Click(System::Object^  sender, System::EventArgs^  e) {
+	private: System::Void controlToken_Calculate_Click(System::Object^  sender, System::EventArgs^  e) {
 		if (tokenTracker.getDifficulty() == 0)
 		{
 			labelToken_EstimatedPoints->Text = "Please set difficulty!";
@@ -719,7 +750,7 @@ private: System::Void controlSM_DifficultyExpert_Click(System::Object^  sender, 
 	scoreMatchTracker.setDifficulty(4);
 	this->labelSM_Difficulty->Text = "Expert";
 }
-private: System::Void buttonSM_Calculate_Click(System::Object^  sender, System::EventArgs^  e) {
+private: System::Void controlSM_Calculate_Click(System::Object^  sender, System::EventArgs^  e) {
 	if (scoreMatchTracker.setData(Convert::ToInt32(controlSM_CurrentPoints->Value), Convert::ToInt32(controlSM_PointGoal->Value), Convert::ToInt32(controlSM_AveragePoints->Value)) != 0)
 	{
 		labelSM_EstimatedLP->Text = "Error: Target score can't be less than current score!";
@@ -773,6 +804,48 @@ private: System::Void controlToken_SaveData_Click(System::Object^  sender, Syste
 	saveFile << Convert::ToInt32(controlToken_CurrentTokens->Value) << "\n";
 	saveFile << Convert::ToInt32(controlToken_AveragePoints->Value) << "\n";
 	saveFile << tokenTracker.getDifficulty();
+	saveFile.close();
+}
+private: System::Void controlSM_LoadData_Click(System::Object^  sender, System::EventArgs^  e) {
+	std::ifstream loadFile;
+	int currentPoints;
+	int pointGoal;
+	int averagePoints;
+	int difficulty;
+
+	loadFile.open("saveFile_scorematch.txt");
+	if (loadFile.fail())
+	{
+		return;
+	}
+	loadFile >> currentPoints;
+	loadFile >> pointGoal;
+	loadFile >> averagePoints;
+	loadFile >> difficulty;
+
+	controlSM_CurrentPoints->Value = currentPoints;
+	controlSM_PointGoal->Value = pointGoal;
+	controlSM_AveragePoints->Value = averagePoints;
+	scoreMatchTracker.setDifficulty(difficulty);
+	if (difficulty == 1)
+		labelSM_Difficulty->Text = "Easy";
+	else if (difficulty == 2)
+		labelSM_Difficulty->Text = "Normal";
+	else if (difficulty == 3)
+		labelSM_Difficulty->Text = "Hard";
+	else if (difficulty == 4)
+		labelSM_Difficulty->Text = "Expert";
+	else
+		labelSM_Difficulty->Text = "Error loading difficulty from save file!";
+	loadFile.close();
+}
+private: System::Void controlSM_SaveData_Click(System::Object^  sender, System::EventArgs^  e) {
+	std::ofstream saveFile;
+	saveFile.open("saveFile_scorematch.txt");
+	saveFile << Convert::ToInt32(controlSM_CurrentPoints->Value) << "\n";
+	saveFile << Convert::ToInt32(controlSM_PointGoal->Value) << "\n";
+	saveFile << Convert::ToInt32(controlSM_AveragePoints->Value) << "\n";
+	saveFile << scoreMatchTracker.getDifficulty();
 	saveFile.close();
 }
 };
