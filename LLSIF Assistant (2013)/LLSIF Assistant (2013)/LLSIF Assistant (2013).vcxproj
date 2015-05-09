@@ -45,9 +45,10 @@
       <DebugInformationFormat Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">ProgramDatabase</DebugInformationFormat>
       <ExceptionHandling Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">Async</ExceptionHandling>
     </ClCompile>
+    <ClCompile Include="XP.cpp" />
   </ItemGroup>
   <ItemGroup>
-    <ClInclude Include="Header.h" />
+    <ClInclude Include="XP.h" />
     <ClInclude Include="scoreMatchG.h" />
     <ClInclude Include="uiAbout.h">
       <FileType>CppForm</FileType>

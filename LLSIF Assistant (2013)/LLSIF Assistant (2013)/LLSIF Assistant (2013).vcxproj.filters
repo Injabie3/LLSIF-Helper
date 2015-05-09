@@ -33,6 +33,9 @@
     <ClCompile Include="tokenCollection.cpp">
       <Filter>LLSIF Event Types</Filter>
     </ClCompile>
+    <ClCompile Include="XP.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="uiMain.h">
@@ -44,7 +47,7 @@
     <ClInclude Include="scoreMatchG.h">
       <Filter>LLSIF Event Types</Filter>
     </ClInclude>
-    <ClInclude Include="Header.h">
+    <ClInclude Include="XP.h">
       <Filter>Source Files</Filter>
     </ClInclude>
   </ItemGroup>
