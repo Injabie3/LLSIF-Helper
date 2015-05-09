@@ -47,8 +47,8 @@
     </ClCompile>
   </ItemGroup>
   <ItemGroup>
+    <ClInclude Include="Header.h" />
     <ClInclude Include="scoreMatchG.h" />
-    <ClInclude Include="tokenCollection.h" />
     <ClInclude Include="uiAbout.h">
       <FileType>CppForm</FileType>
     </ClInclude>
