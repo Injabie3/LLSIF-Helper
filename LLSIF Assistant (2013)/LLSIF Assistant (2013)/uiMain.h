@@ -220,13 +220,10 @@ private: System::Windows::Forms::Button^  controlSM_Calculate;
 			this->tabControl1->Controls->Add(this->tabTokenCollection);
 			this->tabControl1->Controls->Add(this->tabScoreMatch);
 			this->tabControl1->Controls->Add(this->tabRankUp);
-			this->tabControl1->Font = (gcnew System::Drawing::Font(L"Meiryo UI", 9, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
-				static_cast<System::Byte>(128)));
-			this->tabControl1->Location = System::Drawing::Point(20, 50);
-			this->tabControl1->Margin = System::Windows::Forms::Padding(5, 4, 5, 4);
+			this->tabControl1->Location = System::Drawing::Point(12, 36);
 			this->tabControl1->Name = L"tabControl1";
 			this->tabControl1->SelectedIndex = 0;
-			this->tabControl1->Size = System::Drawing::Size(767, 381);
+			this->tabControl1->Size = System::Drawing::Size(460, 275);
 			this->tabControl1->TabIndex = 0;
 			// 
 			// tabTokenCollection
@@ -249,22 +246,18 @@ private: System::Windows::Forms::Button^  controlSM_Calculate;
 			this->tabTokenCollection->Controls->Add(this->controlToken_CurrentPoints);
 			this->tabTokenCollection->Controls->Add(this->labelToken_CurrentTokens);
 			this->tabTokenCollection->Controls->Add(this->labelToken_CurrentPoints);
-			this->tabTokenCollection->Location = System::Drawing::Point(4, 32);
-			this->tabTokenCollection->Margin = System::Windows::Forms::Padding(5, 4, 5, 4);
+			this->tabTokenCollection->Location = System::Drawing::Point(4, 22);
 			this->tabTokenCollection->Name = L"tabTokenCollection";
-			this->tabTokenCollection->Padding = System::Windows::Forms::Padding(5, 4, 5, 4);
-			this->tabTokenCollection->Size = System::Drawing::Size(759, 345);
+			this->tabTokenCollection->Padding = System::Windows::Forms::Padding(3);
+			this->tabTokenCollection->Size = System::Drawing::Size(452, 249);
 			this->tabTokenCollection->TabIndex = 0;
 			this->tabTokenCollection->Text = L"Token Collection";
 			// 
 			// controlToken_SaveData
 			// 
-			this->controlToken_SaveData->Font = (gcnew System::Drawing::Font(L"Meiryo UI", 9, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
-				static_cast<System::Byte>(128)));
-			this->controlToken_SaveData->Location = System::Drawing::Point(457, 253);
-			this->controlToken_SaveData->Margin = System::Windows::Forms::Padding(5, 4, 5, 4);
+			this->controlToken_SaveData->Location = System::Drawing::Point(274, 183);
 			this->controlToken_SaveData->Name = L"controlToken_SaveData";
-			this->controlToken_SaveData->Size = System::Drawing::Size(140, 32);
+			this->controlToken_SaveData->Size = System::Drawing::Size(84, 23);
 			this->controlToken_SaveData->TabIndex = 10;
 			this->controlToken_SaveData->Text = L"Save Data";
 			this->controlToken_SaveData->UseVisualStyleBackColor = true;
@@ -272,12 +265,9 @@ private: System::Windows::Forms::Button^  controlSM_Calculate;
 			// 
 			// controlToken_LoadData
 			// 
-			this->controlToken_LoadData->Font = (gcnew System::Drawing::Font(L"Meiryo UI", 9, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
-				static_cast<System::Byte>(128)));
-			this->controlToken_LoadData->Location = System::Drawing::Point(307, 253);
-			this->controlToken_LoadData->Margin = System::Windows::Forms::Padding(5, 4, 5, 4);
+			this->controlToken_LoadData->Location = System::Drawing::Point(184, 183);
 			this->controlToken_LoadData->Name = L"controlToken_LoadData";
-			this->controlToken_LoadData->Size = System::Drawing::Size(140, 32);
+			this->controlToken_LoadData->Size = System::Drawing::Size(84, 23);
 			this->controlToken_LoadData->TabIndex = 9;
 			this->controlToken_LoadData->Text = L"Load Data";
 			this->controlToken_LoadData->UseVisualStyleBackColor = true;
@@ -286,35 +276,26 @@ private: System::Windows::Forms::Button^  controlSM_Calculate;
 			// labelToken_Difficulty
 			// 
 			this->labelToken_Difficulty->AutoSize = true;
-			this->labelToken_Difficulty->Font = (gcnew System::Drawing::Font(L"Meiryo UI", 9, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
-				static_cast<System::Byte>(128)));
-			this->labelToken_Difficulty->Location = System::Drawing::Point(303, 181);
-			this->labelToken_Difficulty->Margin = System::Windows::Forms::Padding(5, 0, 5, 0);
+			this->labelToken_Difficulty->Location = System::Drawing::Point(181, 134);
 			this->labelToken_Difficulty->Name = L"labelToken_Difficulty";
-			this->labelToken_Difficulty->Size = System::Drawing::Size(222, 23);
+			this->labelToken_Difficulty->Size = System::Drawing::Size(123, 13);
 			this->labelToken_Difficulty->TabIndex = 17;
 			this->labelToken_Difficulty->Text = L"Please select a difficulty.";
 			// 
 			// labelToken_SelectedDifficulty
 			// 
 			this->labelToken_SelectedDifficulty->AutoSize = true;
-			this->labelToken_SelectedDifficulty->Font = (gcnew System::Drawing::Font(L"Meiryo UI", 9, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
-				static_cast<System::Byte>(128)));
-			this->labelToken_SelectedDifficulty->Location = System::Drawing::Point(123, 181);
-			this->labelToken_SelectedDifficulty->Margin = System::Windows::Forms::Padding(5, 0, 5, 0);
+			this->labelToken_SelectedDifficulty->Location = System::Drawing::Point(83, 134);
 			this->labelToken_SelectedDifficulty->Name = L"labelToken_SelectedDifficulty";
-			this->labelToken_SelectedDifficulty->Size = System::Drawing::Size(174, 23);
+			this->labelToken_SelectedDifficulty->Size = System::Drawing::Size(95, 13);
 			this->labelToken_SelectedDifficulty->TabIndex = 16;
 			this->labelToken_SelectedDifficulty->Text = L"Selected Difficulty:";
 			// 
 			// controlToken_DifficultyExpert
 			// 
-			this->controlToken_DifficultyExpert->Font = (gcnew System::Drawing::Font(L"Meiryo UI", 9, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
-				static_cast<System::Byte>(128)));
-			this->controlToken_DifficultyExpert->Location = System::Drawing::Point(602, 145);
-			this->controlToken_DifficultyExpert->Margin = System::Windows::Forms::Padding(5, 4, 5, 4);
+			this->controlToken_DifficultyExpert->Location = System::Drawing::Point(361, 105);
 			this->controlToken_DifficultyExpert->Name = L"controlToken_DifficultyExpert";
-			this->controlToken_DifficultyExpert->Size = System::Drawing::Size(88, 32);
+			this->controlToken_DifficultyExpert->Size = System::Drawing::Size(53, 23);
 			this->controlToken_DifficultyExpert->TabIndex = 7;
 			this->controlToken_DifficultyExpert->Text = L"Expert";
 			this->controlToken_DifficultyExpert->UseVisualStyleBackColor = true;
@@ -322,12 +303,9 @@ private: System::Windows::Forms::Button^  controlSM_Calculate;
 			// 
 			// controlToken_DifficultyHard
 			// 
-			this->controlToken_DifficultyHard->Font = (gcnew System::Drawing::Font(L"Meiryo UI", 9, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
-				static_cast<System::Byte>(128)));
-			this->controlToken_DifficultyHard->Location = System::Drawing::Point(503, 145);
-			this->controlToken_DifficultyHard->Margin = System::Windows::Forms::Padding(5, 4, 5, 4);
+			this->controlToken_DifficultyHard->Location = System::Drawing::Point(302, 105);
 			this->controlToken_DifficultyHard->Name = L"controlToken_DifficultyHard";
-			this->controlToken_DifficultyHard->Size = System::Drawing::Size(88, 32);
+			this->controlToken_DifficultyHard->Size = System::Drawing::Size(53, 23);
 			this->controlToken_DifficultyHard->TabIndex = 6;
 			this->controlToken_DifficultyHard->Text = L"Hard";
 			this->controlToken_DifficultyHard->UseVisualStyleBackColor = true;
@@ -335,12 +313,9 @@ private: System::Windows::Forms::Button^  controlSM_Calculate;
 			// 
 			// controlToken_DifficultyNormal
 			// 
-			this->controlToken_DifficultyNormal->Font = (gcnew System::Drawing::Font(L"Meiryo UI", 9, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
-				static_cast<System::Byte>(128)));
-			this->controlToken_DifficultyNormal->Location = System::Drawing::Point(405, 145);
-			this->controlToken_DifficultyNormal->Margin = System::Windows::Forms::Padding(5, 4, 5, 4);
+			this->controlToken_DifficultyNormal->Location = System::Drawing::Point(243, 105);
 			this->controlToken_DifficultyNormal->Name = L"controlToken_DifficultyNormal";
-			this->controlToken_DifficultyNormal->Size = System::Drawing::Size(88, 32);
+			this->controlToken_DifficultyNormal->Size = System::Drawing::Size(53, 23);
 			this->controlToken_DifficultyNormal->TabIndex = 5;
 			this->controlToken_DifficultyNormal->Text = L"Normal";
 			this->controlToken_DifficultyNormal->UseVisualStyleBackColor = true;
@@ -348,12 +323,9 @@ private: System::Windows::Forms::Button^  controlSM_Calculate;
 			// 
 			// controlToken_DifficultyEasy
 			// 
-			this->controlToken_DifficultyEasy->Font = (gcnew System::Drawing::Font(L"Meiryo UI", 9, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
-				static_cast<System::Byte>(128)));
-			this->controlToken_DifficultyEasy->Location = System::Drawing::Point(307, 145);
-			this->controlToken_DifficultyEasy->Margin = System::Windows::Forms::Padding(5, 4, 5, 4);
+			this->controlToken_DifficultyEasy->Location = System::Drawing::Point(184, 105);
 			this->controlToken_DifficultyEasy->Name = L"controlToken_DifficultyEasy";
-			this->controlToken_DifficultyEasy->Size = System::Drawing::Size(88, 32);
+			this->controlToken_DifficultyEasy->Size = System::Drawing::Size(53, 23);
 			this->controlToken_DifficultyEasy->TabIndex = 4;
 			this->controlToken_DifficultyEasy->Text = L"Easy";
 			this->controlToken_DifficultyEasy->UseVisualStyleBackColor = true;
@@ -362,36 +334,27 @@ private: System::Windows::Forms::Button^  controlSM_Calculate;
 			// labelToken_EstimatedPoints
 			// 
 			this->labelToken_EstimatedPoints->AutoSize = true;
-			this->labelToken_EstimatedPoints->Font = (gcnew System::Drawing::Font(L"Meiryo UI", 9, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
-				static_cast<System::Byte>(128)));
-			this->labelToken_EstimatedPoints->Location = System::Drawing::Point(303, 213);
-			this->labelToken_EstimatedPoints->Margin = System::Windows::Forms::Padding(5, 0, 5, 0);
+			this->labelToken_EstimatedPoints->Location = System::Drawing::Point(181, 157);
 			this->labelToken_EstimatedPoints->Name = L"labelToken_EstimatedPoints";
-			this->labelToken_EstimatedPoints->Size = System::Drawing::Size(320, 23);
+			this->labelToken_EstimatedPoints->Size = System::Drawing::Size(172, 13);
 			this->labelToken_EstimatedPoints->TabIndex = 11;
 			this->labelToken_EstimatedPoints->Text = L"Click Calculate to determine points.";
 			// 
 			// labelToken_Result
 			// 
 			this->labelToken_Result->AutoSize = true;
-			this->labelToken_Result->Font = (gcnew System::Drawing::Font(L"Meiryo UI", 9, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
-				static_cast<System::Byte>(128)));
-			this->labelToken_Result->Location = System::Drawing::Point(77, 213);
-			this->labelToken_Result->Margin = System::Windows::Forms::Padding(5, 0, 5, 0);
+			this->labelToken_Result->Location = System::Drawing::Point(59, 157);
 			this->labelToken_Result->Name = L"labelToken_Result";
-			this->labelToken_Result->Size = System::Drawing::Size(220, 23);
+			this->labelToken_Result->Size = System::Drawing::Size(119, 13);
 			this->labelToken_Result->TabIndex = 10;
 			this->labelToken_Result->Text = L"Estimated Event Points:";
 			// 
 			// controlToken_Calculate
 			// 
 			this->controlToken_Calculate->BackColor = System::Drawing::Color::Transparent;
-			this->controlToken_Calculate->Font = (gcnew System::Drawing::Font(L"Meiryo UI", 9, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
-				static_cast<System::Byte>(128)));
-			this->controlToken_Calculate->Location = System::Drawing::Point(157, 253);
-			this->controlToken_Calculate->Margin = System::Windows::Forms::Padding(5, 4, 5, 4);
+			this->controlToken_Calculate->Location = System::Drawing::Point(94, 183);
 			this->controlToken_Calculate->Name = L"controlToken_Calculate";
-			this->controlToken_Calculate->Size = System::Drawing::Size(140, 32);
+			this->controlToken_Calculate->Size = System::Drawing::Size(84, 23);
 			this->controlToken_Calculate->TabIndex = 8;
 			this->controlToken_Calculate->Text = L"Calculate";
 			this->controlToken_Calculate->UseVisualStyleBackColor = false;
@@ -400,77 +363,62 @@ private: System::Windows::Forms::Button^  controlSM_Calculate;
 			// labelToken_AveragePoints
 			// 
 			this->labelToken_AveragePoints->AutoSize = true;
-			this->labelToken_AveragePoints->Font = (gcnew System::Drawing::Font(L"Meiryo UI", 9, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
-				static_cast<System::Byte>(128)));
-			this->labelToken_AveragePoints->Location = System::Drawing::Point(149, 107);
-			this->labelToken_AveragePoints->Margin = System::Windows::Forms::Padding(5, 0, 5, 0);
+			this->labelToken_AveragePoints->Location = System::Drawing::Point(96, 81);
 			this->labelToken_AveragePoints->Name = L"labelToken_AveragePoints";
-			this->labelToken_AveragePoints->Size = System::Drawing::Size(148, 23);
+			this->labelToken_AveragePoints->Size = System::Drawing::Size(82, 13);
 			this->labelToken_AveragePoints->TabIndex = 8;
 			this->labelToken_AveragePoints->Text = L"Average Points:";
 			// 
 			// controlToken_AveragePoints
 			// 
-			this->controlToken_AveragePoints->Location = System::Drawing::Point(307, 109);
-			this->controlToken_AveragePoints->Margin = System::Windows::Forms::Padding(5, 4, 5, 4);
+			this->controlToken_AveragePoints->Location = System::Drawing::Point(184, 79);
 			this->controlToken_AveragePoints->Maximum = System::Decimal(gcnew cli::array< System::Int32 >(4) { 100000000, 0, 0, 0 });
 			this->controlToken_AveragePoints->Minimum = System::Decimal(gcnew cli::array< System::Int32 >(4) { 1, 0, 0, 0 });
 			this->controlToken_AveragePoints->Name = L"controlToken_AveragePoints";
-			this->controlToken_AveragePoints->Size = System::Drawing::Size(167, 30);
+			this->controlToken_AveragePoints->Size = System::Drawing::Size(100, 20);
 			this->controlToken_AveragePoints->TabIndex = 3;
 			this->controlToken_AveragePoints->Value = System::Decimal(gcnew cli::array< System::Int32 >(4) { 1, 0, 0, 0 });
 			// 
 			// labelToken_DifficultySelection
 			// 
 			this->labelToken_DifficultySelection->AutoSize = true;
-			this->labelToken_DifficultySelection->Font = (gcnew System::Drawing::Font(L"Meiryo UI", 9, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
-				static_cast<System::Byte>(128)));
-			this->labelToken_DifficultySelection->Location = System::Drawing::Point(202, 150);
-			this->labelToken_DifficultySelection->Margin = System::Windows::Forms::Padding(5, 0, 5, 0);
+			this->labelToken_DifficultySelection->Location = System::Drawing::Point(128, 110);
 			this->labelToken_DifficultySelection->Name = L"labelToken_DifficultySelection";
-			this->labelToken_DifficultySelection->Size = System::Drawing::Size(95, 23);
+			this->labelToken_DifficultySelection->Size = System::Drawing::Size(50, 13);
 			this->labelToken_DifficultySelection->TabIndex = 6;
 			this->labelToken_DifficultySelection->Text = L"Difficulty:";
 			// 
 			// controlToken_CurrentTokens
 			// 
-			this->controlToken_CurrentTokens->Location = System::Drawing::Point(307, 73);
-			this->controlToken_CurrentTokens->Margin = System::Windows::Forms::Padding(5, 4, 5, 4);
+			this->controlToken_CurrentTokens->Location = System::Drawing::Point(184, 53);
 			this->controlToken_CurrentTokens->Maximum = System::Decimal(gcnew cli::array< System::Int32 >(4) { 100000000, 0, 0, 0 });
 			this->controlToken_CurrentTokens->Name = L"controlToken_CurrentTokens";
-			this->controlToken_CurrentTokens->Size = System::Drawing::Size(167, 30);
+			this->controlToken_CurrentTokens->Size = System::Drawing::Size(100, 20);
 			this->controlToken_CurrentTokens->TabIndex = 2;
 			// 
 			// controlToken_CurrentPoints
 			// 
-			this->controlToken_CurrentPoints->Location = System::Drawing::Point(307, 37);
-			this->controlToken_CurrentPoints->Margin = System::Windows::Forms::Padding(5, 4, 5, 4);
+			this->controlToken_CurrentPoints->Location = System::Drawing::Point(184, 27);
 			this->controlToken_CurrentPoints->Maximum = System::Decimal(gcnew cli::array< System::Int32 >(4) { 100000000, 0, 0, 0 });
 			this->controlToken_CurrentPoints->Name = L"controlToken_CurrentPoints";
-			this->controlToken_CurrentPoints->Size = System::Drawing::Size(167, 30);
+			this->controlToken_CurrentPoints->Size = System::Drawing::Size(100, 20);
 			this->controlToken_CurrentPoints->TabIndex = 1;
 			// 
 			// labelToken_CurrentTokens
 			// 
 			this->labelToken_CurrentTokens->AutoSize = true;
-			this->labelToken_CurrentTokens->Font = (gcnew System::Drawing::Font(L"Meiryo UI", 9, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
-				static_cast<System::Byte>(128)));
-			this->labelToken_CurrentTokens->Location = System::Drawing::Point(148, 71);
-			this->labelToken_CurrentTokens->Margin = System::Windows::Forms::Padding(5, 0, 5, 0);
+			this->labelToken_CurrentTokens->Location = System::Drawing::Point(95, 55);
 			this->labelToken_CurrentTokens->Name = L"labelToken_CurrentTokens";
-			this->labelToken_CurrentTokens->Size = System::Drawing::Size(149, 23);
+			this->labelToken_CurrentTokens->Size = System::Drawing::Size(83, 13);
 			this->labelToken_CurrentTokens->TabIndex = 1;
 			this->labelToken_CurrentTokens->Text = L"Current Tokens:";
 			// 
 			// labelToken_CurrentPoints
 			// 
 			this->labelToken_CurrentPoints->AutoSize = true;
-			this->labelToken_CurrentPoints->Font = (gcnew System::Drawing::Font(L"Meiryo UI", 9, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
-				static_cast<System::Byte>(0)));
-			this->labelToken_CurrentPoints->Location = System::Drawing::Point(154, 35);
-			this->labelToken_CurrentPoints->Margin = System::Windows::Forms::Padding(5, 0, 5, 0);
+			this->labelToken_CurrentPoints->Location = System::Drawing::Point(102, 29);
 			this->labelToken_CurrentPoints->Name = L"labelToken_CurrentPoints";
-			this->labelToken_CurrentPoints->Size = System::Drawing::Size(143, 23);
+			this->labelToken_CurrentPoints->Size = System::Drawing::Size(76, 13);
 			this->labelToken_CurrentPoints->TabIndex = 0;
 			this->labelToken_CurrentPoints->Text = L"Current Points:";
 			// 
@@ -494,23 +442,19 @@ private: System::Windows::Forms::Button^  controlSM_Calculate;
 			this->tabScoreMatch->Controls->Add(this->controlSM_CurrentPoints);
 			this->tabScoreMatch->Controls->Add(this->labelSM_PointGoal);
 			this->tabScoreMatch->Controls->Add(this->labelSM_CurrentPoints);
-			this->tabScoreMatch->Location = System::Drawing::Point(4, 28);
-			this->tabScoreMatch->Margin = System::Windows::Forms::Padding(5, 4, 5, 4);
+			this->tabScoreMatch->Location = System::Drawing::Point(4, 22);
 			this->tabScoreMatch->Name = L"tabScoreMatch";
-			this->tabScoreMatch->Padding = System::Windows::Forms::Padding(5, 4, 5, 4);
-			this->tabScoreMatch->Size = System::Drawing::Size(759, 349);
+			this->tabScoreMatch->Padding = System::Windows::Forms::Padding(3);
+			this->tabScoreMatch->Size = System::Drawing::Size(452, 249);
 			this->tabScoreMatch->TabIndex = 1;
 			this->tabScoreMatch->Text = L"Score Match";
 			this->tabScoreMatch->UseVisualStyleBackColor = true;
 			// 
 			// controlSM_SaveData
 			// 
-			this->controlSM_SaveData->Font = (gcnew System::Drawing::Font(L"Meiryo UI", 9, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
-				static_cast<System::Byte>(128)));
-			this->controlSM_SaveData->Location = System::Drawing::Point(457, 253);
-			this->controlSM_SaveData->Margin = System::Windows::Forms::Padding(5, 4, 5, 4);
+			this->controlSM_SaveData->Location = System::Drawing::Point(274, 183);
 			this->controlSM_SaveData->Name = L"controlSM_SaveData";
-			this->controlSM_SaveData->Size = System::Drawing::Size(140, 32);
+			this->controlSM_SaveData->Size = System::Drawing::Size(84, 23);
 			this->controlSM_SaveData->TabIndex = 35;
 			this->controlSM_SaveData->Text = L"Save Data";
 			this->controlSM_SaveData->UseVisualStyleBackColor = true;
@@ -518,12 +462,9 @@ private: System::Windows::Forms::Button^  controlSM_Calculate;
 			// 
 			// controlSM_LoadData
 			// 
-			this->controlSM_LoadData->Font = (gcnew System::Drawing::Font(L"Meiryo UI", 9, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
-				static_cast<System::Byte>(128)));
-			this->controlSM_LoadData->Location = System::Drawing::Point(307, 253);
-			this->controlSM_LoadData->Margin = System::Windows::Forms::Padding(5, 4, 5, 4);
+			this->controlSM_LoadData->Location = System::Drawing::Point(184, 183);
 			this->controlSM_LoadData->Name = L"controlSM_LoadData";
-			this->controlSM_LoadData->Size = System::Drawing::Size(140, 32);
+			this->controlSM_LoadData->Size = System::Drawing::Size(84, 23);
 			this->controlSM_LoadData->TabIndex = 34;
 			this->controlSM_LoadData->Text = L"Load Data";
 			this->controlSM_LoadData->UseVisualStyleBackColor = true;
@@ -532,35 +473,26 @@ private: System::Windows::Forms::Button^  controlSM_Calculate;
 			// labelSM_Difficulty
 			// 
 			this->labelSM_Difficulty->AutoSize = true;
-			this->labelSM_Difficulty->Font = (gcnew System::Drawing::Font(L"Meiryo UI", 9, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
-				static_cast<System::Byte>(128)));
-			this->labelSM_Difficulty->Location = System::Drawing::Point(303, 181);
-			this->labelSM_Difficulty->Margin = System::Windows::Forms::Padding(5, 0, 5, 0);
+			this->labelSM_Difficulty->Location = System::Drawing::Point(181, 134);
 			this->labelSM_Difficulty->Name = L"labelSM_Difficulty";
-			this->labelSM_Difficulty->Size = System::Drawing::Size(222, 23);
+			this->labelSM_Difficulty->Size = System::Drawing::Size(123, 13);
 			this->labelSM_Difficulty->TabIndex = 33;
 			this->labelSM_Difficulty->Text = L"Please select a difficulty.";
 			// 
 			// labelSM_SelectedDifficulty
 			// 
 			this->labelSM_SelectedDifficulty->AutoSize = true;
-			this->labelSM_SelectedDifficulty->Font = (gcnew System::Drawing::Font(L"Meiryo UI", 9, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
-				static_cast<System::Byte>(128)));
-			this->labelSM_SelectedDifficulty->Location = System::Drawing::Point(123, 181);
-			this->labelSM_SelectedDifficulty->Margin = System::Windows::Forms::Padding(5, 0, 5, 0);
+			this->labelSM_SelectedDifficulty->Location = System::Drawing::Point(83, 134);
 			this->labelSM_SelectedDifficulty->Name = L"labelSM_SelectedDifficulty";
-			this->labelSM_SelectedDifficulty->Size = System::Drawing::Size(174, 23);
+			this->labelSM_SelectedDifficulty->Size = System::Drawing::Size(95, 13);
 			this->labelSM_SelectedDifficulty->TabIndex = 32;
 			this->labelSM_SelectedDifficulty->Text = L"Selected Difficulty:";
 			// 
 			// controlSM_DifficultyExpert
 			// 
-			this->controlSM_DifficultyExpert->Font = (gcnew System::Drawing::Font(L"Meiryo UI", 9, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
-				static_cast<System::Byte>(128)));
-			this->controlSM_DifficultyExpert->Location = System::Drawing::Point(602, 145);
-			this->controlSM_DifficultyExpert->Margin = System::Windows::Forms::Padding(5, 4, 5, 4);
+			this->controlSM_DifficultyExpert->Location = System::Drawing::Point(361, 105);
 			this->controlSM_DifficultyExpert->Name = L"controlSM_DifficultyExpert";
-			this->controlSM_DifficultyExpert->Size = System::Drawing::Size(88, 32);
+			this->controlSM_DifficultyExpert->Size = System::Drawing::Size(53, 23);
 			this->controlSM_DifficultyExpert->TabIndex = 27;
 			this->controlSM_DifficultyExpert->Text = L"Expert";
 			this->controlSM_DifficultyExpert->UseVisualStyleBackColor = true;
@@ -568,12 +500,9 @@ private: System::Windows::Forms::Button^  controlSM_Calculate;
 			// 
 			// controlSM_DifficultyHard
 			// 
-			this->controlSM_DifficultyHard->Font = (gcnew System::Drawing::Font(L"Meiryo UI", 9, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
-				static_cast<System::Byte>(128)));
-			this->controlSM_DifficultyHard->Location = System::Drawing::Point(503, 145);
-			this->controlSM_DifficultyHard->Margin = System::Windows::Forms::Padding(5, 4, 5, 4);
+			this->controlSM_DifficultyHard->Location = System::Drawing::Point(302, 105);
 			this->controlSM_DifficultyHard->Name = L"controlSM_DifficultyHard";
-			this->controlSM_DifficultyHard->Size = System::Drawing::Size(88, 32);
+			this->controlSM_DifficultyHard->Size = System::Drawing::Size(53, 23);
 			this->controlSM_DifficultyHard->TabIndex = 25;
 			this->controlSM_DifficultyHard->Text = L"Hard";
 			this->controlSM_DifficultyHard->UseVisualStyleBackColor = true;
@@ -581,12 +510,9 @@ private: System::Windows::Forms::Button^  controlSM_Calculate;
 			// 
 			// controlSM_DifficultyNormal
 			// 
-			this->controlSM_DifficultyNormal->Font = (gcnew System::Drawing::Font(L"Meiryo UI", 9, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
-				static_cast<System::Byte>(128)));
-			this->controlSM_DifficultyNormal->Location = System::Drawing::Point(405, 145);
-			this->controlSM_DifficultyNormal->Margin = System::Windows::Forms::Padding(5, 4, 5, 4);
+			this->controlSM_DifficultyNormal->Location = System::Drawing::Point(243, 105);
 			this->controlSM_DifficultyNormal->Name = L"controlSM_DifficultyNormal";
-			this->controlSM_DifficultyNormal->Size = System::Drawing::Size(88, 32);
+			this->controlSM_DifficultyNormal->Size = System::Drawing::Size(53, 23);
 			this->controlSM_DifficultyNormal->TabIndex = 24;
 			this->controlSM_DifficultyNormal->Text = L"Normal";
 			this->controlSM_DifficultyNormal->UseVisualStyleBackColor = true;
@@ -594,12 +520,9 @@ private: System::Windows::Forms::Button^  controlSM_Calculate;
 			// 
 			// controlSM_DifficultyEasy
 			// 
-			this->controlSM_DifficultyEasy->Font = (gcnew System::Drawing::Font(L"Meiryo UI", 9, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
-				static_cast<System::Byte>(128)));
-			this->controlSM_DifficultyEasy->Location = System::Drawing::Point(307, 145);
-			this->controlSM_DifficultyEasy->Margin = System::Windows::Forms::Padding(5, 4, 5, 4);
+			this->controlSM_DifficultyEasy->Location = System::Drawing::Point(184, 105);
 			this->controlSM_DifficultyEasy->Name = L"controlSM_DifficultyEasy";
-			this->controlSM_DifficultyEasy->Size = System::Drawing::Size(88, 32);
+			this->controlSM_DifficultyEasy->Size = System::Drawing::Size(53, 23);
 			this->controlSM_DifficultyEasy->TabIndex = 23;
 			this->controlSM_DifficultyEasy->Text = L"Easy";
 			this->controlSM_DifficultyEasy->UseVisualStyleBackColor = true;
@@ -608,35 +531,26 @@ private: System::Windows::Forms::Button^  controlSM_Calculate;
 			// labelSM_EstimatedLP
 			// 
 			this->labelSM_EstimatedLP->AutoSize = true;
-			this->labelSM_EstimatedLP->Font = (gcnew System::Drawing::Font(L"Meiryo UI", 9, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
-				static_cast<System::Byte>(128)));
-			this->labelSM_EstimatedLP->Location = System::Drawing::Point(303, 212);
-			this->labelSM_EstimatedLP->Margin = System::Windows::Forms::Padding(5, 0, 5, 0);
+			this->labelSM_EstimatedLP->Location = System::Drawing::Point(181, 157);
 			this->labelSM_EstimatedLP->Name = L"labelSM_EstimatedLP";
-			this->labelSM_EstimatedLP->Size = System::Drawing::Size(284, 23);
+			this->labelSM_EstimatedLP->Size = System::Drawing::Size(157, 13);
 			this->labelSM_EstimatedLP->TabIndex = 31;
 			this->labelSM_EstimatedLP->Text = L"Click Calculate to determine LP.";
 			// 
 			// labelSM_Result
 			// 
 			this->labelSM_Result->AutoSize = true;
-			this->labelSM_Result->Font = (gcnew System::Drawing::Font(L"Meiryo UI", 9, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
-				static_cast<System::Byte>(128)));
-			this->labelSM_Result->Location = System::Drawing::Point(94, 212);
-			this->labelSM_Result->Margin = System::Windows::Forms::Padding(5, 0, 5, 0);
+			this->labelSM_Result->Location = System::Drawing::Point(65, 157);
 			this->labelSM_Result->Name = L"labelSM_Result";
-			this->labelSM_Result->Size = System::Drawing::Size(203, 23);
+			this->labelSM_Result->Size = System::Drawing::Size(113, 13);
 			this->labelSM_Result->TabIndex = 30;
 			this->labelSM_Result->Text = L"Estimated LP Needed:";
 			// 
 			// controlSM_Calculate
 			// 
-			this->controlSM_Calculate->Font = (gcnew System::Drawing::Font(L"Meiryo UI", 9, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
-				static_cast<System::Byte>(128)));
-			this->controlSM_Calculate->Location = System::Drawing::Point(157, 253);
-			this->controlSM_Calculate->Margin = System::Windows::Forms::Padding(5, 4, 5, 4);
+			this->controlSM_Calculate->Location = System::Drawing::Point(94, 183);
 			this->controlSM_Calculate->Name = L"controlSM_Calculate";
-			this->controlSM_Calculate->Size = System::Drawing::Size(140, 32);
+			this->controlSM_Calculate->Size = System::Drawing::Size(84, 23);
 			this->controlSM_Calculate->TabIndex = 28;
 			this->controlSM_Calculate->Text = L"Calculate";
 			this->controlSM_Calculate->UseVisualStyleBackColor = true;
@@ -645,109 +559,89 @@ private: System::Windows::Forms::Button^  controlSM_Calculate;
 			// labelSM_AveragePoints
 			// 
 			this->labelSM_AveragePoints->AutoSize = true;
-			this->labelSM_AveragePoints->Font = (gcnew System::Drawing::Font(L"Meiryo UI", 9, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
-				static_cast<System::Byte>(128)));
-			this->labelSM_AveragePoints->Location = System::Drawing::Point(57, 107);
-			this->labelSM_AveragePoints->Margin = System::Windows::Forms::Padding(5, 0, 5, 0);
+			this->labelSM_AveragePoints->Location = System::Drawing::Point(44, 81);
 			this->labelSM_AveragePoints->Name = L"labelSM_AveragePoints";
-			this->labelSM_AveragePoints->Size = System::Drawing::Size(240, 23);
+			this->labelSM_AveragePoints->Size = System::Drawing::Size(134, 13);
 			this->labelSM_AveragePoints->TabIndex = 29;
 			this->labelSM_AveragePoints->Text = L"Average Points Per Match:";
 			// 
 			// controlSM_AveragePoints
 			// 
-			this->controlSM_AveragePoints->Location = System::Drawing::Point(307, 109);
-			this->controlSM_AveragePoints->Margin = System::Windows::Forms::Padding(5, 4, 5, 4);
+			this->controlSM_AveragePoints->Location = System::Drawing::Point(184, 79);
 			this->controlSM_AveragePoints->Maximum = System::Decimal(gcnew cli::array< System::Int32 >(4) { 100000000, 0, 0, 0 });
 			this->controlSM_AveragePoints->Minimum = System::Decimal(gcnew cli::array< System::Int32 >(4) { 1, 0, 0, 0 });
 			this->controlSM_AveragePoints->Name = L"controlSM_AveragePoints";
-			this->controlSM_AveragePoints->Size = System::Drawing::Size(167, 30);
+			this->controlSM_AveragePoints->Size = System::Drawing::Size(100, 20);
 			this->controlSM_AveragePoints->TabIndex = 22;
 			this->controlSM_AveragePoints->Value = System::Decimal(gcnew cli::array< System::Int32 >(4) { 1, 0, 0, 0 });
 			// 
 			// labelSM_DifficultySelection
 			// 
 			this->labelSM_DifficultySelection->AutoSize = true;
-			this->labelSM_DifficultySelection->Font = (gcnew System::Drawing::Font(L"Meiryo UI", 9, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
-				static_cast<System::Byte>(128)));
-			this->labelSM_DifficultySelection->Location = System::Drawing::Point(202, 150);
-			this->labelSM_DifficultySelection->Margin = System::Windows::Forms::Padding(5, 0, 5, 0);
+			this->labelSM_DifficultySelection->Location = System::Drawing::Point(128, 110);
 			this->labelSM_DifficultySelection->Name = L"labelSM_DifficultySelection";
-			this->labelSM_DifficultySelection->Size = System::Drawing::Size(95, 23);
+			this->labelSM_DifficultySelection->Size = System::Drawing::Size(50, 13);
 			this->labelSM_DifficultySelection->TabIndex = 26;
 			this->labelSM_DifficultySelection->Text = L"Difficulty:";
 			// 
 			// controlSM_PointGoal
 			// 
-			this->controlSM_PointGoal->Location = System::Drawing::Point(307, 73);
-			this->controlSM_PointGoal->Margin = System::Windows::Forms::Padding(5, 4, 5, 4);
+			this->controlSM_PointGoal->Location = System::Drawing::Point(184, 53);
 			this->controlSM_PointGoal->Maximum = System::Decimal(gcnew cli::array< System::Int32 >(4) { 100000000, 0, 0, 0 });
 			this->controlSM_PointGoal->Name = L"controlSM_PointGoal";
-			this->controlSM_PointGoal->Size = System::Drawing::Size(167, 30);
+			this->controlSM_PointGoal->Size = System::Drawing::Size(100, 20);
 			this->controlSM_PointGoal->TabIndex = 21;
 			// 
 			// controlSM_CurrentPoints
 			// 
-			this->controlSM_CurrentPoints->Location = System::Drawing::Point(307, 37);
-			this->controlSM_CurrentPoints->Margin = System::Windows::Forms::Padding(5, 4, 5, 4);
+			this->controlSM_CurrentPoints->Location = System::Drawing::Point(184, 27);
 			this->controlSM_CurrentPoints->Maximum = System::Decimal(gcnew cli::array< System::Int32 >(4) { 100000000, 0, 0, 0 });
 			this->controlSM_CurrentPoints->Name = L"controlSM_CurrentPoints";
-			this->controlSM_CurrentPoints->Size = System::Drawing::Size(167, 30);
+			this->controlSM_CurrentPoints->Size = System::Drawing::Size(100, 20);
 			this->controlSM_CurrentPoints->TabIndex = 19;
 			// 
 			// labelSM_PointGoal
 			// 
 			this->labelSM_PointGoal->AutoSize = true;
-			this->labelSM_PointGoal->Font = (gcnew System::Drawing::Font(L"Meiryo UI", 9, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
-				static_cast<System::Byte>(128)));
-			this->labelSM_PointGoal->Location = System::Drawing::Point(189, 71);
-			this->labelSM_PointGoal->Margin = System::Windows::Forms::Padding(5, 0, 5, 0);
+			this->labelSM_PointGoal->Location = System::Drawing::Point(119, 55);
 			this->labelSM_PointGoal->Name = L"labelSM_PointGoal";
-			this->labelSM_PointGoal->Size = System::Drawing::Size(108, 23);
+			this->labelSM_PointGoal->Size = System::Drawing::Size(59, 13);
 			this->labelSM_PointGoal->TabIndex = 20;
 			this->labelSM_PointGoal->Text = L"Point Goal:";
 			// 
 			// labelSM_CurrentPoints
 			// 
 			this->labelSM_CurrentPoints->AutoSize = true;
-			this->labelSM_CurrentPoints->Font = (gcnew System::Drawing::Font(L"Meiryo UI", 9, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
-				static_cast<System::Byte>(128)));
-			this->labelSM_CurrentPoints->Location = System::Drawing::Point(154, 35);
-			this->labelSM_CurrentPoints->Margin = System::Windows::Forms::Padding(5, 0, 5, 0);
+			this->labelSM_CurrentPoints->Location = System::Drawing::Point(102, 29);
 			this->labelSM_CurrentPoints->Name = L"labelSM_CurrentPoints";
-			this->labelSM_CurrentPoints->Size = System::Drawing::Size(143, 23);
+			this->labelSM_CurrentPoints->Size = System::Drawing::Size(76, 13);
 			this->labelSM_CurrentPoints->TabIndex = 18;
 			this->labelSM_CurrentPoints->Text = L"Current Points:";
 			// 
 			// tabRankUp
 			// 
-			this->tabRankUp->Location = System::Drawing::Point(4, 28);
-			this->tabRankUp->Margin = System::Windows::Forms::Padding(5, 4, 5, 4);
+			this->tabRankUp->Location = System::Drawing::Point(4, 22);
 			this->tabRankUp->Name = L"tabRankUp";
-			this->tabRankUp->Padding = System::Windows::Forms::Padding(5, 4, 5, 4);
-			this->tabRankUp->Size = System::Drawing::Size(759, 349);
+			this->tabRankUp->Padding = System::Windows::Forms::Padding(3);
+			this->tabRankUp->Size = System::Drawing::Size(452, 249);
 			this->tabRankUp->TabIndex = 2;
 			this->tabRankUp->Text = L"XP to Rank Up";
 			this->tabRankUp->UseVisualStyleBackColor = true;
 			// 
 			// statusStrip
 			// 
-			this->statusStrip->ImageScalingSize = System::Drawing::Size(24, 24);
-			this->statusStrip->Location = System::Drawing::Point(0, 443);
+			this->statusStrip->Location = System::Drawing::Point(0, 314);
 			this->statusStrip->Name = L"statusStrip";
-			this->statusStrip->Padding = System::Windows::Forms::Padding(2, 0, 23, 0);
-			this->statusStrip->Size = System::Drawing::Size(807, 22);
+			this->statusStrip->Size = System::Drawing::Size(484, 22);
 			this->statusStrip->TabIndex = 1;
 			this->statusStrip->Text = L"statusStrip1";
 			// 
 			// menuStrip
 			// 
-			this->menuStrip->ImageScalingSize = System::Drawing::Size(24, 24);
 			this->menuStrip->Items->AddRange(gcnew cli::array< System::Windows::Forms::ToolStripItem^  >(2) { this->menuStrip_File, this->menuStrip_Help });
 			this->menuStrip->Location = System::Drawing::Point(0, 0);
 			this->menuStrip->Name = L"menuStrip";
-			this->menuStrip->Padding = System::Windows::Forms::Padding(10, 3, 0, 3);
-			this->menuStrip->Size = System::Drawing::Size(807, 33);
+			this->menuStrip->Size = System::Drawing::Size(484, 24);
 			this->menuStrip->TabIndex = 2;
 			this->menuStrip->Text = L"menuStrip1";
 			// 
@@ -755,13 +649,13 @@ private: System::Windows::Forms::Button^  controlSM_Calculate;
 			// 
 			this->menuStrip_File->DropDownItems->AddRange(gcnew cli::array< System::Windows::Forms::ToolStripItem^  >(1) { this->menuStrip_File_Exit });
 			this->menuStrip_File->Name = L"menuStrip_File";
-			this->menuStrip_File->Size = System::Drawing::Size(52, 27);
+			this->menuStrip_File->Size = System::Drawing::Size(39, 20);
 			this->menuStrip_File->Text = L"File";
 			// 
 			// menuStrip_File_Exit
 			// 
 			this->menuStrip_File_Exit->Name = L"menuStrip_File_Exit";
-			this->menuStrip_File_Exit->Size = System::Drawing::Size(113, 28);
+			this->menuStrip_File_Exit->Size = System::Drawing::Size(96, 22);
 			this->menuStrip_File_Exit->Text = L"Exit";
 			this->menuStrip_File_Exit->Click += gcnew System::EventHandler(this, &uiMain::menuStrip_File_Exit_Click);
 			// 
@@ -769,28 +663,27 @@ private: System::Windows::Forms::Button^  controlSM_Calculate;
 			// 
 			this->menuStrip_Help->DropDownItems->AddRange(gcnew cli::array< System::Windows::Forms::ToolStripItem^  >(1) { this->menuStrip_Help_About });
 			this->menuStrip_Help->Name = L"menuStrip_Help";
-			this->menuStrip_Help->Size = System::Drawing::Size(61, 27);
+			this->menuStrip_Help->Size = System::Drawing::Size(45, 20);
 			this->menuStrip_Help->Text = L"Help";
 			// 
 			// menuStrip_Help_About
 			// 
 			this->menuStrip_Help_About->Name = L"menuStrip_Help_About";
-			this->menuStrip_Help_About->Size = System::Drawing::Size(132, 28);
+			this->menuStrip_Help_About->Size = System::Drawing::Size(108, 22);
 			this->menuStrip_Help_About->Text = L"About";
 			this->menuStrip_Help_About->Click += gcnew System::EventHandler(this, &uiMain::menuStrip_Help_About_Click);
 			// 
 			// uiMain
 			// 
-			this->AutoScaleDimensions = System::Drawing::SizeF(10, 18);
+			this->AutoScaleDimensions = System::Drawing::SizeF(6, 13);
 			this->AutoScaleMode = System::Windows::Forms::AutoScaleMode::Font;
-			this->ClientSize = System::Drawing::Size(807, 465);
+			this->ClientSize = System::Drawing::Size(484, 336);
 			this->Controls->Add(this->statusStrip);
 			this->Controls->Add(this->menuStrip);
 			this->Controls->Add(this->tabControl1);
 			this->FormBorderStyle = System::Windows::Forms::FormBorderStyle::FixedSingle;
 			this->Icon = (cli::safe_cast<System::Drawing::Icon^>(resources->GetObject(L"$this.Icon")));
 			this->MainMenuStrip = this->menuStrip;
-			this->Margin = System::Windows::Forms::Padding(5, 4, 5, 4);
 			this->Name = L"uiMain";
 			this->Text = L"LLSIF Helper";
 			this->tabControl1->ResumeLayout(false);
@@ -959,5 +852,5 @@ private: System::Void controlSM_SaveData_Click(System::Object^  sender, System::
 	saveFile << scoreMatchTracker.getDifficulty();
 	saveFile.close();
 }
-
+};
 }
