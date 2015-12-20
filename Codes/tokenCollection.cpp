@@ -1,17 +1,17 @@
 #include "tokenCollection.h"
+#include "LLSIFBase.h"
 #include <cmath>
 
 //Class constructor
 tokenCollection::tokenCollection()
 {
 	difficulty = 0;				//Difficulty of song: Easy/Normal/Hard/Expert
-	currentPoints = 0;			//The user's current event points.
 	currentTokens = 0;			//The user's current event tokens.
 	pointsPerSong = 1;			//Points per song, entered by user.
 	tokenSong = 1;				//The token cost per event song
 	scoreMultiplier = 0.0;		//Multiplier based on score.
 	comboMultiplier = 0.0;		//Multiplier based on combo.
-	estimatedPoints;			//The estimated number of points the user has after calculations.
+	estimatedPoints= 0;			//The estimated number of points the user has after calculations.
 
 }
 
@@ -20,21 +20,14 @@ tokenCollection::~tokenCollection()
 {
 
 }
-
-//Function to set data
-int tokenCollection::setData(int points, int tokens, int pSong)
+//Initial Constructor 
+tokenCollection::tokenCollection(int points, int tokens, int pSong)
 {
-	currentPoints = points;
 	currentTokens = tokens;
 	pointsPerSong = pSong;
-	return 0;
 }
 
-//Function to get current points.
-int tokenCollection::getCurrentPoints()
-{
-	return currentPoints;
-}
+
 
 //Function to get current number of tokens.
 int tokenCollection::getCurrentTokens()
@@ -110,12 +103,14 @@ int tokenCollection::getPointsPerSong()
 	return pointsPerSong;
 }
 
-//Function to calculate/get the estimated number of points.
+//Function to calculate the estimated number of points.
+//Precondition:		setData() member function, or
+//Postcondition:	Calculates the estimated points obtainable, and stores it in member field estimatedPoints.  Allows for getEstimatedPoints() member function to be invoked.
 void tokenCollection::calculateEstimatedPoints()
 {
 	double plays = 0;
 	plays = (double)(currentTokens) / (double)(tokenSong);
-	estimatedPoints = (int)round(currentPoints + pointsPerSong * plays);
+	estimatedPoints = (int)round(getCurrentPoints() + pointsPerSong * plays);
 }
 int tokenCollection::getEstimatedPoints()
 {
@@ -125,7 +120,7 @@ int tokenCollection::getEstimatedPoints()
 //Function to calculate number of tokens needed to reach user's target event points.
 void tokenCollection::calculateTokensNeeded()
 {
-	tokensNeeded = (targetPoints - currentPoints);
+	tokensNeeded = (targetPoints - getCurrentPoints());
 }
 
 

@@ -18,8 +18,8 @@ public:
 	int getRank();
 	int getCurrentLP();
 	int getMaxLP();
-	int getCurrentPoints() = 0;
-	virtual int calculateEstimatedPoints() = 0;
+	int getCurrentPoints();
+	virtual void calculateEstimatedPoints() = 0;
 	virtual int getEstimatedPoints() = 0;
 	
 
