@@ -112,6 +112,9 @@ void tokenCollection::calculateEstimatedPoints()
 	plays = (double)(currentTokens) / (double)(tokenSong);
 	estimatedPoints = (int)round(getCurrentPoints() + pointsPerSong * plays);
 }
+
+//Precondition: tokenCollection Constructor has been invoked on the object before.
+//Postcondition: Returns the number of estimated points as an int.
 int tokenCollection::getEstimatedPoints()
 {
 	return estimatedPoints;

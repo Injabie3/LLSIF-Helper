@@ -1,5 +1,6 @@
-#pragma once
-#include "LLSIFBase.h""
+#ifndef TOKENCOLLECTION_H
+#define TOKENCOLLECTION_H
+#include "LLSIFBase.h"
 //Description:	A class purely for token collection related stuff.
 
 class tokenCollection : public LLSIFBase
@@ -32,12 +33,13 @@ public:
 	//Postcondtion:		Returns the number of points a player can receive per song for the difficulty selected.
 
 	virtual void calculateEstimatedPoints();
-	//Precondition:		
-	//Postcondition:
+	//Function to calculate the estimated number of points.
+	//Precondition:		tokenCollection Constructor member function has been invoked on the object before.
+	//Postcondition:	Calculates the estimated points obtainable, and stores it in member field estimatedPoints.  Allows for getEstimatedPoints() member function to be invoked.
 
 	virtual int getEstimatedPoints();
-	//Precondition:
-	//Postcondition:
+	//Precondition: tokenCollection Constructor has been invoked on the object before.
+	//Postcondition: Returns the number of estimated points as an int.
 
 	int setDifficulty(int diff);
 	//Precondition:		None.  diff is an int from 1 to 4 inclusive, with the following meanings:
@@ -73,3 +75,5 @@ private:
 
 	int setTokenSong(int difficulty); 	//Function to set the token cost per event song, based on the difficulty selected.
 };
+
+#endif //TOKENCOLLECTION_H
