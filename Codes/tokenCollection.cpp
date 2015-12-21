@@ -21,8 +21,9 @@ tokenCollection::~tokenCollection()
 
 }
 //Initial Constructor 
-tokenCollection::tokenCollection(int points, int tokens, int pSong)
+tokenCollection::tokenCollection(int currentpoints, int tokens, int pSong)
 {
+	setCurrentPoints(currentpoints);
 	currentTokens = tokens;
 	pointsPerSong = pSong;
 }

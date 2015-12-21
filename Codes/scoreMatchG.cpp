@@ -5,10 +5,10 @@
 //Initializes class variables to zero.
 scoreMatch::scoreMatch()
 {
-	currentPoints = 0;
+	setCurentPoints(0);
 	difficulty = 0;
 	pointDiff = 0;
-	pointGoal = 0;
+	
 	averageScore = 1;
 	LPReq = 0;
 }
@@ -18,19 +18,15 @@ scoreMatch::~scoreMatch()
 {
 
 }
-
-//Function to set data. 
-//Function returns 0 if data was set correctly.
-//Function returns 1 if pointDiff is negative
-int scoreMatch::setData(int CurrentPts, int PtGoal, int AvgScore){
-	currentPoints = CurrentPts;
-	pointGoal = PtGoal;
+//Initial Constructor 
+scoreMatch::scoreMatch(int currentpoints, int PtGoal, int AvgScore)
+{
+	setTargetPoints(PtGoal);
+	setCurrentPoints(currentpoints);
 	averageScore = AvgScore;
-	if (PtGoal - CurrentPts < 0)
-		return 1;
-	pointDiff = PtGoal - CurrentPts;
-	return 0;
+	pointDiff = getTargetPoints() - getCurrentPoints();
 }
+
 
 //Function to set difficulty
 //Function returns 0 if difficulty was set correctly.
@@ -52,7 +48,8 @@ int scoreMatch::getDifficulty()
 //Function to calculate LP needed.
 //Returns the LP required to reach goal.
 //Will return -1 if LP cannot be calculated due to difficulty not being set.
-double scoreMatch::calcLP(){
+int scoreMatch::calcLP()
+{
 	int LPCost;
 	if (difficulty == 1)
 		LPCost = LPEasy;

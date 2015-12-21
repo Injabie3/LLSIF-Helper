@@ -11,7 +11,7 @@ public:
 	tokenCollection();
 
 	//Initial Constructor 
-	tokenCollection(int points, int tokens, int pSong);
+	tokenCollection(int currentpoints,int tokens, int pSong);
 
 	//Destructor
 	~tokenCollection();
