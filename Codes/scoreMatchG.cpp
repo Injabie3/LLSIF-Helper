@@ -5,12 +5,10 @@
 //Initializes class variables to zero.
 scoreMatch::scoreMatch()
 {
-	setCurentPoints(0);
-	difficulty = 0;
+	setTargetPoints(0);
+	setCurrentPoints(0);
+	averageScore = 0;
 	pointDiff = 0;
-	
-	averageScore = 1;
-	LPReq = 0;
 }
 
 //Class destructor
@@ -62,7 +60,7 @@ int scoreMatch::calcLP()
 	else
 		return -1;
 	
-	double PtsperLP = (double)averageScore / (double)LPCost;
-	LPReq = (int)ceil((double)pointDiff / PtsperLP);
+	double PtsperLP = (double)averageScore / (double)LPCost; //COMMENT explaining calculation here
+	int LPReq = (int)ceil((double)pointDiff / PtsperLP);
 	return LPReq;
 }

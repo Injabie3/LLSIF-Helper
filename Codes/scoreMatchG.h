@@ -48,7 +48,6 @@ private:
 	/*int pointGoal;*/		//will be defined in base class
 	int pointDiff;			
 	int averageScore;		//Average score per game
-	int LPReq;				//LP Required to reach goal
 
 	//constants defined for LP costs
 	const int LPEasy = 5; 
