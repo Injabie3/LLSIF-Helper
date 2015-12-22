@@ -18,7 +18,7 @@ public:
 	scoreMatch();
 
 	//Initial Constructor 
-	scoreMatch(int currentpoints,int PtGoal, int AveScore);
+	scoreMatch(int currentpoints,int PtGoal, int AvgScore);
 
 	//Destructor
 	~scoreMatch();
@@ -45,8 +45,8 @@ public:
 private:
 	int currentpoints;		//COMMENT
 	int difficulty;			//Score Match difficulty
-	/*int pointGoal;*/		//will be defined in base class
-	int pointDiff;			
+	int pointGoal;			//amount of points the user wishes to reach in the event
+	int pointDiff;			//different between the pointGoal and currentPoints of the user
 	int averageScore;		//Average score per game
 
 	//constants defined for LP costs
