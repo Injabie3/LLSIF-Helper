@@ -15,15 +15,16 @@ public:
 	//					rank is the current player's rank, expressed as an int, >0.
 	//					currentPoints is the current number of points the player has, expressed as an int, >=0.
 	//					targetPoints is the number of points the player is aiming for, >= currentPoints.
-	//Postcondition:	
+	//Postcondition:	If valid inputs are given, the object is instantiated with these values.
+	//					If ANY of the inputs are invalid, the object is instantiated with the default constructor.
 
 	void setEXP(int EXP);
-	//Precondition:		EXP is the current EXP of the player, expressed as an int, and greater than 0.
+	//Precondition:		EXP is the current EXP of the player, expressed as an int, >=0 but less than the max EXP for the rank.
 	//Postcondition:	Sets the current EXP of the player if valid input is given, else nothing is set.
 	
 	void setRank(int rank);
 	//Precondition:		rank is the current player's rank, expressed as an int, and greater than 0.
-	//Postcondition:	Sets the current rank of the plyaer if valid input is given, else nothing is set.
+	//Postcondition:	If valid input is given, the function ets the current rank of the player, sets the EXP required for that rank, and sets the maximum LP at that rank, else nothing is set.
 
 	void setCurrentLP(int currentLP);
 	//Precondition:		currentLP is the current LP that the player has, expressed as an int.  Requires setRank() or a constructor that initializes the rank to be called beforehand.
@@ -69,16 +70,18 @@ public:
 	
 
 private:
-	int EXP;			//EXP of the player
-	int rank;			//The player's rank
-	int rank_up;		//The number of times the player has ranked up.
-	int LP_max;			//The player's maximum LP
+	int EXP_current;	//EXP of the player. Must be >=0 and less than max EXP at the rank.
+	int EXP_max;		//The maximum EXP for the current rank.
+	int rank;			//The player's current rank.
+	int rank_up;		//The number of times the player has ranked up during an event, if applicable.
+	int LP_max;			//The player's maximum LP at the given rank
 	int LP_current;		//The player's current LP
-	int points_current;	//The player's total points for the event.
-	int points_target;	//The number of points the player is aiming for, if applicable.
+	int points_current;	//The player's total points for an event.
+	int points_target;	//The number of points the player is aiming for in an event, if applicable.
 	int LCS_current;	//The number of lovecas (LCS) or gems the user currently has.
-	int LCS_used;		//The number of lovecas (LCS) or gems the user has used in the event, if applicable
+	int LCS_used;		//The number of lovecas (LCS) or gems the user has used in an event, if applicable
 
+	void setMaxEXP();
 	void setMaxLP();
 };
 

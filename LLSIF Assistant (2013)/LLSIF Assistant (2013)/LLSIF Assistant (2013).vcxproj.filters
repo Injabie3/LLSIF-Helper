@@ -30,11 +30,14 @@
     <ClCompile Include="scoreMatchG.cpp">
       <Filter>LLSIF Event Types</Filter>
     </ClCompile>
-    <ClCompile Include="tokenCollection.cpp">
-      <Filter>LLSIF Event Types</Filter>
-    </ClCompile>
     <ClCompile Include="XP.cpp">
       <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\Codes\tokenCollection.cpp">
+      <Filter>LLSIF Event Types</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\Codes\LLSIFBase.cpp">
+      <Filter>LLSIF Event Types</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>
@@ -50,7 +53,10 @@
     <ClInclude Include="XP.h">
       <Filter>Source Files</Filter>
     </ClInclude>
-    <ClInclude Include="tokenCollection.h">
+    <ClInclude Include="..\..\Codes\tokenCollection.h">
+      <Filter>LLSIF Event Types</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\Codes\LLSIFBase.h">
       <Filter>LLSIF Event Types</Filter>
     </ClInclude>
   </ItemGroup>

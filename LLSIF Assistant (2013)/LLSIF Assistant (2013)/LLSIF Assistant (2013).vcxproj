@@ -11,8 +11,9 @@
     </ProjectConfiguration>
   </ItemGroup>
   <ItemGroup>
+    <ClCompile Include="..\..\Codes\LLSIFBase.cpp" />
+    <ClCompile Include="..\..\Codes\tokenCollection.cpp" />
     <ClCompile Include="scoreMatchG.cpp" />
-    <ClCompile Include="tokenCollection.cpp" />
     <ClCompile Include="uiAbout.cpp">
       <CompileAsManaged Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">true</CompileAsManaged>
       <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
@@ -51,7 +52,8 @@
     </ClCompile>
   </ItemGroup>
   <ItemGroup>
-    <ClInclude Include="tokenCollection.h" />
+    <ClInclude Include="..\..\Codes\LLSIFBase.h" />
+    <ClInclude Include="..\..\Codes\tokenCollection.h" />
     <ClInclude Include="XP.h">
       <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">true</ExcludedFromBuild>
       <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">true</ExcludedFromBuild>
