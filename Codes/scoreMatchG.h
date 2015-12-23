@@ -23,6 +23,10 @@ public:
 	//Destructor
 	~scoreMatch();
 	
+	int setScoreAverage(int AvgScore, int recentScore);
+	//Precondition:		the previous average score value will be passed into the function, accumulating from the start of the event
+	//Postcondition:	updated average value is returned based on the old value, the most recent score, and the amount of songs played
+
 	int setDifficulty(int diff);
 	//Precondition:		None.  diff is an int from 1 to 4 inclusive, with the following meanings:
 	//					1 - Easy
@@ -30,6 +34,10 @@ public:
 	//					3 - Hard
 	//					4 - Expert
 	//Postcondition:	Sets the difficulty. Function returns 0 if the difficulty was set, else it returns 1 for an error.
+
+	int getScoreAverage();
+	//Precondition:		scoreMatchG constructor has been invoked and/or multiple rounds(every score match song) have been inputted
+	//Postcondition:	returns the current averagescore value
 
 	int getDifficulty();
 	//Precondition:		scoreMatchG Constructor has been invoked on the object before.
@@ -47,7 +55,9 @@ private:
 	int difficulty;			//Score Match difficulty
 	int pointGoal;			//amount of points the user wishes to reach in the event
 	int pointDiff;			//different between the pointGoal and currentPoints of the user
-	int averageScore;		//Average score per game
+	int averageScore;		//Average score per game, user will be able to input scores after each song and a new average score will be calculated
+	int recentScore;		//the score the player received on the most recent score match they had just played, will be used to calculate the net average score
+	
 
 	//constants defined for LP costs
 	const int LPEasy = 5; 
