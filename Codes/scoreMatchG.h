@@ -18,10 +18,7 @@ public:
 	scoreMatch();
 
 	//Initial Constructor 
-	scoreMatch(int currentpoints,int PtGoal, int AvgScore);
-
-	//Destructor
-	~scoreMatch();
+	scoreMatch(int currentpoints,int targetpoints, int AvgScore);
 	
 	int setScoreAverage(int AvgScore, int recentScore);
 	//Precondition:		the previous average score value will be passed into the function, accumulating from the start of the event

@@ -15,48 +15,30 @@ tokenCollection::tokenCollection()
 
 }
 
-//Class destructor
-tokenCollection::~tokenCollection()
+//Precondition:		pSong is the amount of points the user obtains in a song, an int, >0
+//					tokens is the amount of tokens has when they initially start tracking their event data, >=0
+//					currentPoints is the current number of points the player has, expressed as an int, >=0.
+//					targetPoints is the number of points the player is aiming for, >= currentPoints.
+//Postcondition:	If valid inputs are given, the object is instantiated with these values.
+//					If ANY of the inputs are invalid, the object is instantiated with the default constructor.
+tokenCollection::tokenCollection(int currentpoints, int tokens, int pSong,int targetpoints)
 {
-
-}
-//Initial Constructor 
-tokenCollection::tokenCollection(int currentpoints, int tokens, int pSong)
-{
+	//fix implementation to properly handle the post-condition
 	setCurrentPoints(currentpoints);
+	setTargetPoints(targetpoints);
 	currentTokens = tokens;
 	pointsPerSong = pSong;
 }
 
-
-
-//Function to get current number of tokens.
+//Precondition:		tokenCollection Constructor has been invoked on the object before.
+//Postcondition:	Returns the number of current tokens as an int.
 int tokenCollection::getCurrentTokens()
 {
 	return currentTokens;
 }
 
-//Function to set/get target event points.
-int tokenCollection::setTargetPoints(int points)
-{
-	if (points > 0)
-	{
-		targetPoints = points;
-		return 0;
-	}
-	else
-	{
-		return 1;
-	}
-}
-int tokenCollection::getTargetPoints()
-{
-	return targetPoints;
-}
-
-//Function to set the token cost per event song, based on the difficulty selected.
-//Returns 0 if function sets tokenSong correctly.
-//Returns 1 if function is unable to set tokenSong.
+//Precondition:		tokenCollection Constructor invoked on the object before.
+//Postcondition:	returns the amount of tokens a song will cost the player based on the difficulty
 int tokenCollection::setTokenSong(int difficulty)
 {
 	if (difficulty == 1)		//Easy song
@@ -75,6 +57,8 @@ int tokenCollection::setTokenSong(int difficulty)
 	{
 		tokenSong = 75;
 	}
+
+	//NOTE** see error checking issue for proposed enhancement
 	else						//Return error.
 	{
 		return 1;
@@ -121,10 +105,11 @@ int tokenCollection::getEstimatedPoints()
 	return estimatedPoints;
 }
 
-//Function to calculate number of tokens needed to reach user's target event points.
+//Precondition:	tokenCollection Constructor has been invoked on the object before.
+//Postcondition: Calculates the number of tokens needed to reach targetPoints, based off of the current difficulty selected, and stores it in member field tokensNeeded.
 void tokenCollection::calculateTokensNeeded()
 {
-	tokensNeeded = (targetPoints - getCurrentPoints());
+	tokensNeeded = (getTargetPoints() - getCurrentPoints());		//calculate number of tokens needed to reach user's target event points.
 }
 
 

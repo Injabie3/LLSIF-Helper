@@ -10,11 +10,6 @@ scoreMatch::scoreMatch()
 	pointDiff = 0;
 }
 
-//Class destructor
-scoreMatch::~scoreMatch()
-{
-
-}
 
 //Precondition:		EXP is the current EXP of the player, expressed as an int, >0.
 //					rank is the current player's rank, expressed as an int, >0.

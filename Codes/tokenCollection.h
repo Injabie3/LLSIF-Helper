@@ -1,7 +1,7 @@
 #ifndef TOKENCOLLECTION_H
 #define TOKENCOLLECTION_H
 #include "LLSIFBase.h"
-//Description:	A class purely for token collection related stuff.
+
 
 class tokenCollection : public LLSIFBase
 {
@@ -10,11 +10,14 @@ public:
 	//Default Constructor 
 	tokenCollection();
 
-	//Initial Constructor 
-	tokenCollection(int currentpoints,int tokens, int pSong);
+	tokenCollection(int currentpoints,int tokens, int pSong, int targetpoints);
+	//Precondition:		pSong is the amount of points the user obtains in a song, an int, >0
+	//					tokens is the amount of tokens has when they initially start tracking their event data, >=0
+	//					currentPoints is the current number of points the player has, expressed as an int, >=0.
+	//					targetPoints is the number of points the player is aiming for, >= currentPoints.
+	//Postcondition:	If valid inputs are given, the object is instantiated with these values.
+	//					If ANY of the inputs are invalid, the object is instantiated with the default constructor.
 
-	//Destructor
-	~tokenCollection();
 
 	int getCurrentTokens();
 	//Precondition:		tokenCollection Constructor has been invoked on the object before.
@@ -49,23 +52,23 @@ public:
 	//					4 - Expert
 	//Postcondition:	Sets the difficulty. Function returns 0 if the difficulty was set, else it returns 1 for an error.
 
-	int setTargetPoints(int points);
-	//Precondition:		None.  points is an int greater than 0.
-	//Postcondition:	Sets the target points.  Function returns 0 if the difficulty was set, else it returns 1 for an error.
+	//int setTargetPoints(int points);
+	////Precondition:		tokenCollection Constructor has been invoked on the object before.
+	////Postcondition:	Sets the target points.  Function returns 0 if the difficulty was set, else it returns 1 for an error.
 
 	int getTargetPoints();				//Function to get target event points.
-	//Precondition:		setTargetPoints() or setData() member function invoked on the object before.
+	//Precondition:		tokenCollection Constructor has been invoked on the object before.
 	//Postcondition:	Returns the target points as an int.
 
 	void calculateTokensNeeded();		//Function to calculate number of tokens needed to reach user's target event points.
-	//Precondition:	setData() member function has been invoked on the object before.
+	//Precondition:	tokenCollection Constructor has been invoked on the object before.
 	//Postcondition: Calculates the number of tokens needed to reach targetPoints, based off of the current difficulty selected, and stores it in member field tokensNeeded.
 
 private:
 	int difficulty;				//Difficulty of song: Easy/Normal/Hard/Expert
 	int currentTokens;			//The user's current event tokens.
 	int pointsPerSong;			//Points per song, entered by user.
-	int targetPoints;			//The target event points, entered by user.
+	//int targetPoints;			//The target event points, entered by user.
 	int tokenSong;				//The token cost per event song
 	int estimatedPoints;		//stores the calculation of estimated points.
 	double scoreMultiplier;		//Multiplier based on score.
@@ -74,6 +77,8 @@ private:
 	int tokensNeeded;			//The estimated number of tokens needed to get to the user's target event points.
 
 	int setTokenSong(int difficulty); 	//Function to set the token cost per event song, based on the difficulty selected.
+	//Precondition:
+	//Postcondition:
 };
 
 #endif //TOKENCOLLECTION_H
