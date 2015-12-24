@@ -29,33 +29,46 @@ LLSIFBase::LLSIFBase(int EXP, int rank, int currentPoints, int targetPoints)
 	this->points_target = targetPoints;
 }
 
-void LLSIFBase::setEXP(int EXP)
-//Precondition:		EXP is the current EXP of the player, expressed as an int, and greater than 0, but less than the max EXP for the rank.
-//Postcondition:	Sets the current EXP of the player if valid input is given, else nothing is set.
+int LLSIFBase::setEXP(int EXP)
+//Precondition:		EXP is the current EXP of the player, expressed as an int, >=0 but less than the max EXP for the rank.
+//Postcondition:	Returns one of the following values:
+//					0 		OK (valid input is given => sets the current EXP of the player).
+//					-1		Error (Invalid input is given => nothing is set).
 {
-	if (EXP < 0 || EXP >= EXP_max)	//Invalid input.
-		return;
+	if (EXP < 0 || EXP >= EXP_max)	//Invalid input: return -1 error.
+	{
+		return -1;
+	}
 	else
-		this->EXP_current = EXP;	//Valid input and set data.
+	{
+		this->EXP_current = EXP;	//Valid input and set data, return 0 OK..
+		return 0;
+	}
+		
 }
 
-void LLSIFBase::setRank(int rank)
+int LLSIFBase::setRank(int rank)
 //Precondition:		rank is the current player's rank, expressed as an int, and greater than 0.
-//Postcondition:	If valid input is given, the function ets the current rank of the player, sets the EXP required for that rank, and sets the maximum LP at that rank, else nothing is set.
+//Postcondition:	Returns one of the following values:
+//					0		OK (Valid input is given => sets the current rank of the player, sets the EXP required for that rank, and sets the maximum LP at that rank)
+//					-1		Error (Invalid input is given => nothing is set).
 {
 	if (rank <= 0)	//Invalid input.
-		return;
+		return -1;
 	else
 	{
 		this->rank = rank;	//Valid input and set data.
 		setMaxEXP();	//Call helper function to set max EXP, which uses rank to calculate.
 		setMaxLP();		//Call helper function to set max LP, which uses rank to calculate
+		return 0;
 	}
 }
 
-void LLSIFBase::setCurrentLP(int currentLP)
+int LLSIFBase::setCurrentLP(int currentLP)
 //Precondition:		currentLP is the current LP that the player has, expressed as an int.  Requires setRank() or a constructor that initializes the rank to be called beforehand.
-//Postcondition:	Sets the current LP if valid input is given, else sets LP to the maximum.
+//Postcondition:	Returns one of the following values:
+//					0		OK (Valid input is given => sets the current LP).
+//					-1		Error (Invalid input is given => sets LP to the maximum).
 {
 
 }

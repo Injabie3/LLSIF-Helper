@@ -18,25 +18,35 @@ public:
 	//Postcondition:	If valid inputs are given, the object is instantiated with these values.
 	//					If ANY of the inputs are invalid, the object is instantiated with the default constructor.
 
-	void setEXP(int EXP);
+	int setEXP(int EXP);
 	//Precondition:		EXP is the current EXP of the player, expressed as an int, >=0 but less than the max EXP for the rank.
-	//Postcondition:	Sets the current EXP of the player if valid input is given, else nothing is set.
+	//Postcondition:	Returns one of the following values:
+	//					0 		OK (valid input is given => sets the current EXP of the player).
+	//					-1		Error (Invalid input is given => nothing is set).
 	
-	void setRank(int rank);
+	int setRank(int rank);
 	//Precondition:		rank is the current player's rank, expressed as an int, and greater than 0.
-	//Postcondition:	If valid input is given, the function ets the current rank of the player, sets the EXP required for that rank, and sets the maximum LP at that rank, else nothing is set.
+	//Postcondition:	Returns one of the following values:
+	//					0		OK (Valid input is given => sets the current rank of the player, sets the EXP required for that rank, and sets the maximum LP at that rank)
+	//					-1		Error (Invalid input is given => nothing is set).
 
-	void setCurrentLP(int currentLP);
+	int setCurrentLP(int currentLP);
 	//Precondition:		currentLP is the current LP that the player has, expressed as an int.  Requires setRank() or a constructor that initializes the rank to be called beforehand.
-	//Postcondition:	Sets the current LP if valid input is given, else sets LP to the maximum.
+	//Postcondition:	Returns one of the following values:
+	//					0		OK (Valid input is given => sets the current LP).
+	//					-1		Error (Invalid input is given => sets LP to the maximum).
 
-	void setCurrentPoints(int currentPoints);
+	int setCurrentPoints(int currentPoints);
 	//Precondition:		currentPoints is the total number of points the user has, expressed as an int, and greater than or equal to 0.
-	//Postcondition:	Sets the current points if valid input is given, else nothing is set.
+	//Postcondition:	Returns one of the following values:
+	//					0		OK (Valid input is given => sets the current points).
+	//					-1		Error (Invalid input is given => nothing is set).
 
-	void setTargetPoints(int targetPoints);
+	int setTargetPoints(int targetPoints);
 	//Precondition:		A non-default constructor or setCurrentPointstargetPoints has been previously called, and targetPoints is the total number of points the user has, expressed as an int, and greater than or equal to currentPoints.
-	//Postcondition:	Sets the target points if valid input is given, else nothing is set.
+	//Postcondition:	Returns on of the following values:
+	//					0		OK (Valid input is given => sets the target points).
+	//					-1		Error (Invalid input is given => nothing is set).
 
 	int getEXP();
 	//Precondition:		A non-default constructor or setEXP() member function has been previously called.
