@@ -44,13 +44,13 @@ public:
 	//Precondition: tokenCollection Constructor has been invoked on the object before.
 	//Postcondition: Returns the number of estimated points as an int.
 
-	int setDifficulty(int diff);
+	void setDifficulty(int diff);
 	//Precondition:		None.  diff is an int from 1 to 4 inclusive, with the following meanings:
 	//					1 - Easy
 	//					2 - Normal
 	//					3 - Hard
 	//					4 - Expert
-	//Postcondition:	Sets the difficulty. Function returns 0 if the difficulty was set, else it returns 1 for an error.
+	//Postcondition:	Sets the difficulty. will set "difficulty" to -1 to indicate an error that difficulty is invalid
 
 	//int setTargetPoints(int points);
 	////Precondition:		tokenCollection Constructor has been invoked on the object before.
@@ -68,7 +68,6 @@ private:
 	int difficulty;				//Difficulty of song: Easy/Normal/Hard/Expert
 	int currentTokens;			//The user's current event tokens.
 	int pointsPerSong;			//Points per song, entered by user.
-	//int targetPoints;			//The target event points, entered by user.
 	int tokenSong;				//The token cost per event song
 	int estimatedPoints;		//stores the calculation of estimated points.
 	double scoreMultiplier;		//Multiplier based on score.
@@ -76,9 +75,9 @@ private:
 
 	int tokensNeeded;			//The estimated number of tokens needed to get to the user's target event points.
 
-	int setTokenSong(int difficulty); 	//Function to set the token cost per event song, based on the difficulty selected.
-	//Precondition:
-	//Postcondition:
+	void setTokenSong(int difficulty); 	//Function to set the token cost per event song, based on the difficulty selected.
+	//Precondition:		tokenCollection Constructor invoked on the object before.
+	//Postcondition:	returns the amount of tokens a song will cost the player based on the difficulty, will set "tokenSong" to -1 to indicate an error that difficulty is invalid
 };
 
 #endif //TOKENCOLLECTION_H

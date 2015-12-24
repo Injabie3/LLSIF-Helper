@@ -24,13 +24,13 @@ public:
 	//Precondition:		the previous average score value will be passed into the function, accumulating from the start of the event
 	//Postcondition:	updated average value is returned based on the old value, the most recent score, and the amount of songs played
 
-	int setDifficulty(int diff);
+	void setDifficulty(int diff);
 	//Precondition:		None.  diff is an int from 1 to 4 inclusive, with the following meanings:
 	//					1 - Easy
 	//					2 - Normal
 	//					3 - Hard
 	//					4 - Expert
-	//Postcondition:	Sets the difficulty. Function returns 0 if the difficulty was set, else it returns 1 for an error.
+	//Postcondition:	Sets the difficulty. Difficulty will be set to -1 as an error indicator to let program know to re-prompt for data entry
 
 	int getScoreAverage();
 	//Precondition:		scoreMatchG constructor has been invoked and/or multiple rounds(every score match song) have been inputted
@@ -46,7 +46,7 @@ public:
 
 	int calcLP();		
 	//Precondition:		scoreMatchG Constructor has been invoked on the object before.	
-	//Postcondition:	Returns an estimated LP value to be able to reach the Target points 
+	//Postcondition:	Returns an estimated LP value to be able to reach the Target points, will return -1 as an error indicator that difficulty is not valid
 private:
 	int currentpoints;		//COMMENT
 	int difficulty;			//Score Match difficulty

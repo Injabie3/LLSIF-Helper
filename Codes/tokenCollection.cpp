@@ -39,7 +39,7 @@ int tokenCollection::getCurrentTokens()
 
 //Precondition:		tokenCollection Constructor invoked on the object before.
 //Postcondition:	returns the amount of tokens a song will cost the player based on the difficulty
-int tokenCollection::setTokenSong(int difficulty)
+void tokenCollection::setTokenSong(int difficulty)
 {
 	if (difficulty == 1)		//Easy song
 	{
@@ -58,23 +58,25 @@ int tokenCollection::setTokenSong(int difficulty)
 		tokenSong = 75;
 	}
 
-	//NOTE** see error checking issue for proposed enhancement
-	else						//Return error.
+	else						
 	{
-		return 1;
+		tokenSong = -1;			//error invoked
 	}
-	return 0;					//Return OK.
+					
 }
 
-//Function to set song difficulty
-//If function detects difficulty is incorrect, it will not set difficulty, and return 1
-//If function can set tokenSong correctly, it will set difficulty and return 0
-int tokenCollection::setDifficulty(int diff)
+//Precondition:		None.  diff is an int from 1 to 4 inclusive, with the following meanings:
+//					1 - Easy
+//					2 - Normal
+//					3 - Hard
+//					4 - Expert
+//Postcondition:	Sets the difficulty. will set "difficulty" to -1 to indicate an error that difficulty is invalid
+void tokenCollection::setDifficulty(int diff)
 {
-	if (setTokenSong(diff) == 1)
-		return 1;
-	difficulty = diff;
-	return 0;
+	if (tokenSong != -1)		//if the tokenSong has valid data, then "diff" must be in the correct range of integers, and difficulty can be set accordingly
+		difficulty = diff;
+	else
+		difficulty = -1;		//error invoked
 }
 //Function to get song difficulty
 int tokenCollection::getDifficulty()
