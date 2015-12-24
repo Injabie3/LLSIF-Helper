@@ -7,6 +7,7 @@ More info to come on this, but in the meantime, there is no testbench.  All the 
 #### To Do List:
 * Implement Score Match class.
 * Implement Medley Festival class.
+* Implement data storage to keep track of user's event history
 * Add UI that is independent of Windows Forms.
 * 
 
