@@ -1,3 +1,10 @@
+//GitHub:	https://github.com/Injabie3/LLSIF-Helper/
+//
+//LLSIFBase - The base class for all events on Love Live school idol festival.
+//File:		LLSIFBase.cpp - The implementation file.
+//Version:	beta
+//Note:		This is an abstract class, and as such, no objects can be instantiated of class LLSIFBase.
+
 #include <cmath>
 #include "LLSIFBase.h"
 
@@ -78,7 +85,7 @@ void LLSIFBase::setMaxEXP()
 {
 	//Use the following to calculate the EXP from the current rank.
 	//y = 34.4512x - 585.5878
-	EXP_max = 34.4512*rank - 585.5878;
+	EXP_max = abs(34.4512*rank - 585.5878);
 }
 
 void LLSIFBase::setMaxLP()

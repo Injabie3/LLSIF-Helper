@@ -1,3 +1,10 @@
+//GitHub:	https://github.com/Injabie3/LLSIF-Helper/
+//
+//LLSIFBase - The base class for all events on Love Live school idol festival.
+//File:		LLSIFBase.h - The header/interface file.
+//Version:	beta
+//Note:		This is an abstract class, and as such, no objects can be instantiated of class LLSIFBase.
+
 #ifndef LLSIFBASE_H
 #define LLSIFBASE_H
 
