@@ -2,7 +2,7 @@
 A program to help LLSIF gamers to calculate things :)
 
 #### How to compile:
-More info to come on this, but in the meantime, there is no testbench.  All the class header and implementation files are located in the Code folder in the / directory.
+Using Visual Studio 2013, add all files in the /Code directory except for the .resx files, and compile.
 
 #### To Do List:
 * Implement Score Match class.
