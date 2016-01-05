@@ -80,6 +80,19 @@ int LLSIFBase::setCurrentLP(int currentLP)
 
 }
 
+int LLSIFBase::setCurrentPoints(int currentPoints)
+{
+	if (currentPoints < 0) //Invalid input, return -1 for error.
+		return -1;
+	else //Data OK, set the field.
+	{
+		points_current = currentPoints;
+		return 0;
+	}
+	
+}
+
+
 void LLSIFBase::setMaxEXP()
 //Helper function that is used to calculate the EXP required to go to the next rank based on the current rank.
 {

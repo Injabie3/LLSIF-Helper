@@ -55,6 +55,12 @@ public:
 	//					0		OK (Valid input is given => sets the target points).
 	//					-1		Error (Invalid input is given => nothing is set).
 
+	int setEventSongsPlayed(int eventSongPlayed);
+	//Precondition:		eventSongPlayed is the number of times the player has played the event song, expressed as an int, and greater than or equal to 0 (when applicable).
+	//Postcondition:	Returns one of the following values:
+	//					0		OK (Valid input is given => sets the target points).
+	//					-1		Error (Invalid input is given => nothing is set).
+
 	int getEXP();
 	//Precondition:		A non-default constructor or setEXP() member function has been previously called.
 	//Postcondition:	Returns the current EXP of the player as an int.
@@ -79,6 +85,10 @@ public:
 	//Precondition:		A non-default constructor or setTargetPoints() member function has been previously called.
 	//Postcondition:	Returns the target points the user is aiming for as an int.
 
+	int getEventSongsPlayed();
+	//Precondition:		A non-default constructor or setEventSongsPlayed() member function has been previously called.
+	//Postcondition:	Returns the number of times the event song was played as an int, if applicable.
+
 	virtual void calculateEstimatedPoints() = 0;
 	//Virtual function to calculate the estimated points the user has.  To be defined in derived classes.
 
@@ -96,7 +106,8 @@ private:
 	int points_current;	//The player's total points for an event.
 	int points_target;	//The number of points the player is aiming for in an event, if applicable.
 	int LCS_current;	//The number of lovecas (LCS) or gems the user currently has.
-	int LCS_used;		//The number of lovecas (LCS) or gems the user has used in an event, if applicable
+	int LCS_used;		//The number of lovecas (LCS) or gems the user has used in an event, if applicable.
+	int eventSongsPlayed;	//The number of times the event song was played, if applicable.
 
 	void setMaxEXP();
 	void setMaxLP();
