@@ -47,6 +47,16 @@ public:
 	int calcLP();		
 	//Precondition:		scoreMatchG Constructor has been invoked on the object before.	
 	//Postcondition:	Returns an estimated LP value to be able to reach the Target points, will return -1 as an error indicator that difficulty is not valid
+
+	virtual void calculateEstimatedPoints();
+	//Function to calculate the estimated number of points.
+	//Precondition:		tokenCollection Constructor member function has been invoked on the object before.
+	//Postcondition:	Calculates the estimated points obtainable, and stores it in member field estimatedPoints.  Allows for getEstimatedPoints() member function to be invoked.
+
+	virtual int getEstimatedPoints();
+	//Precondition: tokenCollection Constructor has been invoked on the object before.
+	//Postcondition: Returns the number of estimated points as an int.
+
 private:
 	int currentpoints;		//COMMENT
 	int difficulty;			//Score Match difficulty
@@ -54,6 +64,7 @@ private:
 	int pointDiff;			//different between the pointGoal and currentPoints of the user
 	int averageScore;		//Average score per game, user will be able to input scores after each song and a new average score will be calculated
 	int recentScore;		//the score the player received on the most recent score match they had just played, will be used to calculate the net average score
+	int estimatedPoints;		//stores the calculation of estimated points.
 	
 
 	//constants defined for LP costs

@@ -34,7 +34,8 @@ scoreMatch::scoreMatch(int currentpoints, int targetpoints, int AvgScore)
 //Postcondition:	updated average value is returned based on the old value, the most recent score, and the amount of songs played
 int scoreMatch::setScoreAverage(int AvgScore, int recentScore)
 {
-	//***implementation soon, waiting on pending issues***
+	AvgScore = AvgScore+(recentScore/(getEventSongsPlayed()-1));  //to append to the average score, the incoming score must be divided by one less than the actual amount of songs
+																  //  played to renormalize the offset of the # of songs held in the variable "AvgScore"
 }
 
 
@@ -90,4 +91,19 @@ int scoreMatch::calcLP()
 	double PtsperLP = (double)averageScore / (double)LPCost; //***COMMENT explaining calculation here***
 	int LPReq = (int)ceil((double)pointDiff / PtsperLP);
 	return LPReq;
+}
+
+//Function to calculate the estimated number of points.
+//Precondition:		setData() member function, or
+//Postcondition:	Calculates the estimated points obtainable, and stores it in member field estimatedPoints.  Allows for getEstimatedPoints() member function to be invoked.
+void scoreMatch::calculateEstimatedPoints()
+{
+	//**fill in implementation
+}
+
+//Precondition: tokenCollection Constructor has been invoked on the object before.
+//Postcondition: Returns the number of estimated points as an int.
+int scoreMatch::getEstimatedPoints()
+{
+	return estimatedPoints;
 }
