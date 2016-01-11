@@ -1,6 +1,7 @@
 #ifndef SCOREMATCHG_H
 #define SCOREMATCHG_H
 #include "LLSIFBase.h"
+#include <list>
 
 //****implement the position you end up being in (1,2,3,4) and then rank u got in the song (S,A,B,C,D) will let you calculate points you get for the round****
 
@@ -20,9 +21,9 @@ public:
 	//Initial Constructor 
 	scoreMatch(int currentpoints,int targetpoints, int AvgScore);
 	
-	int setScoreAverage(int AvgScore, int recentScore);
-	//Precondition:		the previous average score value will be passed into the function, accumulating from the start of the event
-	//Postcondition:	updated average value is returned based on the old value, the most recent score, and the amount of songs played
+	int setScoreAverage(int recentScore);
+	//Precondition:		the recent score will be sent in to the function where previous scores are being held in a doubly linked list
+	//Postcondition:	updated average value is returned based on the most recent score, the rest of the values in the list, and the amount of songs played
 
 	void setDifficulty(int diff);
 	//Precondition:		None.  diff is an int from 1 to 4 inclusive, with the following meanings:
@@ -66,7 +67,6 @@ private:
 	int recentScore;		//the score the player received on the most recent score match they had just played, will be used to calculate the net average score
 	int estimatedPoints;		//stores the calculation of estimated points.
 	
-
 	//constants defined for LP costs
 	const int LPEasy = 5; 
 	const int LPNormal = 10;
@@ -74,4 +74,7 @@ private:
 	const int LPExpert = 25;
 
 };
+
+std::list<int> songScoreList; //doubly linked list used to hold the values that the user has achieved, main purpose is to be used to calculate the average score but will also be used for an Event History page
+
 #endif //SCOREMATCHG_H

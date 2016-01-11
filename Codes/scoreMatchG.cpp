@@ -1,6 +1,7 @@
 #include "ScoreMatchG.h"
 #include <cmath>
 
+
 //Default Constructor
 scoreMatch::scoreMatch()
 {
@@ -32,10 +33,21 @@ scoreMatch::scoreMatch(int currentpoints, int targetpoints, int AvgScore)
 
 //Precondition:		the previous average score value will be passed into the function, accumulating from the start of the event
 //Postcondition:	updated average value is returned based on the old value, the most recent score, and the amount of songs played
-int scoreMatch::setScoreAverage(int AvgScore, int recentScore)
+int scoreMatch::setScoreAverage(int recentScore)
 {
-	AvgScore = AvgScore+(recentScore/(getEventSongsPlayed()-1));  //to append to the average score, the incoming score must be divided by one less than the actual amount of songs
-																  //  played to renormalize the offset of the # of songs held in the variable "AvgScore"
+	
+
+	list<int>::iterator songScoreIter;	//an iterator used to move back and forth throughout the songScoreList
+	int averageScore = 0;				//int variable in which the average score value will be held and returned
+
+	if (recentScore > 0)
+		songScoreList.push_back(recentScore); //impossible to get (-)tive score in a match, therefore this list should only contain positive intergers
+
+	for (songScoreIter = songScoreList.begin(); songScoreIter != songScoreList.end(); songScoreIter++)
+	{
+		averageScore += (*songScoreIter)/getEventSongsPlayed(); //dereferencing the iterator to get the value of the integer in the list and dividing by total songs played
+	}															// calculation is set up this way because it prevents us from having an extra placeholder variable
+	return averageScore;										// based on the property that a/c + b/c = (a + b)/c
 }
 
 
