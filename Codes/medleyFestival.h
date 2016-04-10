@@ -2,11 +2,14 @@
 #define MEDLEYFESTIVAL_H
 
 #include "LLSIFBase.h"
-using namespace std;
 
 class medleyFestival : public LLSIFBase
 {
+	//Default Constructor
 
+	//Copy Constructor
+
+	//Assignment Operator
 };
 
 #endif //MEDLEYFESTIVAL_H

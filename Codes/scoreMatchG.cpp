@@ -11,6 +11,9 @@ scoreMatch::scoreMatch()
 	pointDiff = 0;
 }
 
+//Copy Constructor
+
+//Assignment Operator
 
 //Precondition:		EXP is the current EXP of the player, expressed as an int, >0.
 //					rank is the current player's rank, expressed as an int, >0.
@@ -35,9 +38,9 @@ scoreMatch::scoreMatch(int currentpoints, int targetpoints, int AvgScore)
 //Postcondition:	updated average value is returned based on the old value, the most recent score, and the amount of songs played
 int scoreMatch::setScoreAverage(int recentScore)
 {
-	
 
-	list<int>::iterator songScoreIter;	//an iterator used to move back and forth throughout the songScoreList
+
+	std::list<int>::iterator songScoreIter;	//an iterator used to move back and forth throughout the songScoreList
 	int avgScore = 0;				//int variable in which the average score value will be held and returned
 
 	if (recentScore > 0)
@@ -47,7 +50,7 @@ int scoreMatch::setScoreAverage(int recentScore)
 
 	for (songScoreIter = songScoreList.begin(); songScoreIter != songScoreList.end(); songScoreIter++)
 	{
-		avgScore += (*songScoreIter)/getEventSongsPlayed(); //dereferencing the iterator to get the value of the integer in the list and dividing by total songs played
+		avgScore += (*songScoreIter) / getEventSongsPlayed(); //dereferencing the iterator to get the value of the integer in the list and dividing by total songs played
 	}															// calculation is set up this way because it prevents us from having an extra placeholder variable
 	averageScore = avgScore;										// based on the property that a/c + b/c = (a + b)/c
 
@@ -61,12 +64,16 @@ int scoreMatch::setScoreAverage(int recentScore)
 //					3 - Hard
 //					4 - Expert
 //Postcondition:	Sets the difficulty. Difficulty will be set to -1 as an error indicator to let program know to re-prompt for data entry
-void scoreMatch::setDifficulty(int diff)
+int scoreMatch::setDifficulty(int diff)
 {
 	if (diff >= 1 && diff <= 4)		//only sets difficulty to the corresponding integers, 1 to 4
+	{
 		difficulty = diff;
+		return 0;	//valid input, data OK
+	}
+
 	else
-		difficulty = -1;			//error invoked
+		return -1;			//error invoked
 }
 
 //Precondition:		scoreMatchG constructor has been invoked and/or multiple rounds(every score match song) have been inputted
@@ -103,7 +110,7 @@ int scoreMatch::calcLP()
 		LPCost = LPExpert;
 	else
 		return -1;		//error invoked
-	
+
 	double PtsperLP = (double)averageScore / (double)LPCost; //***COMMENT explaining calculation here***
 	int LPReq = (int)ceil((double)pointDiff / PtsperLP);
 	return LPReq;

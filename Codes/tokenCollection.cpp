@@ -11,17 +11,22 @@ tokenCollection::tokenCollection()
 	tokenSong = 1;				//The token cost per event song
 	scoreMultiplier = 0.0;		//Multiplier based on score.
 	comboMultiplier = 0.0;		//Multiplier based on combo.
-	estimatedPoints= 0;			//The estimated number of points the user has after calculations.
+	estimatedPoints = 0;			//The estimated number of points the user has after calculations.
 
 }
 
+//Copy Constructor
+
+//Assignment Operator
+
+//Initial Constructor
 //Precondition:		pSong is the amount of points the user obtains in a song, an int, >0
 //					tokens is the amount of tokens has when they initially start tracking their event data, >=0
 //					currentPoints is the current number of points the player has, expressed as an int, >=0.
 //					targetPoints is the number of points the player is aiming for, >= currentPoints.
 //Postcondition:	If valid inputs are given, the object is instantiated with these values.
 //					If ANY of the inputs are invalid, the object is instantiated with the default constructor.
-tokenCollection::tokenCollection(int currentpoints, int tokens, int pSong,int targetpoints)
+tokenCollection::tokenCollection(int currentpoints, int tokens, int pSong, int targetpoints)
 {
 	//fix implementation to properly handle the post-condition
 	setCurrentPoints(currentpoints);
@@ -39,30 +44,35 @@ int tokenCollection::getCurrentTokens()
 
 //Precondition:		tokenCollection Constructor invoked on the object before.
 //Postcondition:	returns the amount of tokens a song will cost the player based on the difficulty
-void tokenCollection::setTokenSong(int difficulty)
+int tokenCollection::setTokenSong(int difficulty)
 {
 	if (difficulty == 1)		//Easy song
 	{
 		tokenSong = 15;
+		return 0;	//valid input, data OK
 	}
 	else if (difficulty == 2)	//Normal song
 	{
 		tokenSong = 30;
+		return 0;	//valid input, data OK
 	}
 	else if (difficulty == 3)	//Hard song
 	{
 		tokenSong = 45;
+		return 0;	//valid input, data OK
 	}
 	else if (difficulty == 4)	//Expert song
 	{
 		tokenSong = 75;
+		return 0;	//valid input, data OK
 	}
 
-	else						
+	else
 	{
 		tokenSong = -1;			//error invoked
+		return -1;
 	}
-					
+
 }
 
 //Precondition:		None.  diff is an int from 1 to 4 inclusive, with the following meanings:
@@ -71,12 +81,16 @@ void tokenCollection::setTokenSong(int difficulty)
 //					3 - Hard
 //					4 - Expert
 //Postcondition:	Sets the difficulty. will set "difficulty" to -1 to indicate an error that difficulty is invalid
-void tokenCollection::setDifficulty(int diff)
+int tokenCollection::setDifficulty(int diff)
 {
 	if (tokenSong != -1)		//if the tokenSong has valid data, then "diff" must be in the correct range of integers, and difficulty can be set accordingly
+	{
 		difficulty = diff;
+		return 0;	//valid input, data OK
+	}
+
 	else
-		difficulty = -1;		//error invoked
+		return -1;		//error invoked
 }
 //Function to get song difficulty
 int tokenCollection::getDifficulty()

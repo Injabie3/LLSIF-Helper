@@ -18,14 +18,18 @@ public:
 	//Default Constructor 
 	scoreMatch();
 
+	//Copy Constructor
+
+	//Assignment Operator
+
 	//Initial Constructor 
-	scoreMatch(int currentpoints,int targetpoints, int AvgScore);
-	
+	scoreMatch(int currentpoints, int targetpoints, int AvgScore);
+
 	int setScoreAverage(int recentScore);
 	//Precondition:		the recent score will be sent in to the function where previous scores are being held in a doubly linked list
 	//Postcondition:	updated average value is returned based on the most recent score, the rest of the values in the list, and the amount of songs played
 
-	void setDifficulty(int diff);
+	int setDifficulty(int diff);
 	//Precondition:		None.  diff is an int from 1 to 4 inclusive, with the following meanings:
 	//					1 - Easy
 	//					2 - Normal
@@ -45,7 +49,7 @@ public:
 	//					3 - Hard
 	//					4 - Expert
 
-	int calcLP();		
+	int calcLP();
 	//Precondition:		scoreMatchG Constructor has been invoked on the object before.	
 	//Postcondition:	Returns an estimated LP value to be able to reach the Target points, will return -1 as an error indicator that difficulty is not valid
 
@@ -66,9 +70,9 @@ private:
 	int averageScore;		//Average score per game, user will be able to input scores after each song and a new average score will be calculated
 	int recentScore;		//the score the player received on the most recent score match they had just played, will be used to calculate the net average score
 	int estimatedPoints;		//stores the calculation of estimated points.
-	
+
 	//constants defined for LP costs
-	const int LPEasy = 5; 
+	const int LPEasy = 5;
 	const int LPNormal = 10;
 	const int LPHard = 15;
 	const int LPExpert = 25;
