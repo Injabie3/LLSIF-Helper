@@ -9,6 +9,3 @@ Using Visual Studio 2013, add all files in the /Code directory except for the .r
 * Implement Medley Festival class.
 * Test code base with a command line interface (CLI)
 * Develop a GUI using the fox-toolkit library.
-* 
-
-![image](http://puu.sh/hFwJK/18fb29934e.png)
