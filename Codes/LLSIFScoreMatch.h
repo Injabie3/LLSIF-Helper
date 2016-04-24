@@ -1,5 +1,5 @@
-#ifndef SCOREMATCHG_H
-#define SCOREMATCHG_H
+#ifndef LLSIFSCOREMATCH_H
+#define LLSIFSCOREMATCH_H
 #include "LLSIFBase.h"
 #include <list>
 
@@ -12,18 +12,18 @@
 
 //Description:	A class purely for score match related stuff.
 
-class scoreMatch : public LLSIFBase
+class LLSIFScoreMatch : public LLSIFBase
 {
 public:
 	//Default Constructor 
-	scoreMatch();
+	LLSIFScoreMatch();
 
 	//Copy Constructor
 
 	//Assignment Operator
 
 	//Initial Constructor 
-	scoreMatch(int currentpoints, int targetpoints, int AvgScore);
+	LLSIFScoreMatch(int currentpoints, int targetpoints, int AvgScore);
 
 	int setScoreAverage(int recentScore);
 	//Precondition:		the recent score will be sent in to the function where previous scores are being held in a doubly linked list
@@ -81,4 +81,4 @@ private:
 
 std::list<int> songScoreList; //doubly linked list used to hold the values that the user has achieved, main purpose is to be used to calculate the average score but will also be used for an Event History page
 
-#endif //SCOREMATCHG_H
+#endif //LLSIFSCOREMATCH_H
