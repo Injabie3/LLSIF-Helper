@@ -1,9 +1,9 @@
-#include "ScoreMatchG.h"
+#include "LLSIFScoreMatch.h"
 #include <cmath>
 
 
 //Default Constructor
-scoreMatch::scoreMatch()
+LLSIFScoreMatch::LLSIFScoreMatch()
 {
 	setTargetPoints(0);
 	setCurrentPoints(0);
@@ -21,7 +21,7 @@ scoreMatch::scoreMatch()
 //					targetPoints is the number of points the player is aiming for, >= currentPoints.
 //Postcondition:	If valid inputs are given, the object is instantiated with these values.
 //					If ANY of the inputs are invalid, the object is instantiated with the default constructor.
-scoreMatch::scoreMatch(int currentpoints, int targetpoints, int AvgScore)
+LLSIFScoreMatch::LLSIFScoreMatch(int currentpoints, int targetpoints, int AvgScore)
 {
 	//fix implementation to properly handle the post-condition
 	setTargetPoints(targetpoints);
@@ -36,7 +36,7 @@ scoreMatch::scoreMatch(int currentpoints, int targetpoints, int AvgScore)
 
 //Precondition:		the previous average score value will be passed into the function, accumulating from the start of the event
 //Postcondition:	updated average value is returned based on the old value, the most recent score, and the amount of songs played
-int scoreMatch::setScoreAverage(int recentScore)
+int LLSIFScoreMatch::setScoreAverage(int recentScore)
 {
 
 
@@ -64,7 +64,7 @@ int scoreMatch::setScoreAverage(int recentScore)
 //					3 - Hard
 //					4 - Expert
 //Postcondition:	Sets the difficulty. Difficulty will be set to -1 as an error indicator to let program know to re-prompt for data entry
-int scoreMatch::setDifficulty(int diff)
+int LLSIFScoreMatch::setDifficulty(int diff)
 {
 	if (diff >= 1 && diff <= 4)		//only sets difficulty to the corresponding integers, 1 to 4
 	{
@@ -78,7 +78,7 @@ int scoreMatch::setDifficulty(int diff)
 
 //Precondition:		scoreMatchG constructor has been invoked and/or multiple rounds(every score match song) have been inputted
 //Postcondition:	returns the current averagescore value
-int scoreMatch::getScoreAverage()
+int LLSIFScoreMatch::getScoreAverage()
 {
 	return averageScore;
 }
@@ -89,14 +89,14 @@ int scoreMatch::getScoreAverage()
 //					2 - Normal
 //					3 - Hard
 //					4 - Expert
-int scoreMatch::getDifficulty()
+int LLSIFScoreMatch::getDifficulty()
 {
 	return difficulty;
 }
 
 //Precondition:		scoreMatchG Constructor has been invoked on the object before.	
 //Postcondition:	Returns an estimated LP value to be able to reach the Target points, will return -1 as an error indicator that difficulty is not valid
-int scoreMatch::calcLP()
+int LLSIFScoreMatch::calcLP()
 {
 	int LPCost;
 	//setting difficulty based on user input
@@ -119,14 +119,14 @@ int scoreMatch::calcLP()
 //Function to calculate the estimated number of points.
 //Precondition:		setData() member function, or
 //Postcondition:	Calculates the estimated points obtainable, and stores it in member field estimatedPoints.  Allows for getEstimatedPoints() member function to be invoked.
-void scoreMatch::calculateEstimatedPoints()
+void LLSIFScoreMatch::calculateEstimatedPoints()
 {
 	//**fill in implementation
 }
 
 //Precondition: tokenCollection Constructor has been invoked on the object before.
 //Postcondition: Returns the number of estimated points as an int.
-int scoreMatch::getEstimatedPoints()
+int LLSIFScoreMatch::getEstimatedPoints()
 {
 	return estimatedPoints;
 }
