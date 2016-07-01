@@ -121,6 +121,7 @@ int LLSIFtokenCollection::getEstimatedPoints()
 	return estimatedPoints;
 }
 
+
 //Precondition:	tokenCollection Constructor has been invoked on the object before.
 //Postcondition: Calculates the number of tokens needed to reach targetPoints, based off of the current difficulty selected, and stores it in member field tokensNeeded.
 void LLSIFtokenCollection::calculateTokensNeeded()
