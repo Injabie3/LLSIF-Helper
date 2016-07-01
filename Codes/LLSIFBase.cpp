@@ -138,13 +138,6 @@ int LLSIFBase::setEventTimeRemaining(string dateAndTime)
 	return 0;	//valid input, data OK
 }
 
-//Precondition:		A non-default constructor or setTargetPoints() member function has been previously called.
-//Postcondition:	Returns the target points the user is aiming for as an int.
-int LLSIFBase::getTargetPoints()
-{
-	return points_target;
-}
-
 //Precondition:		A non-default constructor or setCurrentPoints() member function has been previously called.
 //Postcondition:	Returns the current number of points the user has as an int.
 int LLSIFBase::getCurrentPoints()
