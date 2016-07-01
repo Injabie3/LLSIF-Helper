@@ -137,3 +137,40 @@ int LLSIFBase::setEventTimeRemaining(string dateAndTime)
 
 	return 0;	//valid input, data OK
 }
+
+//Precondition:		A non-default constructor or setTargetPoints() member function has been previously called.
+//Postcondition:	Returns the target points the user is aiming for as an int.
+int LLSIFBase::getTargetPoints()
+{
+	return points_target;
+}
+
+//Precondition:		A non-default constructor or setCurrentPoints() member function has been previously called.
+//Postcondition:	Returns the current number of points the user has as an int.
+int LLSIFBase::getCurrentPoints()
+{
+	return points_current;
+}
+
+//Precondition:		A non-default constructor or setEventSongsPlayed() member function has been previously called.
+//Postcondition:	Returns the number of times the event song was played as an int, if applicable.
+int LLSIFBase::getEventSongsPlayed()
+{
+	return eventSongsPlayed;
+}
+
+//Precondition:		A non-default constructor or setCurrentPointstargetPoints has been previously called, and targetPoints is the total number of points the user has, expressed as an int, and greater than or equal to currentPoints.
+//Postcondition:	Returns on of the following values:
+//					0		OK (Valid input is given => sets the target points).
+//					-1		Error (Invalid input is given => nothing is set).
+int LLSIFBase::setTargetPoints(int targetPoints)
+{
+	if (targetPoints < 0) //Invalid input, return -1 for error.
+		return -1;
+	else
+	{
+		points_current = targetPoints;
+		return 0;	//valid input, data OK
+	}
+}
+
