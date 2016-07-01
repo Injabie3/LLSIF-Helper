@@ -49,10 +49,6 @@ public:
 	//Precondition: tokenCollection Constructor has been invoked on the object before.
 	//Postcondition: Returns the number of estimated points as an int.
 
-	int getTargetPoints();				//Function to get target event points.
-	//Precondition:		tokenCollection Constructor has been invoked on the object before.
-	//Postcondition:	Returns the target points as an int.
-
 	int setDifficulty(int diff);
 	//Precondition:		None.  diff is an int from 1 to 4 inclusive, with the following meanings:
 	//					1 - Easy
