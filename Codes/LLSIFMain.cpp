@@ -3,7 +3,6 @@
 
 #include <iostream>
 #include <fstream>
-#include "LLSIFBase.h";
 #include "LLSIFTokenCollection.h";
 #include "LLSIFMedleyFestival.h";
 #include "LLSIFScoreMatch.h";
