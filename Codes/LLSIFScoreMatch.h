@@ -25,42 +25,42 @@ public:
 	//Initial Constructor 
 	LLSIFScoreMatch(int currentpoints, int targetpoints, int AvgScore);
 
-	int setScoreAverage(int recentScore);
 	//Precondition:		the recent score will be sent in to the function where previous scores are being held in a doubly linked list
 	//Postcondition:	updated average value is returned based on the most recent score, the rest of the values in the list, and the amount of songs played
+	int setScoreAverage(int recentScore);
 
-	int setDifficulty(int diff);
 	//Precondition:		None.  diff is an int from 1 to 4 inclusive, with the following meanings:
 	//					1 - Easy
 	//					2 - Normal
 	//					3 - Hard
 	//					4 - Expert
 	//Postcondition:	Sets the difficulty. Difficulty will be set to -1 as an error indicator to let program know to re-prompt for data entry
+	int setDifficulty(int diff);
 
-	int getScoreAverage();
 	//Precondition:		scoreMatchG constructor has been invoked and/or multiple rounds(every score match song) have been inputted
 	//Postcondition:	returns the current averagescore value
+	int getScoreAverage();
 
-	int getDifficulty();
 	//Precondition:		scoreMatchG Constructor has been invoked on the object before.
 	//Postcondition:	Returns the difficult as an int:
 	//					1 - Easy
 	//					2 - Normal
 	//					3 - Hard
 	//					4 - Expert
-
-	int calcLP();
+	int getDifficulty();
+	
 	//Precondition:		scoreMatchG Constructor has been invoked on the object before.	
 	//Postcondition:	Returns an estimated LP value to be able to reach the Target points, will return -1 as an error indicator that difficulty is not valid
+	int calcLP();
 
-	virtual void calculateEstimatedPoints();
 	//Function to calculate the estimated number of points.
 	//Precondition:		tokenCollection Constructor member function has been invoked on the object before.
 	//Postcondition:	Calculates the estimated points obtainable, and stores it in member field estimatedPoints.  Allows for getEstimatedPoints() member function to be invoked.
-
-	virtual int getEstimatedPoints();
+	virtual void calculateEstimatedPoints();
+	
 	//Precondition: tokenCollection Constructor has been invoked on the object before.
 	//Postcondition: Returns the number of estimated points as an int.
+	virtual int getEstimatedPoints();
 
 private:
 	int currentpoints;		//COMMENT

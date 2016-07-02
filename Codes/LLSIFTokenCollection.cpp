@@ -92,13 +92,22 @@ int LLSIFtokenCollection::setDifficulty(int diff)
 	else
 		return -1;		//error invoked
 }
+
 //Function to get song difficulty
+//Precondition:		tokenCollection Constructor has been invoked on the object before.
+//Postcondition:	Returns the difficult as an int:
+//					1 - Easy
+//					2 - Normal
+//					3 - Hard
+//					4 - Expert
 int LLSIFtokenCollection::getDifficulty()
 {
 	return difficulty;
 }
 
 //Function to get (average) event points obtained per song
+//Precondition:		tokenCollection Constructor member function has been invoked on the object before.
+//Postcondtion:		Returns the number of points a player can receive per song for the difficulty selected.
 int LLSIFtokenCollection::getPointsPerSong()
 {
 	return pointsPerSong;
@@ -120,7 +129,6 @@ int LLSIFtokenCollection::getEstimatedPoints()
 {
 	return estimatedPoints;
 }
-
 
 //Precondition:	tokenCollection Constructor has been invoked on the object before.
 //Postcondition: Calculates the number of tokens needed to reach targetPoints, based off of the current difficulty selected, and stores it in member field tokensNeeded.
