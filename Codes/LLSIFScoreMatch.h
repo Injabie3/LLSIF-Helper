@@ -62,6 +62,9 @@ public:
 	//Postcondition: Returns the number of estimated points as an int.
 	virtual int getEstimatedPoints();
 
+	//doubly linked list used to hold the values that the user has achieved, main purpose is to be used to calculate the average score but will also be used for an Event History page
+	std::list<int> songScoreList; 
+
 private:
 	int currentpoints;		//COMMENT
 	int difficulty;			//Score Match difficulty
@@ -79,6 +82,6 @@ private:
 
 };
 
-std::list<int> songScoreList; //doubly linked list used to hold the values that the user has achieved, main purpose is to be used to calculate the average score but will also be used for an Event History page
+
 
 #endif //LLSIFSCOREMATCH_H
