@@ -20,91 +20,92 @@ public:
 
 	//Assignment Operator
 
-	LLSIFBase(int EXP, int rank, int currentPoints, int targetPoints);
 	//Precondition:		EXP is the current EXP of the player, expressed as an int, >0.
 	//					rank is the current player's rank, expressed as an int, >0.
 	//					currentPoints is the current number of points the player has, expressed as an int, >=0.
 	//					targetPoints is the number of points the player is aiming for, >= currentPoints.
 	//Postcondition:	If valid inputs are given, the object is instantiated with these values.
 	//					If ANY of the inputs are invalid, the object is instantiated with the default constructor.
+	LLSIFBase(int EXP, int rank, int currentPoints, int targetPoints);
 
-	int setEXP(int EXP);
 	//Precondition:		EXP is the current EXP of the player, expressed as an int, >=0 but less than the max EXP for the rank.
 	//Postcondition:	Returns one of the following values:
 	//					0 		OK (valid input is given => sets the current EXP of the player).
 	//					-1		Error (Invalid input is given => nothing is set).
+	int setEXP(int EXP);
 
-	int setRank(int rank);
 	//Precondition:		rank is the current player's rank, expressed as an int, and greater than 0.
 	//Postcondition:	Returns one of the following values:
 	//					0		OK (Valid input is given => sets the current rank of the player, sets the EXP required for that rank, and sets the maximum LP at that rank)
 	//					-1		Error (Invalid input is given => nothing is set).
+	int setRank(int rank);
 
-	int setCurrentLP(int currentLP);
 	//Precondition:		currentLP is the current LP that the player has, expressed as an int.  Requires setRank() or a constructor that initializes the rank to be called beforehand.
 	//Postcondition:	Returns one of the following values:
 	//					0		OK (Valid input is given => sets the current LP).
 	//					-1		Error (Invalid input is given => sets LP to the maximum).
+	int setCurrentLP(int currentLP);
 
-	int setCurrentPoints(int currentPoints);
 	//Precondition:		currentPoints is the total number of points the user has, expressed as an int, and greater than or equal to 0.
 	//Postcondition:	Returns one of the following values:
 	//					0		OK (Valid input is given => sets the current points).
 	//					-1		Error (Invalid input is given => nothing is set).
+	int setCurrentPoints(int currentPoints);
 
-	int setTargetPoints(int targetPoints);
-	//Precondition:		A non-default constructor or setCurrentPointstargetPoints has been previously called, and targetPoints is the total number of points the user has, expressed as an int, and greater than or equal to currentPoints.
+	//Precondition:		A non-default constructor or targetPoints has been previously called, and targetPoints is the total number of points the user has, expressed as an int, and greater than or equal to currentPoints.
 	//Postcondition:	Returns on of the following values:
 	//					0		OK (Valid input is given => sets the target points).
 	//					-1		Error (Invalid input is given => nothing is set).
+	int setTargetPoints(int targetPoints);
 
-	int setEventSongsPlayed(int eventSongPlayed);
 	//Precondition:		eventSongPlayed is the number of times the player has played the event song, expressed as an int, and greater than or equal to 0 (when applicable).
 	//Postcondition:	Returns one of the following values:
 	//					0		OK (Valid input is given => sets the target points).
 	//					-1		Error (Invalid input is given => nothing is set).
+	int setEventSongsPlayed(int eventSongPlayed);
 
-	int setEventTimeRemaining(string dateAndTime);
 	//Precondition:		Independant to object instantiation, can access at anytime of program execution
 	//Postcondition:	Parses the specified format in "eventTimeRemaining" and returns the amount of time left in hours precise to 10^-2 parse format is Will parse the format: DD/MM/YYYY XX:XX
-
-	int getEXP();
+	int setEventTimeRemaining(string dateAndTime);
+	
 	//Precondition:		A non-default constructor or setEXP() member function has been previously called.
 	//Postcondition:	Returns the current EXP of the player as an int.
+	int getEXP();
 
-	int getRank();
 	//Precondition:		A non-default constructor or setRank() member function has been previously called.
 	//Postcondition:	Returns the current rank of the player as an int.
+	int getRank();
 
-	int getCurrentLP();
 	//Precondition:		A non-default constructor or setCurrentLP() member function has been previously called.
 	//Postcondition:	Returns the current LP the user has as an int.
+	int getCurrentLP();
 
-	int getMaxLP();
 	//Precondition:		A non-default constructor or setRank() member function has been previously called.
 	//Postcondition:	Returns the maximum LP the user has as an int.
-
-	int getCurrentPoints();
+	int getMaxLP();
+	
 	//Precondition:		A non-default constructor or setCurrentPoints() member function has been previously called.
 	//Postcondition:	Returns the current number of points the user has as an int.
+	int getCurrentPoints();
 
-	int getTargetPoints();
 	//Precondition:		A non-default constructor or setTargetPoints() member function has been previously called.
 	//Postcondition:	Returns the target points the user is aiming for as an int.
-
-	int getEventSongsPlayed();
+	int getTargetPoints();
+	
 	//Precondition:		A non-default constructor or setEventSongsPlayed() member function has been previously called.
 	//Postcondition:	Returns the number of times the event song was played as an int, if applicable.
-
-	double getEventTimeRemaining();
+	int getEventSongsPlayed();
+	
 	//Precondition:		A non-default constructor or setEventTimeRemaining() member function has been previously called.
 	//Postcondition:	Returns the time remaining in hours precisely to 10^-2.
-
-	virtual void calculateEstimatedPoints() = 0;
+	double getEventTimeRemaining();
+	
 	//Virtual function to calculate the estimated points the user has.  To be defined in derived classes.
-
-	virtual int getEstimatedPoints() = 0;
+	virtual void calculateEstimatedPoints() = 0;
+	
 	//Virtual function to get the estimated points the user has.  To be defined in derived classes.
+	virtual int getEstimatedPoints() = 0;
+	
 
 
 private:
@@ -121,7 +122,10 @@ private:
 	int eventSongsPlayed;	//The number of times the event song was played, if applicable.
 	static double eventTimeRemaining; //The time until an event is finished in terms of hours. 
 
+	//Helper function that is used to calculate the EXP required to go to the next rank based on the current rank.
 	void setMaxEXP();
+
+	//Helper function that is used to calculate the maximum LP a player can have at their current rank.
 	void setMaxLP();
 };
 
